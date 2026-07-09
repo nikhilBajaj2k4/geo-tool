@@ -246,7 +246,7 @@ dentist for crowns and implants austin</textarea></div>
 <div class="card" id="dom-card" style="display:none">
 <div class="card-t">Top Cited Sources</div><div id="domains"></div></div>
 
-<div class="card"><div class="card-t">Visibility Ranking</div><div id="ranking"></div></div>
+<div class="card"><div class="card-h"><span class="card-t">Visibility Ranking</span><button class="btn btn-gh" onclick="downloadReport()" style="font-size:.7rem;padding:5px 10px">Download Report</button></div><div id="ranking"></div></div>
 <div class="card"><div class="card-t">Query Details</div><div id="qlist"></div></div>
 </div></div>
 
@@ -294,7 +294,7 @@ fetch('/api/audit',{method:'POST',headers:{'Content-Type':'application/json'},bo
 (function pump(){rd.read().then(function(x){var data=x.value||'';buf+=dc.decode(data,{stream:!x.done});var i;while((i=buf.indexOf('\n\n'))!==-1){he(buf.slice(0,i),function(){return tt},function(t){tt=t});buf=buf.slice(i+2)}if(!x.done){pump()}else{if(buf.trim())he(buf,function(){return tt},function(t){tt=t})}}).catch(function(e){fw(e.message)})})()}).catch(function(e){fw(e.message)})}
 function ca(){if(es){es.close();es=null}$('rlog').innerHTML+='<div class="err">Cancelled after '+el()+'</div>';srs(false);$('status').textContent='Cancelled'}
 function he(c,gt,st){var ls=c.split('\n');for(var i=0;i<ls.length;i++){var l=ls[i];if(l.indexOf('data:')!==0)continue;var p=l.slice(5).trim();if(!p)continue;var ev;try{ev=JSON.parse(p)}catch(e){continue}
-if(ev.type==='start'){st(ev.total);he.mock=!!ev.mock;$('rl').textContent='0/'+ev.total;if(ev.mock)$('rc').textContent='mock'}else if(ev.type==='query'){rcost=ev.run_cost||0;var pct=gt()?Math.round((ev.done/gt())*100):0;$('rf').style.width=pct+'%';$('rl').textContent=ev.done+'/'+gt();$('re').textContent=el();if(ev.mentions&&ev.mentions.length)$('rlog').innerHTML+='<div class="hit">✓ '+esc(ev.query)+' → '+esc(ev.mentions.join(', '))+'</div>';else $('rlog').innerHTML+='<div class="miss">✗ '+esc(ev.query)+' (none)</div>';if(!he.mock)$('rc').textContent=fc(rcost);$('rlog').scrollTop=$('rlog').scrollHeight}else if(ev.type==='error'){$('rlog').innerHTML+='<div class="err">ERROR: '+esc(ev.query)+'</div>'}else if(ev.type==='done'){srs(false);$('status').textContent='';$('running').style.display='none';$('result').style.display='block';setTimeout(function(){rf(ev.result);ah(ev.result);$('result').scrollIntoView({behavior:'smooth'})},300)}}}
+if(ev.type==='start'){st(ev.total);he.mock=!!ev.mock;$('rl').textContent='0/'+ev.total;if(ev.mock)$('rc').textContent='mock'}else if(ev.type==='query'){rcost=ev.run_cost||0;var pct=gt()?Math.round((ev.done/gt())*100):0;$('rf').style.width=pct+'%';$('rl').textContent=ev.done+'/'+gt();$('re').textContent=el();if(ev.mentions&&ev.mentions.length)$('rlog').innerHTML+='<div class="hit">✓ '+esc(ev.query)+' → '+esc(ev.mentions.join(', '))+'</div>';else $('rlog').innerHTML+='<div class="miss">✗ '+esc(ev.query)+' (none)</div>';if(!he.mock)$('rc').textContent=fc(rcost);$('rlog').scrollTop=$('rlog').scrollHeight}else if(ev.type==='error'){$('rlog').innerHTML+='<div class="err">ERROR: '+esc(ev.query)+'</div>'}else if(ev.type==='done'){srs(false);$('status').textContent='';$('running').style.display='none';$('result').style.display='block';setTimeout(function(){rf(ev.result);window._lastAudit=ev.result;ah(ev.result);$('result').scrollIntoView({behavior:'smooth'})},300)}}}
 function fw(m){$('running').style.display='none';srs(false);$('status').textContent='Error: '+m}
 
 // render — Phase 1 full dashboard
@@ -339,6 +339,7 @@ var engDiv=$('engBtns');if(engDiv&&d.engines){engDiv.innerHTML='';var eids=Objec
 }
 
 $('rb').addEventListener('click',ra);$('cb').addEventListener('click',ca);
+function downloadReport(){if(!window._lastAudit)return;fetch('/api/report',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({result:window._lastAudit})}).then(function(r){return r.text()}).then(function(html){var w=window.open('','_blank');w.document.write(html);w.document.close();setTimeout(function(){w.print()},500)})}
 document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key==='Enter'){e.preventDefault();if(!$('rb').disabled)ra()}if(e.key==='Escape'&&$('cb').style.display!=='none'){e.preventDefault();ca()}});
 us();$('hc').style.display=lh().length?'':'none'
 """
@@ -380,6 +381,8 @@ class Handler(BaseHTTPRequestHandler):
             self._send(200, HTML, ctype="text/html; charset=utf-8")
         elif self.path == "/app.js":
             self._send(200, APP_JS, ctype="application/javascript; charset=utf-8")
+        elif self.path.startswith("/api/report"):
+            self._handle_report()
         else:
             self._send(404, '{"error":"not found"}')
 
@@ -397,7 +400,41 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(("data: " + json.dumps(obj) + "\n\n").encode("utf-8"))
         self.wfile.flush()
 
+    def _handle_report(self):
+        """Serve a report from query params: /api/report?file=audit-filename.json"""
+        import urllib.parse
+        params = urllib.parse.parse_qs(self.path.split("?")[-1])
+        filename = params.get("file", [None])[0]
+        if not filename:
+            self._send_json(400, {"error": "missing file param"})
+            return
+        try:
+            data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "audits")
+            path = os.path.join(data_dir, os.path.basename(filename))
+            with open(path) as f:
+                data = json.load(f)
+            from report import generate_report
+            html = generate_report(data)
+            self._send(200, html, ctype="text/html; charset=utf-8")
+        except FileNotFoundError:
+            self._send_json(404, {"error": "audit file not found"})
+
+    def _handle_report_post(self):
+        """Generate a report from POSTed audit result JSON."""
+        try:
+            n = int(self.headers.get("Content-Length", 0))
+            payload = json.loads(self.rfile.read(n).decode("utf-8") or "{}")
+            result_data = payload.get("result", payload)
+            from report import generate_report
+            html = generate_report(result_data)
+            self._send(200, html, ctype="text/html; charset=utf-8")
+        except Exception as e:
+            self._send_json(400, {"error": str(e)})
+
     def do_POST(self):
+        if self.path == "/api/report":
+            self._handle_report_post()
+            return
         if self.path != "/api/audit":
             self._send_json(404, {"error": "not found"}); return
         try:

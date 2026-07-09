@@ -394,6 +394,49 @@ def _analyze_citations(query_results: list) -> dict:
     }
 
 
+def _competitor_gap_analysis(query_results: list, practices: list) -> list:
+    """For each query where competitors won and the tracked practice didn't,
+    show exactly what sources the AI cited. Returns per-practice gap insights."""
+    gaps = {}
+    for practice in practices:
+        name = practice["name"]
+        aliases = [a.lower() for a in practice.get("aliases", [])]
+        gaps[name] = {"present_in": 0, "missing_from": 0, "gap_queries": []}
+
+    for qr in query_results:
+        query = qr.get("query", "")
+        mentioned = [m.lower() for m in qr.get("mentions", [])]
+        sources = qr.get("sources", []) or []
+        source_domains = [_extract_domain(s.get("link", "") or s.get("url", "")) for s in sources]
+        source_domains = [d for d in source_domains if d]
+
+        for p in practices:
+            name = p["name"]
+            aliases = [a.lower() for a in p.get("aliases", [])]
+            was_mentioned = any(m in name.lower() or any(a in name.lower() for a in aliases) for m in mentioned)
+            # also check if any alias is directly in mentioned
+            if not was_mentioned:
+                was_mentioned = any(name.lower() in m or m in name.lower() for m in mentioned)
+
+            if was_mentioned:
+                gaps[name]["present_in"] += 1
+            else:
+                gaps[name]["missing_from"] += 1
+                if mentioned and source_domains:
+                    gaps[name]["gap_queries"].append({
+                        "query": query,
+                        "competitors_mentioned": mentioned,
+                        "sources_cited": [{
+                            "title": s.get("title", ""),
+                            "domain": _extract_domain(s.get("link", "") or s.get("url", "")),
+                            "link": s.get("link", "") or s.get("url", ""),
+                        } for s in sources][:5],
+                        "dominant_domain": max(set(source_domains), key=source_domains.count) if source_domains else "",
+                    })
+
+    return [{"practice": name, **data} for name, data in gaps.items()]
+
+
 # Common recommendation rules for local medical practices
 RECOMMENDATION_RULES = [
     {"domain_keywords": ["google.com"], "action": "Google Business Profile",
@@ -601,6 +644,8 @@ def run_multi_audit(api_key, queries, practices, engines=None, mock=False, on_qu
         "recommendations": unique_recs,
         "top_cited_domains": [(d, c) for d, c in all_source_domains.most_common(15)],
         "engines": per_engine,
+        # Phase 2: competitor gap analysis (aggregate)
+        "gap_analysis": _competitor_gap_analysis(all_query_results, practices),
     }
 
 
@@ -665,6 +710,7 @@ def run_audit(provider, model, api_key, queries, practices, mock=False, on_query
     ranked_list = [{"name": n, "count": c} for n, c in ranking]
     source_data = _analyze_citations(query_results)
     recs = _generate_recommendations(source_data, practices, ranked_list)
+    gap_data = _competitor_gap_analysis(query_results, practices)
 
     # --- verdict logic (mirrors the brief's decision gate) -----------------
     if total_q == 0 or queries_with_any == 0:
@@ -707,6 +753,8 @@ def run_audit(provider, model, api_key, queries, practices, mock=False, on_query
         "source_analysis": source_data,
         "recommendations": recs["recommendations"],
         "top_cited_domains": recs["top_cited_domains"],
+        # Phase 2: competitor gap analysis
+        "gap_analysis": gap_data,
     }
 
 
