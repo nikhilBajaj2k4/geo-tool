@@ -47,9 +47,9 @@ NVIDIA_ENDPOINT = "https://integrate.api.nvidia.com/v1/chat/completions"
 
 # Default model per provider
 DEFAULTS = {
-    "openrouter": "openai/gpt-4o-mini:online",  # web-grounded via :online plugin; ~cheapest usable
+    "openrouter": "perplexity/sonar",
     "zai": "glm-4.6",                            # web-search tool grounding
-    "nvidia": "meta/llama-3.1-8b-instruct",     # free, smaller model — faster cold starts
+    "nvidia": "z-ai/glm-5.2",                  # free, GLM via NVIDIA NIM
 }
 
 # 10 realistic patient questions a person in Austin would actually ask an AI.

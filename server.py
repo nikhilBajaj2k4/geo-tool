@@ -25,143 +25,189 @@ HTML = r"""<!doctype html>
 <title>Healthcare GEO Audit</title>
 <style>
   :root {
-    --bg:#f6f8fa; --surface:#ffffff; --surface-2:#f1f5f9; --surface-3:#e9eef3;
-    --border:#e2e8f0; --border-strong:#cbd5e1;
-    --text:#0f172a; --text-2:#475569; --muted:#64748b; --muted-2:#94a3b8;
-    --accent:#2563eb; --accent-soft:#eff6ff; --accent-border:#bfdbfe;
-    --good:#059669; --good-soft:#ecfdf5; --good-border:#a7f3d0;
-    --warn:#d97706; --warn-soft:#fffbeb; --warn-border:#fde68a;
-    --bad:#dc2626; --bad-soft:#fef2f2; --bad-border:#fecaca;
-    --bar:#2563eb; --bar-soft:#dbeafe;
-    --shadow-sm:0 1px 2px rgba(15,23,42,.04);
-    --shadow:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
-    --shadow-md:0 4px 12px rgba(15,23,42,.06),0 2px 4px rgba(15,23,42,.04);
-    --radius:12px; --radius-sm:8px;
+    --bg:#0a0e14; --surface:#12171f; --surface-2:#1a1f29; --surface-3:#222833;
+    --border:#1e2733; --border-acc:#2d3b4d;
+    --text:#e6edf3; --text-2:#8b949e; --muted:#595f6b;
+    --accent:#39ff14; --accent-dim:#1a3a1a; --accent-border:#1f541f;
+    --good:#3fb950; --good-dim:#0f2d14; --good-border:#1a4420;
+    --warn:#d29922; --warn-dim:#2e2208; --warn-border:#4a3808;
+    --bad:#f85149; --bad-dim:#2d0c0f; --bad-border:#4a1610;
+    --bar:#39ff14; --bar-2:#58a6ff; --bar-dim:#0f1f0f; --bar-track:#1c2634;
+    --radius:6px; --radius-sm:4px;
   }
   * { box-sizing:border-box; }
-  body {
-    margin:0;
-    font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;
-    background:var(--bg); color:var(--text); line-height:1.55;
-    -webkit-font-smoothing:antialiased; font-size:15px;
+  @media (prefers-reduced-motion:reduce) {
+    *, ::before, ::after { animation-duration:0s !important; transition-duration:0s !important; }
   }
-  .wrap { max-width:940px; margin:0 auto; padding:40px 24px 96px; }
-  h1 { font-size:1.75rem; font-weight:700; margin:0 0 6px; letter-spacing:-.02em;
-       color:var(--text); }
-  .sub { color:var(--text-2); font-size:.95rem; margin-bottom:28px; max-width:620px; }
-  .card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
-          padding:24px; margin-bottom:18px; box-shadow:var(--shadow-sm); }
-  .card-title { font-size:.78rem; font-weight:600; color:var(--muted);
-                text-transform:uppercase; letter-spacing:.06em; margin:0 0 14px; }
-  label { display:block; font-size:.82rem; font-weight:500; color:var(--text-2);
-          margin:0 0 7px; }
-  input, select, textarea {
-    width:100%; background:var(--surface); color:var(--text);
-    border:1px solid var(--border-strong); border-radius:var(--radius-sm);
-    padding:10px 12px; font-size:.95rem; font-family:inherit;
+  body {
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:'JetBrains Mono','SF Mono','Fira Code','Cascadia Code',monospace;
+    font-size:13px; line-height:1.65; -webkit-font-smoothing:antialiased;
+  }
+  ::selection { background:rgba(57,255,20,.25); color:var(--text); }
+
+  .wrap { max-width:960px; margin:0 auto; padding:32px 20px 96px; }
+
+  /* --- header --- */
+  .header { margin-bottom:28px; }
+  .header h1 { font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;
+    font-size:1.4rem; font-weight:700; margin:0; display:flex; align-items:center; gap:10px;
+    letter-spacing:-.01em; }
+  .header .bracket { color:var(--accent); font-size:.8rem; font-family:inherit;
+    background:var(--accent-dim); border:1px solid var(--accent-border);
+    padding:2px 10px; border-radius:var(--radius-sm); letter-spacing:.04em; font-weight:400; }
+  .header .sub { color:var(--text-2); font-size:.8rem; margin-top:8px;
+    font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif; max-width:620px; }
+
+  /* --- cards --- */
+  .card { background:var(--surface); border:1px solid var(--border);
+    border-radius:var(--radius); padding:20px; margin-bottom:16px; }
+  .card-title { font-size:.68rem; font-weight:600; color:var(--muted); text-transform:uppercase;
+    letter-spacing:.08em; margin:0 0 14px; display:flex; align-items:center; gap:8px; }
+  .card-title::before { content:''; width:8px; height:2px; background:var(--accent);
+    opacity:.5; display:inline-block; }
+
+  /* --- form --- */
+  .row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  @media (max-width:640px) { .row { grid-template-columns:1fr; } }
+  label { display:block; font-size:.72rem; color:var(--muted); margin:0 0 5px;
+    text-transform:uppercase; letter-spacing:.06em; }
+  .fm-label::before { content:'> '; color:var(--accent); opacity:.4; }
+  input, textarea {
+    width:100%; background:var(--bg); color:var(--text); font-family:inherit;
+    border:1px solid var(--border); border-radius:var(--radius-sm);
+    padding:9px 12px; font-size:.82rem; line-height:1.6;
     transition:border-color .15s, box-shadow .15s;
   }
+  input::placeholder, textarea::placeholder { color:var(--muted); }
   input:focus, textarea:focus { outline:none; border-color:var(--accent);
-    box-shadow:0 0 0 3px rgba(37,99,235,.12); }
-  input:disabled, textarea:disabled { background:var(--surface-2); color:var(--muted-2); cursor:not-allowed; }
-  textarea { resize:vertical; min-height:120px; line-height:1.7; }
-  .row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-  .controls { display:flex; align-items:center; gap:16px; margin-top:20px; flex-wrap:wrap; }
+    box-shadow:0 0 0 2px rgba(57,255,20,.1); }
+  input:disabled, textarea:disabled { background:var(--surface-2); color:var(--muted);
+    border-color:var(--border); cursor:not-allowed; opacity:.6; }
+  textarea { min-height:96px; field-sizing:content; }
+  input { height:36px; }
+
+  .controls { display:flex; align-items:center; gap:14px; margin-top:18px; flex-wrap:wrap; }
+  .controls .kb { font-size:.65rem; color:var(--muted); margin-left:6px; }
+  .check { display:flex; align-items:center; gap:7px; color:var(--text-2); font-size:.78rem;
+    cursor:pointer; user-select:none; }
+  .check input { width:auto; height:auto; accent-color:var(--accent); cursor:pointer; }
+  .check .flag { color:var(--accent); font-weight:600; opacity:.7; }
+
   button {
-    background:var(--accent); color:#fff; border:0; border-radius:var(--radius-sm);
-    padding:11px 22px; font-size:.95rem; font-weight:600; cursor:pointer;
-    display:inline-flex; align-items:center; gap:9px;
-    box-shadow:0 1px 2px rgba(37,99,235,.2), inset 0 1px 0 rgba(255,255,255,.15);
-    transition:transform .1s, box-shadow .15s;
+    background:var(--accent-dim); color:var(--accent); font-family:inherit;
+    border:1px solid var(--accent-border); border-radius:var(--radius-sm);
+    padding:8px 16px; font-size:.78rem; font-weight:600; cursor:pointer;
+    display:inline-flex; align-items:center; gap:7px;
+    transition:background .15s, box-shadow .15s, color .15s;
+    text-transform:uppercase; letter-spacing:.04em;
   }
-  button:hover:not(:disabled) { box-shadow:0 4px 12px rgba(37,99,235,.25); }
+  button:hover:not(:disabled) { background:var(--accent); color:var(--bg); }
   button:active:not(:disabled) { transform:translateY(1px); }
-  button:disabled { opacity:.6; cursor:not-allowed; }
-  .check { display:flex; align-items:center; gap:8px; color:var(--text-2); font-size:.9rem; cursor:pointer; }
-  .check input { width:auto; }
-  #status { color:var(--text-2); font-size:.9rem; min-height:1.2em; margin-left:auto; }
+  button:disabled { opacity:.4; cursor:not-allowed; }
+  button.cancel { background:var(--bad-dim); color:var(--bad); border-color:var(--bad-border); }
+  button.cancel:hover:not(:disabled) { background:var(--bad); color:#fff; }
+  button.cancel .kb { color:inherit; opacity:.7; }
 
-  /* --- spinner --- */
-  .spinner { width:15px; height:15px; border:2.5px solid rgba(255,255,255,.3);
-          border-top-color:#fff; border-radius:50%; animation:spin .65s linear infinite; }
-  @keyframes spin { to { transform:rotate(360deg); } }
+  /* --- terminal output (progress) --- */
+  .term { background:var(--bg); border:1px solid var(--border); border-radius:var(--radius);
+    padding:14px 18px; margin-bottom:16px; font-size:.78rem; line-height:1.8;
+    min-height:60px; max-height:440px; overflow-y:auto; }
+  .term .line { padding:1px 0; white-space:pre-wrap; word-break:break-word; }
+  .term .prompt { color:var(--muted); margin-right:6px; }
+  .term .cmd { color:var(--text); }
+  .term .hit { color:var(--good); }
+  .term .miss { color:var(--muted); }
+  .term .err { color:var(--bad); }
+  .term .cursor { display:inline-block; width:8px; height:14px; background:var(--accent);
+    margin-left:2px; vertical-align:text-bottom; animation:blink .8s step-end infinite; }
+  @keyframes blink { 50% { opacity:0; } }
+  .term .header-line { color:var(--muted); margin-bottom:4px; }
+  .term .footer-line { display:flex; justify-content:space-between; color:var(--muted);
+    font-size:.72rem; margin-top:8px; padding-top:6px; border-top:1px solid var(--border); }
+  .term .footer-line .cost { color:var(--good); }
+  .term .footer-line .cost.mock { color:var(--muted); }
 
-  /* --- progress --- */
-  .progress-wrap { display:flex; align-items:center; gap:14px; margin:4px 0 14px; }
-  .progress-track { flex:1; height:8px; background:var(--surface-3); border-radius:5px; overflow:hidden; }
-  .progress-fill { height:100%; width:0%; background:linear-gradient(90deg,var(--accent),#3b82f6);
-          border-radius:5px; transition:width .4s ease; }
-  .progress-label { font-size:.85rem; font-weight:600; color:var(--text-2);
-          min-width:54px; text-align:right; font-variant-numeric:tabular-nums; }
-  .live-line { font-size:.9rem; color:var(--text-2); min-height:1.4em; padding:8px 12px;
-          background:var(--surface-2); border-radius:var(--radius-sm); }
-  .live-line.err { color:var(--bad); background:var(--bad-soft); }
-  .cost-line { font-size:.82rem; color:var(--muted); margin-top:10px; min-height:1.2em;
-          display:flex; align-items:center; gap:6px; }
-  .cost-line .dot { width:6px; height:6px; border-radius:50%; background:var(--good); display:inline-block; }
-  .cost-line.mock .dot { background:var(--muted-2); }
+  /* --- verdict banner --- */
+  .verdict-banner { font-family:inherit; font-size:.82rem; line-height:1.4;
+    white-space:pre; padding:12px 0; margin:0 0 16px; overflow-x:auto; }
+  .verdict-banner.good { color:var(--good); }
+  .verdict-banner.warn { color:var(--warn); }
+  .verdict-banner.bad  { color:var(--bad); }
 
-  /* --- verdict --- */
-  .verdict { font-size:1.1rem; font-weight:700; padding:16px 18px; border-radius:var(--radius-sm);
-          margin:0 0 16px; display:flex; align-items:center; gap:10px; }
-  .verdict .vicon { font-size:1.25rem; line-height:1; }
-  .verdict.good { background:var(--good-soft); color:var(--good); border:1px solid var(--good-border); }
-  .verdict.warn { background:var(--warn-soft); color:var(--warn); border:1px solid var(--warn-border); }
-  .verdict.bad  { background:var(--bad-soft);  color:var(--bad);  border:1px solid var(--bad-border); }
+  .summary { color:var(--text-2); font-size:.76rem; padding:6px 0; margin-bottom:8px;
+    border-bottom:1px solid var(--border); }
+  .summary .cost { color:var(--good); }
 
   /* --- ranking bars --- */
   #ranking { margin-top:6px; }
-  .bar-row { display:grid; grid-template-columns:240px 1fr 60px; gap:14px; align-items:center;
-          padding:9px 0; border-bottom:1px solid var(--border); font-size:.92rem; }
+  .bar-row { display:grid; grid-template-columns:220px 1fr 64px; gap:12px; align-items:center;
+    padding:7px 0; border-bottom:1px solid var(--border); font-size:.78rem; }
+  @media (max-width:640px) { .bar-row { grid-template-columns:1fr 1fr; }
+    .bar-row .name { grid-column:1/-1; margin-bottom:2px; }
+    .bar-row .count { text-align:right; } }
   .bar-row:last-child { border-bottom:0; }
-  .bar-row .name { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-weight:500; color:var(--text); }
-  .bar-row .rank { color:var(--muted-2); font-weight:400; margin-right:8px; }
-  .bar-track { background:var(--bar-soft); border-radius:6px; height:20px; overflow:hidden; }
-  .bar-fill { background:var(--bar); height:100%; border-radius:6px; transition:width .6s cubic-bezier(.4,0,.2,1); }
-  .bar-row .count { text-align:right; color:var(--text-2); font-weight:600; font-variant-numeric:tabular-nums; }
+  .bar-row .name { overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+    color:var(--text); }
+  .bar-row .rank { color:var(--muted); display:inline-block; width:18px; text-align:right;
+    margin-right:6px; font-size:.68rem; }
+  .bar-track { background:var(--bar-track); border-radius:3px; height:14px; overflow:hidden; }
+  .bar-fill { height:100%; border-radius:3px; transition:width .6s cubic-bezier(.4,0,.2,1); }
+  .bar-fill.top { background:var(--bar); }
+  .bar-fill.mid { background:var(--bar-2); opacity:.7; }
+  .bar-fill.low { background:var(--bar-2); opacity:.4; }
+  .bar-row .count { text-align:right; color:var(--text-2); font-size:.74rem;
+    font-variant-numeric:tabular-nums; }
 
   /* --- query detail --- */
-  .q { padding:13px 0; border-bottom:1px solid var(--border); }
+  .q { padding:11px 0; border-bottom:1px solid var(--border);
+    font-family:inherit; }
   .q:last-child { border-bottom:0; }
-  .q .qq { font-weight:600; font-size:.92rem; display:flex; align-items:center; gap:9px; color:var(--text); }
-  .q .tick { display:inline-flex; align-items:center; justify-content:center;
-          width:18px; height:18px; border-radius:50%; font-size:.7rem; flex-shrink:0; }
-  .q .tick.hit { background:var(--good-soft); color:var(--good); }
-  .q .tick.miss { background:var(--surface-3); color:var(--muted-2); }
-  .q .mm { color:var(--accent); font-size:.85rem; margin:5px 0 0 27px; }
-  .q .none { color:var(--muted); font-size:.85rem; margin:5px 0 0 27px; }
-  details summary { cursor:pointer; color:var(--accent); font-size:.82rem; margin:6px 0 0 27px;
-          list-style:none; }
+  .q .qq { display:flex; align-items:center; gap:8px; font-size:.8rem; }
+  .q .qq .qnum { color:var(--muted); font-size:.68rem; min-width:28px; }
+  .q .qq .qtext { color:var(--text); flex:1; }
+  .q .qq .tick { font-size:.75rem; flex-shrink:0; }
+  .q .qq .tick.hit { color:var(--good); }
+  .q .qq .tick.miss { color:var(--muted); }
+  .q .mm { color:var(--good); font-size:.74rem; margin:3px 0 0 36px; }
+  .q .none { color:var(--muted); font-size:.74rem; margin:3px 0 0 36px; }
+  details { margin:4px 0 0 36px; }
+  details summary { cursor:pointer; color:var(--accent); font-size:.72rem;
+    list-style:none; opacity:.7; transition:opacity .15s; }
+  details summary:hover { opacity:1; }
   details summary::-webkit-details-marker { display:none; }
-  details summary::before { content:'\203a  '; }
-  details[open] summary::before { content:'\2038  '; }
-  .q-ans { white-space:pre-wrap; color:var(--text-2); font-size:.85rem;
-          margin:10px 0 0 27px; padding:12px; background:var(--surface-2); border-radius:var(--radius-sm);
-          max-height:260px; overflow:auto; border:1px solid var(--border); }
-  .meta { color:var(--muted); font-size:.85rem; }
-  .note { font-size:.82rem; color:var(--muted); margin-top:14px; line-height:1.6; }
-  .pill { display:inline-block; background:var(--accent-soft); color:var(--accent);
-          border:1px solid var(--accent-border); font-size:.72rem; font-weight:600;
-          padding:2px 9px; border-radius:99px; margin-left:8px; vertical-align:middle; }
+  details summary::before { content:'[+] '; }
+  details[open] summary::before { content:'[-] '; }
+  .q-ans { white-space:pre-wrap; color:var(--text-2); font-size:.73rem;
+    margin:8px 0 0 0; padding:10px 12px; background:var(--surface-2);
+    border-radius:var(--radius-sm); border-left:2px solid var(--accent);
+    max-height:240px; overflow:auto; line-height:1.6; }
+  .q-ans::before { content:''; }
+
+  #status { color:var(--bad); font-size:.74rem; min-height:1.2em; margin-left:auto; }
+  .note { font-size:.72rem; color:var(--muted); margin-top:12px;
+    font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif; }
 </style></head><body><div class="wrap">
-  <h1>Healthcare GEO Audit <span class="pill">probe</span></h1>
-  <div class="sub">Measures how often competing medical practices appear in AI-search answers (ChatGPT, Perplexity) when patients search for their specialty &mdash; and whether visibility gaps exist to close.</div>
+  <div class="header">
+    <h1>Healthcare GEO Audit <span class="bracket">[PROBE]</span></h1>
+    <div class="sub">Measures how often competing medical practices appear in AI-search answers when patients search for their specialty &mdash; and whether visibility gaps exist to close.</div>
+  </div>
 
   <div class="card">
-    <div class="card-title">Audit configuration</div>
+    <div class="card-title">Configuration</div>
     <div class="row">
       <div>
-        <label for="specialty">Specialty</label>
-        <input id="specialty" value="dentist">
+        <label for="specialty" class="fm-label">specialty</label>
+        <input id="specialty" value="dentist" aria-label="Medical specialty">
       </div>
       <div>
-        <label for="city">City</label>
-        <input id="city" value="Austin, TX">
+        <label for="city" class="fm-label">city</label>
+        <input id="city" value="Austin, TX" aria-label="City">
       </div>
     </div>
-    <div style="margin-top:16px">
-      <label for="practices">Practices to track (one per line)</label>
-      <textarea id="practices">Forest Family Dentistry
+    <div style="margin-top:14px">
+      <label for="practices" class="fm-label">practices</label>
+      <textarea id="practices" aria-label="Practices to track">Forest Family Dentistry
 Austin Dental Spa
 Enamel Dentistry
 Walden Dental
@@ -171,9 +217,9 @@ ATX Family Dental
 Tech Ridge Dental
 Belterra Dental</textarea>
     </div>
-    <div style="margin-top:16px">
-      <label for="queries">Patient queries to ask the AI (one per line)</label>
-      <textarea id="queries">best dentist in austin tx
+    <div style="margin-top:14px">
+      <label for="queries" class="fm-label">queries</label>
+      <textarea id="queries" aria-label="Patient queries">best dentist in austin tx
 top rated dentist in austin
 dentist near me that takes delta dental austin
 affordable dentist south austin
@@ -185,33 +231,30 @@ pediatric dentist austin tx
 dentist for crowns and implants austin</textarea>
     </div>
     <div class="controls">
-      <button id="runBtn">Run audit</button>
-      <label class="check"><input type="checkbox" id="mockChk"> Mock mode (no API cost)</label>
-      <span id="status"></span>
+      <button id="runBtn" aria-label="Run audit">&#9654; Run Audit <span class="kb">Ctrl+Enter</span></button>
+      <button id="cancelBtn" class="cancel" style="display:none" aria-label="Cancel audit">&#9632; Cancel <span class="kb">Esc</span></button>
+      <label class="check"><input type="checkbox" id="mockChk" aria-label="Mock mode">
+        <span class="flag">--mock</span> no API cost</label>
+      <span id="status" role="alert"></span>
     </div>
-    <div class="note">The audit sends 10 realistic patient questions to a web-grounded AI-search model, then counts how often each practice is named &mdash; in the answer and its cited sources. Live runs take ~20&ndash;30s.</div>
+    <div class="note">Sends patient queries to a web-grounded AI model, counts how often each practice is named in answers and cited sources.</div>
   </div>
 
-  <!-- live progress (shown while running) -->
-  <div id="running" class="card" style="display:none">
-    <div class="progress-wrap">
-      <div class="progress-track"><div id="progressFill" class="progress-fill"></div></div>
-      <div id="progressLabel" class="progress-label">0 / 0</div>
-    </div>
-    <div id="liveLine" class="live-line">Starting\u2026</div>
-    <div id="costLine" class="cost-line"><span class="dot"></span><span></span></div>
+  <!-- terminal output log (shown while running) -->
+  <div id="running" style="display:none">
+    <div id="termOut" class="term" role="log" aria-live="polite" aria-label="Audit progress"></div>
   </div>
 
   <!-- final results (shown when done) -->
   <div id="result" style="display:none">
     <div class="card">
-      <div id="verdict" class="verdict"></div>
-      <div id="summary" class="meta" style="margin-bottom:18px"></div>
-      <div class="card-title">Visibility ranking</div>
+      <div id="verdict" class="verdict-banner"></div>
+      <div id="summary" class="summary"></div>
+      <div class="card-title">Visibility Ranking</div>
       <div id="ranking"></div>
     </div>
     <div class="card">
-      <div class="card-title">Per-query detail</div>
+      <div class="card-title">Query Details</div>
       <div id="queryDetails"></div>
     </div>
   </div>
@@ -220,10 +263,11 @@ dentist for crowns and implants austin</textarea>
 </body></html>"""
 
 
-APP_JS = r"""// Healthcare GEO Audit — client logic (served as real JS, separate from HTML)
-// Uses Server-Sent Events to stream per-query progress as the audit runs.
+APP_JS = r"""// Healthcare GEO Audit — terminal-style client logic
 const $ = (id) => document.getElementById(id);
 let evtSource = null;
+let runningTotal = 0;
+let auditStart = 0;
 
 function esc(s) {
   return String(s == null ? "" : s).replace(/[&<>]/g, (c) =>
@@ -231,69 +275,67 @@ function esc(s) {
   );
 }
 
+function fmtCost(c) {
+  return "$" + Number(c || 0).toFixed(4);
+}
+
+function elapsed() {
+  const s = auditStart ? ((Date.now() - auditStart) / 1000).toFixed(1) : "0";
+  return s + "s";
+}
+
+// --- UI state ---
+
 function setRunState(running) {
-  const btn = $("runBtn");
-  btn.disabled = running;
-  btn.innerHTML = running
-    ? '<span class="spinner"></span> Running'
-    : "Run audit";
-  // inputs lock while running
   $("specialty").disabled = running;
   $("city").disabled = running;
   $("practices").disabled = running;
   $("queries").disabled = running;
   $("mockChk").disabled = running;
-}
-
-function setCostLine(mock, text) {
-  var cl = $("costLine");
-  cl.className = "cost-line" + (mock ? " mock" : "");
-  cl.innerHTML = '<span class="dot"></span><span class="ctxt"></span>';
-  cl.querySelector(".ctxt").textContent = text;
+  $("runBtn").style.display = running ? "none" : "";
+  $("cancelBtn").style.display = running ? "" : "none";
 }
 
 function showRunning(total, mock) {
   $("result").style.display = "none";
   $("running").style.display = "block";
-  $("progressFill").style.width = "0%";
-  $("progressLabel").textContent = "0 / " + total;
-  var live = $("liveLine");
-  live.className = "live-line";
-  live.textContent = "Starting\u2026";
-  setCostLine(
-    mock,
-    mock ? "Mock mode \u2014 no real API cost." : "Running cost: $0.0000"
-  );
+  runningTotal = 0;
+  auditStart = Date.now();
+  const t = $("termOut");
+  const m = mock ? " --mock" : "";
+  t.innerHTML = '<div class="header-line">$ probe' + m + ' ' + total + ' queries' +
+    ' <span class="cursor"></span></div>';
 }
 
-function fmtCost(c) {
-  return "$" + Number(c || 0).toFixed(4);
+function appendTerm(css, html) {
+  const t = $("termOut");
+  // remove cursor from last line, append, re-add cursor
+  t.innerHTML = t.innerHTML.replace(/<span class="cursor"><\/span>$/, "");
+  t.innerHTML += '<div class="line ' + css + '">' + html + "</div>";
+  t.innerHTML += '<span class="cursor"></span>';
+  t.scrollTop = t.scrollHeight;
 }
 
-function updateProgress(done, total, queryText, mentions, isError, runCost, mock) {
-  const pct = total ? Math.round((done / total) * 100) : 0;
-  $("progressFill").style.width = pct + "%";
-  $("progressLabel").textContent = done + " / " + total;
-  const live = $("liveLine");
-  if (isError) {
-    live.className = "live-line err";
-    live.textContent = "Error on: " + queryText;
-  } else {
-    live.className = "live-line";
-    if (mentions && mentions.length) {
-      live.textContent =
-        "\u2713 " + queryText + "  \u2014  " + mentions.join(", ");
-    } else if (mentions) {
-      live.textContent =
-        "\u2717 " + queryText + "  \u2014  none of the tracked practices named";
-    } else {
-      live.textContent = "Answering: " + queryText;
-    }
-  }
-  setCostLine(
-    mock,
-    mock ? "Mock mode \u2014 no real API cost." : "Running cost: " + fmtCost(runCost)
-  );
+function updateFooter(mock, runCost) {
+  const t = $("termOut");
+  const existing = t.querySelector(".footer-line");
+  if (existing) existing.remove();
+  const costHtml = mock
+    ? '<span class="cost mock">--mock (no cost)</span>'
+    : '<span class="cost">$' + fmtCost(runCost) + "</span>";
+  t.innerHTML += '<div class="footer-line"><span>' + elapsed() +
+    "</span>" + costHtml + "</div>";
+}
+
+// --- render final ---
+
+function makeBanner(text, cls) {
+  const icon = cls === "good" ? "\u2713" : cls === "warn" ? "\u26a0" : "\u2717";
+  const w = Math.max(48, text.length + 4);
+  const top = "\u2554" + "\u2550".repeat(w + 2) + "\u2557";
+  const mid = "\u2551  " + icon + "  " + text.padEnd(w - 3) + "\u2551";
+  const bot = "\u255a" + "\u2550".repeat(w + 2) + "\u255d";
+  return top + "\n" + mid + "\n" + bot;
 }
 
 function renderFinal(d) {
@@ -305,81 +347,102 @@ function renderFinal(d) {
       : d.verdict.indexOf("AMBIGUOUS") !== -1
       ? "warn"
       : "bad";
-  const vicon =
-    cls === "good" ? "\u2713" : cls === "warn" ? "\u26a0" : "\u2717";
-  const v = $("verdict");
-  v.className = "verdict " + cls;
-  v.innerHTML =
-    '<span class="vicon">' + vicon + "</span><span>" + esc(d.verdict) + "</span>";
+  $("verdict").textContent = makeBanner(d.verdict, cls);
+  $("verdict").className = "verdict-banner " + cls;
+
   const costTag =
     d.model === "mock"
-      ? "(mock run \u2014 no API cost)"
-      : "API cost for this run: " + fmtCost(d.total_cost);
-  $("summary").textContent =
-    d.detail +
-    "  \u00b7  " +
+      ? "mock run (no API cost)"
+      : "cost: <span class='cost'>" + fmtCost(d.total_cost) + "</span>";
+  $("summary").innerHTML =
+    esc(d.detail) +
+    " &middot; " +
     d.queries_with_any +
     "/" +
     d.total_queries +
-    " queries named a tracked practice." +
-    "  \u00b7  " +
-    costTag;
-  const max = Math.max.apply(
-    null,
-    [1].concat(d.ranking.map((r) => r.count))
-  );
+    " queries named a practice &middot; " +
+    costTag +
+    (d.total_queries ? " &middot; " + elapsed() + " elapsed" : "");
+
+  // ranking bars — proportional to total_queries, not leader
+  const total = d.total_queries || 1;
+  const maxCount = Math.max.apply(null, [1].concat(d.ranking.map((r) => r.count)));
   $("ranking").innerHTML = d.ranking
     .map((r, i) => {
-      const pct = (r.count / max) * 100;
+      const pct = total ? (r.count / total) * 100 : 0;
+      const rank = maxCount > 0 ? r.count / maxCount : 0;
+      const cls = rank >= 0.6 ? "top" : rank >= 0.3 ? "mid" : "low";
       return (
         '<div class="bar-row"><div class="name"><span class="rank">' +
         (i + 1) +
-        "</span>" +
+        ".</span>" +
         esc(r.name) +
         "</div>" +
-        '<div class="bar-track"><div class="bar-fill" style="width:' +
+        '<div class="bar-track"><div class="bar-fill ' + cls + '" style="width:' +
         pct +
         '%"></div></div>' +
         '<div class="count">' +
         r.count +
         "/" +
-        d.total_queries +
+        total +
         "</div></div>"
       );
     })
     .join("");
+
   $("queryDetails").innerHTML = d.query_results
-    .map((q) => {
+    .map((q, i) => {
       const hit = q.mentions.length > 0;
       const m = hit
-        ? '<div class="mm">\u2192 ' + esc(q.mentions.join(", ")) + "</div>"
-        : '<div class="none">\u2192 none of the tracked practices named</div>';
+        ? '<div class="mm">&rarr; ' + esc(q.mentions.join(", ")) + "</div>"
+        : '<div class="none">&rarr; none of the tracked practices named</div>';
       return (
-        '<div class="q"><div class="qq"><span class="tick ' +
+        '<div class="q"><div class="qq"><span class="qnum">[' +
+        String(i + 1).padStart(2, "0") +
+        "]</span>" +
+        '<span class="tick ' +
         (hit ? "hit" : "miss") +
         '">' +
         (hit ? "\u2713" : "\u00b7") +
-        "</span> " +
+        "</span>" +
+        '<span class="qtext">' +
         esc(q.query) +
-        "</div>" +
+        "</span></div>" +
         m +
-        "<details><summary>show AI answer</summary><div class=\"q-ans\">" +
+        "<details><summary>show answer</summary><div class=\"q-ans\">" +
         esc(q.answer) +
         "</div></details></div>"
       );
     })
     .join("");
+
   $("result").scrollIntoView({ behavior: "smooth" });
 }
 
 function failWith(msg) {
   $("running").style.display = "none";
   setRunState(false);
-  $("status").innerHTML =
-    '<span style="color:var(--bad)">Error: ' + esc(msg) + "</span>";
+  $("status").innerHTML = "Error: " + esc(msg);
 }
 
-$("runBtn").addEventListener("click", () => {
+// --- cancel ---
+
+function cancelAudit() {
+  if (evtSource) {
+    evtSource.close();
+    evtSource = null;
+  }
+  appendTerm("err", "  ^C cancelled after " + elapsed());
+  setRunState(false);
+  $("status").textContent = "Cancelled.";
+}
+
+// --- click handler ---
+
+$("runBtn").addEventListener("click", () => startAudit());
+$("cancelBtn").addEventListener("click", () => cancelAudit());
+
+function startAudit() {
   if (evtSource) {
     evtSource.close();
     evtSource = null;
@@ -401,7 +464,6 @@ $("runBtn").addEventListener("click", () => {
     queries: queries,
     mock: $("mockChk").checked,
   };
-  // POST to start, get a stream back via fetch ReadableStream (SSE-style).
   fetch("/api/audit", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -413,12 +475,10 @@ $("runBtn").addEventListener("click", () => {
           throw new Error(j.error || "HTTP " + resp.status);
         });
       }
-      const ct = resp.headers.get("content-type") || "";
-      // Stream of SSE events: data: {...}\n\n
       const reader = resp.body.getReader();
       const decoder = new TextDecoder();
       let buf = "";
-      let total = 10;
+      let total = queries.length || 10;
       function pump() {
         reader
           .read()
@@ -438,10 +498,9 @@ $("runBtn").addEventListener("click", () => {
       pump();
     })
     .catch((e) => failWith(e.message));
-});
+}
 
 function handleEvent(chunk, getTotal, setTotal) {
-  // parse "data: {json}"
   const lines = chunk.split("\n");
   for (const line of lines) {
     if (line.indexOf("data:") !== 0) continue;
@@ -458,24 +517,42 @@ function handleEvent(chunk, getTotal, setTotal) {
       handleEvent.mock = !!ev.mock;
       showRunning(ev.total, !!ev.mock);
     } else if (ev.type === "query") {
-      updateProgress(
-        ev.done,
-        getTotal(),
-        ev.query,
-        ev.mentions,
-        false,
-        ev.run_cost,
-        handleEvent.mock
-      );
+      runningTotal = ev.run_cost || 0;
+      if (ev.mentions && ev.mentions.length) {
+        appendTerm("hit", "  \u2713 " + esc(ev.query) + "  \u2192  " +
+          esc(ev.mentions.join(", ")));
+      } else {
+        appendTerm("miss", "  \u2717 " + esc(ev.query) + "  (none)");
+      }
+      updateFooter(handleEvent.mock, runningTotal);
     } else if (ev.type === "error") {
-      updateProgress(ev.done, getTotal(), ev.query, null, true, ev.run_cost || 0, handleEvent.mock);
+      appendTerm("err", "  ERROR: " + esc(ev.query));
+      updateFooter(handleEvent.mock, runningTotal);
     } else if (ev.type === "done") {
       setRunState(false);
       $("status").textContent = "";
+      // remove cursor before rendering final
+      $("termOut").innerHTML = $("termOut").innerHTML.replace(
+        /<span class="cursor"><\/span>$/,
+        ""
+      );
       renderFinal(ev.result);
     }
   }
 }
+
+// --- keyboard shortcuts ---
+
+document.addEventListener("keydown", (e) => {
+  if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
+    e.preventDefault();
+    if (!$("runBtn").disabled) startAudit();
+  }
+  if (e.key === "Escape" && !$("cancelBtn").style.display.match(/none/)) {
+    e.preventDefault();
+    cancelAudit();
+  }
+});
 """
 
 
