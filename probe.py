@@ -331,6 +331,159 @@ def mock_result(query: str) -> dict:
 
 
 # ---------------------------------------------------------------------------
+# Source citation analysis (Phase 1 — explains why the gaps exist)
+# ---------------------------------------------------------------------------
+
+def _extract_domain(url: str) -> str:
+    """Extract a clean domain from a URL for grouping citations."""
+    if not url:
+        return ""
+    try:
+        from urllib.parse import urlparse
+        parsed = urlparse(url)
+        domain = parsed.netloc or parsed.path.split("/")[0]
+        # strip www. prefix
+        if domain.startswith("www."):
+            domain = domain[4:]
+        return domain
+    except Exception:
+        return ""
+
+
+def _analyze_citations(query_results: list) -> dict:
+    """Analyze all query results to extract citation patterns.
+
+    Returns:
+        {
+            "source_domains": {domain: count, ...},
+            "per_query_citations": [{query, sources_found, domains: [...]}, ...],
+            "top_domains_ranked": [(domain, count), ...],
+        }
+    """
+    from collections import Counter
+    source_hits = Counter()
+    per_query = []
+
+    for qr in query_results:
+        domains = []
+        for src in qr.get("sources", []) or []:
+            domain = _extract_domain(src.get("link", "") or src.get("url", ""))
+            if domain:
+                domains.append(domain)
+                source_hits[domain] += 1
+
+        per_query.append({
+            "query": qr.get("query", ""),
+            "mentions": qr.get("mentions", []),
+            "domains_cited": domains,
+            "source_count": len(domains),
+        })
+
+    return {
+        "source_domains": dict(source_hits.most_common()),
+        "per_query_citations": per_query,
+        "top_domains_ranked": source_hits.most_common(15),
+    }
+
+
+# Common recommendation rules for local medical practices
+RECOMMENDATION_RULES = [
+    {"domain_keywords": ["google.com"], "action": "Google Business Profile",
+     "detail": "AI models frequently cite Google Maps listings. Ensure your profile is claimed, has recent photos, and accurate hours.",
+     "priority": 5},
+    {"domain_keywords": ["yelp.com"], "action": "Yelp Listing",
+     "detail": "Your Yelp presence is being ignored. Claim your listing and actively request reviews.",
+     "priority": 4},
+    {"domain_keywords": ["healthgrades.com"], "action": "Healthgrades Profile",
+     "detail": "Healthgrades is a top-cited medical directory. Create or update your profile with specialties and patient reviews.",
+     "priority": 4},
+    {"domain_keywords": ["zocdoc.com"], "action": "Zocdoc Listing",
+     "detail": "Zocdoc drives AI citations. List your practice with availability and accepted insurance.",
+     "priority": 4},
+    {"domain_keywords": ["reddit.com"], "action": "Reddit Presence",
+     "detail": "Reddit threads influence AI recommendations. Monitor r/[yourcity] and engage authentically.",
+     "priority": 3},
+    {"domain_keywords": ["facebook.com"], "action": "Facebook Page",
+     "detail": "Social proof matters. Keep your Facebook page active with updates and reviews.",
+     "priority": 2},
+    {"domain_keywords": ["instagram.com"], "action": "Instagram Presence",
+     "detail": "Visual social proof helps AI recommendations. Post before/after photos and patient stories.",
+     "priority": 2},
+    {"domain_keywords": ["justdial.com"], "action": "Justdial Listing",
+     "detail": "Justdial is a critical local directory in India. Ensure your listing has reviews, photos, and accurate contact info.",
+     "priority": 4},
+    {"domain_keywords": ["practo.com"], "action": "Practo Profile",
+     "detail": "Practo is the leading healthcare directory in India. Create a complete profile with services and patient feedback.",
+     "priority": 4},
+]
+
+
+def _generate_recommendations(citation_data: dict, practices: list, ranking: list) -> dict:
+    """Generate actionable recommendations based on what AI models are citing.
+
+    Two types of recommendations:
+    1. "Cited domains you're missing" — domains the AI cites but your practice isn't on
+    2. "Volume gaps" — your practice has fewer reviews/signals than competitors
+    """
+    top_domains = citation_data.get("top_domains_ranked", [])
+    recommendations = []
+
+    # 1. Map domains to recommended actions
+    mentioned_domains = set()
+    for domain, count in top_domains:
+        for rule in RECOMMENDATION_RULES:
+            if any(kw in domain for kw in rule["domain_keywords"]):
+                if rule["action"] not in [r["action"] for r in recommendations]:
+                    recommendations.append({
+                        "action": rule["action"],
+                        "detail": rule["detail"],
+                        "domain": domain,
+                        "citation_count": count,
+                        "priority": rule["priority"],
+                    })
+                mentioned_domains.add(domain)
+
+    # 2. Add "review gap" recommendation if the leader has significant mentions
+    if ranking and len(ranking) >= 2:
+        top_count = ranking[0]["count"]
+        bottom_count = ranking[-1]["count"]
+        if top_count > 0 and top_count - bottom_count >= 3:
+            recommendations.append({
+                "action": "Google Reviews",
+                "detail": f"Your top competitor appears in {top_count}/10 queries. AI models prioritize review count and rating. Aim for 50+ Google reviews with recent activity.",
+                "domain": "google.com",
+                "citation_count": top_count,
+                "priority": 5,
+            })
+
+    # 3. If no domains cited at all, suggest basic web presence
+    if not top_domains:
+        recommendations.append({
+            "action": "Basic Web Presence",
+            "detail": "No cited sources were found. Create a website with structured data (schema.org/LocalBusiness), claim your Google Business Profile, and get listed on major directories.",
+            "domain": "",
+            "citation_count": 0,
+            "priority": 5,
+        })
+
+    # Sort by priority descending
+    recommendations.sort(key=lambda r: r["priority"], reverse=True)
+    # Deduplicate by action name
+    seen = set()
+    unique = []
+    for r in recommendations:
+        if r["action"] not in seen:
+            seen.add(r["action"])
+            unique.append(r)
+
+    return {
+        "recommendations": unique,
+        "top_cited_domains": top_domains[:10],
+        "total_unique_domains": len(top_domains),
+    }
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 # ---------------------------------------------------------------------------
@@ -387,6 +540,11 @@ def run_audit(provider, model, api_key, queries, practices, mock=False, on_query
     ranking = sorted(mentioned_in.items(), key=lambda kv: kv[1], reverse=True)
     counts = [c for _, c in ranking]
 
+    # Phase 1: citation analysis + recommendations
+    ranked_list = [{"name": n, "count": c} for n, c in ranking]
+    source_data = _analyze_citations(query_results)
+    recs = _generate_recommendations(source_data, practices, ranked_list)
+
     # --- verdict logic (mirrors the brief's decision gate) -----------------
     if total_q == 0 or queries_with_any == 0:
         if total_q == 0:
@@ -424,6 +582,10 @@ def run_audit(provider, model, api_key, queries, practices, mock=False, on_query
         "provider": provider,
         "model": "mock" if mock else model,
         "timestamp": datetime.now(timezone.utc).isoformat(),
+        # Phase 1: citation insights
+        "source_analysis": source_data,
+        "recommendations": recs["recommendations"],
+        "top_cited_domains": recs["top_cited_domains"],
     }
 
 
