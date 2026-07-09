@@ -212,7 +212,7 @@ dentist for crowns and implants austin</textarea>
     </div>
     <div class="card">
       <div class="card-title">Per-query detail</div>
-      <div id="queries"></div>
+      <div id="queryDetails"></div>
     </div>
   </div>
 </div>
@@ -348,7 +348,7 @@ function renderFinal(d) {
       );
     })
     .join("");
-  $("queries").innerHTML = d.query_results
+  $("queryDetails").innerHTML = d.query_results
     .map((q) => {
       const hit = q.mentions.length > 0;
       const m = hit

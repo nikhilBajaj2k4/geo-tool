@@ -19,6 +19,7 @@ Usage:
     OPENROUTER_API_KEY=... python3 probe.py                  # Perplexity Sonar (default, recommended)
     OPENROUTER_API_KEY=... python3 probe.py --model perplexity/sonar-pro
     ZAI_API_KEY=...        python3 probe.py --provider zai    # GLM-4.6 + web search
+    NVIDIA_API_KEY=...     python3 probe.py --provider nvidia  # free NVIDIA models (no web search)
     python3 probe.py --mock                                    # dry run, no key
     python3 probe.py --queries 3                               # cheaper smoke test
 """
@@ -36,17 +37,19 @@ from datetime import datetime, timezone
 # ---------------------------------------------------------------------------
 # Configuration
 # ---------------------------------------------------------------------------
-HTTP_TIMEOUT = 120         # web-grounded calls can be slow
+HTTP_TIMEOUT = 300        # NVIDIA free tier cold starts can take 2-3 min
 RETRY_BACKOFF = (2, 5, 12) # seconds between retries on transient errors
 
 # Endpoints
 OPENROUTER_ENDPOINT = "https://openrouter.ai/api/v1/chat/completions"
 ZAI_ENDPOINT = "https://api.z.ai/api/paas/v4/chat/completions"
+NVIDIA_ENDPOINT = "https://integrate.api.nvidia.com/v1/chat/completions"
 
 # Default model per provider
 DEFAULTS = {
     "openrouter": "openai/gpt-4o-mini:online",  # web-grounded via :online plugin; ~cheapest usable
     "zai": "glm-4.6",                            # web-search tool grounding
+    "nvidia": "meta/llama-3.1-8b-instruct",     # free, smaller model — faster cold starts
 }
 
 # 10 realistic patient questions a person in Austin would actually ask an AI.
@@ -259,6 +262,53 @@ def mentioned_practices_for(result, practices):
 
 
 # ---------------------------------------------------------------------------
+# Provider: NVIDIA (free models, OpenAI-compatible, no web-search grounding)
+# ---------------------------------------------------------------------------
+def call_nvidia(query: str, api_key: str, model: str) -> dict:
+    """Send one patient question to a free NVIDIA model.
+
+    NVIDIA's free tier doesn't include web-search grounding, so answers come
+    from training data only. Mention detection still works — it just won't be
+    real-time local search results like Perplexity Sonar.
+    """
+    payload = {
+        "model": model,
+        "messages": [
+            {"role": "system",
+             "content": ("You are a helpful local-search assistant answering a patient "
+                         "looking for a dental practice in Austin, Texas. Recommend "
+                         "specific, real practices by name. List the 3-5 best options "
+                         "you can verify, with a one-line reason each.")},
+            {"role": "user", "content": query},
+        ],
+        "temperature": 0.3,
+        "max_tokens": 1024,
+    }
+    headers = {
+        "Authorization": "Bearer " + api_key,
+        "Content-Type": "application/json",
+    }
+    data = _post_json(NVIDIA_ENDPOINT, headers, payload)
+    if "error" in data:
+        raise RuntimeError(f"NVIDIA error: {json.dumps(data['error'])[:300]}")
+    answer = ""
+    try:
+        answer = data["choices"][0]["message"]["content"] or ""
+    except (KeyError, IndexError):
+        pass
+    # NVIDIA free models don't return citations.
+    # Estimate cost from token usage (free models, but track for consistency).
+    usage = data.get("usage") or {}
+    try:
+        pt = float(usage.get("prompt_tokens") or 0) / 1_000_000 * 0.00
+        ct = float(usage.get("completion_tokens") or 0) / 1_000_000 * 0.00
+        cost = pt + ct
+    except (TypeError, ValueError):
+        cost = 0.0
+    return {"answer": answer, "sources": [], "cost": cost, "raw": data}
+
+
+# ---------------------------------------------------------------------------
 # Mock provider — run the full pipeline on canned data with no API key
 # ---------------------------------------------------------------------------
 def mock_result(query: str) -> dict:
@@ -294,7 +344,7 @@ def run_audit(provider, model, api_key, queries, practices, mock=False, on_query
     on_query:   optional callback(i, total, query, mentions, query_cost, run_cost)
                 called per query (the web UI uses this to stream progress + cost)
     """
-    caller = {"openrouter": call_openrouter, "zai": call_zai}[provider]
+    caller = {"openrouter": call_openrouter, "zai": call_zai, "nvidia": call_nvidia}[provider]
     mentioned_in = {p["name"]: 0 for p in practices}
     queries_with_any = 0
     queries_with_none = 0
@@ -444,7 +494,7 @@ def run(provider: str, model: str, api_key: str, limit: int, mock: bool, market:
 
 def main():
     ap = argparse.ArgumentParser(description="Healthcare GEO validation probe")
-    ap.add_argument("--provider", choices=["openrouter", "zai"], default="openrouter",
+    ap.add_argument("--provider", choices=["openrouter", "zai", "nvidia"], default="openrouter",
                     help="AI-search provider (default: openrouter = Perplexity Sonar)")
     ap.add_argument("--model", default=None,
                     help="model id; defaults to perplexity/sonar (openrouter) or glm-4.6 (zai)")
@@ -462,9 +512,12 @@ def main():
     if args.provider == "openrouter":
         key = os.environ.get("OPENROUTER_API_KEY", "").strip()
         env_name = "OPENROUTER_API_KEY"
-    else:
+    elif args.provider == "zai":
         key = os.environ.get("ZAI_API_KEY", "").strip()
         env_name = "ZAI_API_KEY"
+    else:
+        key = os.environ.get("NVIDIA_API_KEY", "").strip()
+        env_name = "NVIDIA_API_KEY"
     if not key:
         print(f"ERROR: set {env_name}, or run with --mock.", file=sys.stderr)
         return 2
