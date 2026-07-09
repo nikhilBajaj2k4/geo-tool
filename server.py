@@ -260,7 +260,7 @@ dentist for crowns and implants austin</textarea></div>
 
 APP_JS = r"""
 const $=id=>document.getElementById(id);let es=null,rcost=0,ts=0;
-function esc(s){return String(s==null?'':s).replace(/[&<>]/g,c=>c==='&'?'&amp;':c==='<'?'&lt;':c==='>'?'&gt;')}
+function esc(s){return String(s==null?"":s).replace(/[&<>]/g,c=>c==="&"?"&amp;":c==="<"?"&lt;":"&gt;")}
 function fc(c){return'$'+(Number(c||0)).toFixed(4)}
 function el(){return((Date.now()-ts)/1000).toFixed(1)+'s'}
 
