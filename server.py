@@ -291,48 +291,51 @@ function srs(r){['spec','city','practices','queries','mt'].forEach(id=>$(id).dis
 function ra(){if(es){es.close();es=null}srs(true);$('status').textContent='';$('result').style.display='none';$('running').style.display='block';rcost=0;ts=Date.now();$('rf').style.width='0';$('rl').textContent='0/0';$('rlog').innerHTML='';$('re').textContent='0s';$('rc').textContent='';
 var ps=$('practices').value.split('\n').map(s=>s.trim()).filter(Boolean);var qs=$('queries').value.split('\n').map(s=>s.trim()).filter(Boolean);
 var b={specialty:$('spec').value,city:$('city').value,practices:ps,queries:qs,mock:$('mt').checked};
-fetch('/api/audit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)}).then(r=>{if(!r.ok)return r.json().then(j=>{throw new Error(j.error||'HTTP '+r.status)});var rd=r.body.getReader(),dc=new TextDecoder(),buf='',tt=qs.length||10;
-function p(){rd.read().then(({done,v})=>{if(done)return;buf+=dc.decode(v,{stream:true});var i;while((i=buf.indexOf('\n\n'))!==-1){he(buf.slice(0,i),()=>tt,t=>tt=t);buf=buf.slice(i+2)}p()}).catch(e=>fw(e.message))}p()}).catch(e=>fw(e.message))}
+fetch('/api/audit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)}).then(function(r){if(!r.ok)return r.json().then(function(j){throw new Error(j.error||'HTTP '+r.status)});var rd=r.body.getReader(),dc=new TextDecoder(),buf='',tt=qs.length||10;
+(function pump(){rd.read().then(function(x){var data=x.value||'';buf+=dc.decode(data,{stream:!x.done});var i;while((i=buf.indexOf('\n\n'))!==-1){he(buf.slice(0,i),function(){return tt},function(t){tt=t});buf=buf.slice(i+2)}if(!x.done){pump()}else{if(buf.trim())he(buf,function(){return tt},function(t){tt=t})}}).catch(function(e){fw(e.message)})})()}).catch(function(e){fw(e.message)})}
 function ca(){if(es){es.close();es=null}$('rlog').innerHTML+='<div class="err">Cancelled after '+el()+'</div>';srs(false);$('status').textContent='Cancelled'}
 function he(c,gt,st){var ls=c.split('\n');for(var i=0;i<ls.length;i++){var l=ls[i];if(l.indexOf('data:')!==0)continue;var p=l.slice(5).trim();if(!p)continue;var ev;try{ev=JSON.parse(p)}catch(e){continue}
-if(ev.type==='start'){st(ev.total);he.mock=!!ev.mock;$('rl').textContent='0/'+ev.total;if(ev.mock)$('rc').textContent='mock'}else if(ev.type==='query'){rcost=ev.run_cost||0;var pct=gt()?Math.round((ev.done/gt())*100):0;$('rf').style.width=pct+'%';$('rl').textContent=ev.done+'/'+gt();$('re').textContent=el();if(ev.mentions&&ev.mentions.length)$('rlog').innerHTML+='<div class="hit">✓ '+esc(ev.query)+' → '+esc(ev.mentions.join(', '))+'</div>';else $('rlog').innerHTML+='<div class="miss">✗ '+esc(ev.query)+' (none)</div>';if(!he.mock)$('rc').textContent=fc(rcost);$('rlog').scrollTop=$('rlog').scrollHeight}else if(ev.type==='error'){$('rlog').innerHTML+='<div class="err">ERROR: '+esc(ev.query)+'</div>'}else if(ev.type==='done'){srs(false);$('status').textContent='';$('running').style.display='none';$('result').style.display='block';rf(ev.result);ah(ev.result);$('result').scrollIntoView({behavior:'smooth'})}}}
+if(ev.type==='start'){st(ev.total);he.mock=!!ev.mock;$('rl').textContent='0/'+ev.total;if(ev.mock)$('rc').textContent='mock'}else if(ev.type==='query'){rcost=ev.run_cost||0;var pct=gt()?Math.round((ev.done/gt())*100):0;$('rf').style.width=pct+'%';$('rl').textContent=ev.done+'/'+gt();$('re').textContent=el();if(ev.mentions&&ev.mentions.length)$('rlog').innerHTML+='<div class="hit">✓ '+esc(ev.query)+' → '+esc(ev.mentions.join(', '))+'</div>';else $('rlog').innerHTML+='<div class="miss">✗ '+esc(ev.query)+' (none)</div>';if(!he.mock)$('rc').textContent=fc(rcost);$('rlog').scrollTop=$('rlog').scrollHeight}else if(ev.type==='error'){$('rlog').innerHTML+='<div class="err">ERROR: '+esc(ev.query)+'</div>'}else if(ev.type==='done'){srs(false);$('status').textContent='';$('running').style.display='none';$('result').style.display='block';setTimeout(function(){rf(ev.result);ah(ev.result);$('result').scrollIntoView({behavior:'smooth'})},300)}}}
 function fw(m){$('running').style.display='none';srs(false);$('status').textContent='Error: '+m}
 
-// render
+// render — Phase 1 full dashboard
 function rf(d){
+if(!d)return;
+try{
+$('result').style.display='block';
+$('running').style.display='none';
 var cl=d.verdict.indexOf('REAL')!==-1?'good':d.verdict.indexOf('AMBIGUOUS')!==-1?'warn':'bad';
-var ic=cl==='good'?'✓':cl==='warn'?'⚠':'✗';
-$('verdict').className='vb '+cl;$('verdict').innerHTML='<span class="vb-icon">'+ic+'</span><span>'+esc(d.verdict)+'</span>';
+var ic=cl==='good'?'\u2713':cl==='warn'?'\u26a0':'\u2717';
+var vb=$('verdict');if(vb){vb.className='vb '+cl;vb.innerHTML='<span class="vb-icon">'+ic+'</span><span>'+esc(d.verdict)+'</span>';}
 var ct=d.model==='mock'?'mock run (no cost)':fc(d.total_cost);
-$('summ').innerHTML=esc(d.detail)+' &middot; '+d.queries_with_any+'/'+d.total_queries+' queries &middot; <span class="sc">'+ct+'</span>'+(d.total_queries?' &middot; '+el()+' elapsed':'');
+var sm=$('summ');if(sm)sm.innerHTML=esc(d.detail)+' &middot; '+d.queries_with_any+'/'+d.total_queries+' queries &middot; <span class="sc">'+ct+'</span>'+(d.total_queries?' &middot; '+el()+' elapsed':'');
 
 // KPI row
-var prs=d.ranking.filter(r=>r.count>0),zrs=d.ranking.filter(r=>r.count===0);
-$('kpis').style.display='block';
-$('kpis').innerHTML='<div class="kpi-card"><div class="kv g">'+d.queries_with_any+'</div><div class="kl">Queries with mentions</div></div>'+
-'<div class="kpi-card"><div class="kv">'+(d.top_cited_domains?d.top_cited_domains.length:0)+'</div><div class="kl">Unique domains cited</div></div>'+
-'<div class="kpi-card"><div class="kv a">'+zrs.length+'</div><div class="kl">Practices invisible</div></div>';
+var kp=$('kpis');if(kp){kp.style.display='block';
+var prs=d.ranking.filter(function(r){return r.count>0}),zrs=d.ranking.filter(function(r){return r.count===0});
+kp.innerHTML='<div class="kpi-card"><div class="kv g">'+d.queries_with_any+'</div><div class="kl">Queries with mentions</div></div><div class="kpi-card"><div class="kv">'+(d.top_cited_domains&&d.top_cited_domains.length?d.top_cited_domains.length:0)+'</div><div class="kl">Unique domains cited</div></div><div class="kpi-card"><div class="kv a">'+zrs.length+'</div><div class="kl">Practices invisible</div></div>';}
 
 // recommendations
-if(d.recommendations&&d.recommendations.length){$('recs-card').style.display='block';
-$('recs').innerHTML=d.recommendations.map(r=>'<div class="rec-card"><div class="rec-prio p'+r.priority+'">'+r.priority+'</div><div class="rec-body"><div class="rec-act">'+esc(r.action)+'</div><div class="rec-det">'+esc(r.detail)+'</div>'+(r.domain?'<div class="rec-src">Source: '+esc(r.domain)+' ('+r.citation_count+'×)</div>':'')+'</div></div>').join('')}else{$('recs-card').style.display='none'}
+var rc=$('recs-card');var rd=$('recs');if(rc&&rd){if(d.recommendations&&d.recommendations.length){rc.style.display='block';
+rd.innerHTML=d.recommendations.map(function(r){return'<div class="rec-card"><div class="rec-prio p'+r.priority+'">'+r.priority+'</div><div class="rec-body"><div class="rec-act">'+esc(r.action)+'</div><div class="rec-det">'+esc(r.detail)+'</div>'+(r.domain?'<div class="rec-src">Source: '+esc(r.domain)+' ('+r.citation_count+'\u00d7)</div>':'')+'</div></div>'}).join('');}else{rc.style.display='none';}}
 
 // domains
-if(d.top_cited_domains&&d.top_cited_domains.length){$('dom-card').style.display='block';
-$('domains').innerHTML=d.top_cited_domains.map(e=>'<span class="dom-tag">'+esc(e[0])+' <b>'+e[1]+'×</b></span>').join('')}else{$('dom-card').style.display='none'}
+var dc=$('dom-card');var dd=$('domains');if(dc&&dd){if(d.top_cited_domains&&d.top_cited_domains.length){dc.style.display='block';
+dd.innerHTML=d.top_cited_domains.map(function(e){return'<span class="dom-tag">'+esc(e[0])+' <b>'+e[1]+'\u00d7</b></span>'}).join('');}else{dc.style.display='none';}}
 
 // ranking
-var tot=d.total_queries||1,mc=Math.max(1,Math.max.apply(null,d.ranking.map(r=>r.count)));
-$('ranking').innerHTML=d.ranking.map((r,i)=>{
-var pct=tot?(r.count/tot)*100:0,rn=r.count/mc,cls2=i<3?'t'+(i+1):'def',bc=rn>=.6?'hi':rn>=.3?'md':'lo';
-return'<div class="rk-item"><div class="rk-pos '+cls2+'">'+(i+1)+'</div><div class="rk-name">'+esc(r.name)+'</div><div class="rk-bar-wrap"><div class="rk-bar-track"><div class="rk-bar-fill '+bc+'" style="width:'+pct+'%"></div></div></div><div class="rk-cnt">'+r.count+' <span>/'+tot+'</span></div></div>'}).join('');
+var rk=$('ranking');if(rk){var tot=d.total_queries||1,mc=Math.max.apply(null,[1].concat(d.ranking.map(function(r){return r.count})));
+rk.innerHTML=d.ranking.map(function(r,i){var pct=tot?(r.count/tot)*100:0,rn=r.count/mc,cls2=i<3?'t'+(i+1):'def',bc=rn>=.6?'hi':rn>=.3?'md':'lo';
+return'<div class="rk-item"><div class="rk-pos '+cls2+'">'+(i+1)+'</div><div class="rk-name">'+esc(r.name)+'</div><div class="rk-bar-wrap"><div class="rk-bar-track"><div class="rk-bar-fill '+bc+'" style="width:'+pct+'%"></div></div></div><div class="rk-cnt">'+r.count+' <span>/'+tot+'</span></div></div>'}).join('');}
 
 // query details
-$('qlist').innerHTML=d.query_results.map((q,i)=>{
-var h=q.mentions.length>0,sr=q.sources||[],dms=(q.source_analysis||{}).domains_cited||(sr.map(s=>{try{return new URL(s.link||s.url||'').hostname.replace('www.','')}catch(e){return''}}).filter(Boolean));
-return'<div class="q-item"><div class="q-head"><span class="q-dot '+(h?'hit':'miss')+'">'+(h?'✓':'·')+'</span><span class="q-txt">'+esc(q.query)+'</span><span class="q-cost">'+(q.cost!==undefined?fc(q.cost):'')+'</span></div><div class="q-ment '+(h?'hit':'miss')+'">'+(h?'→ '+esc(q.mentions.join(', ')):'→ no tracked practices named')+'</div>'+
-(dms.length?'<div style="margin:3px 0 0 28px;font-size:.7rem;color:var(--text3)">Cited: '+dms.map(d=>'<span class="dom-tag">'+esc(d)+'</span>').join('')+'</div>':'')+
-'<details class="q-ans"><summary></summary><div class="ans-body">Sources:\n'+sr.map(s=>'- '+esc(s.title||'')+' ['+esc(s.link||'')+']').join('\n')+'\n\nAnswer:\n'+esc(q.answer)+'</div></details></div>'}).join('')}
+var ql=$('qlist');if(ql){ql.innerHTML=d.query_results.map(function(q,i){var h=q.mentions.length>0,sr=q.sources||[],dms=[];
+sr.forEach(function(s){try{var u=s.link||s.url||'';if(u){var hst=(new URL(u)).hostname.replace(/^www\./,'');if(hst&&dms.indexOf(hst)<0)dms.push(hst)}}catch(e){}});
+return'<div class="q-item"><div class="q-head"><span class="q-dot '+(h?'hit':'miss')+'">'+(h?'\u2713':'\u00b7')+'</span><span class="q-txt">'+esc(q.query)+'</span><span class="q-cost">'+(q.cost!==undefined?fc(q.cost):'')+'</span></div><div class="q-ment '+(h?'hit':'miss')+'">'+(h?'\u2192 '+esc(q.mentions.join(', ')):'\u2192 no tracked practices named')+'</div>'+(dms.length?'<div style="margin:3px 0 0 28px;font-size:.7rem;color:var(--text3)">Cited: '+dms.map(function(dm){return'<span class="dom-tag">'+esc(dm)+'</span>'}).join('')+'</div>':'')+'<details class="q-ans"><summary></summary><div class="ans-body">Sources:\n'+sr.map(function(s){return'- '+esc(s.title||'')+' ['+esc(s.link||'')+']'}).join('\n')+'\n\nAnswer:\n'+esc(q.answer)+'</div></details></div>'}).join('');}
+
+var re=$('result');if(re)re.scrollIntoView({behavior:'smooth'});
+}catch(e){var st=$('status');if(st)st.textContent='Render: '+e.message;}
+}
 
 $('rb').addEventListener('click',ra);$('cb').addEventListener('click',ca);
 document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key==='Enter'){e.preventDefault();if(!$('rb').disabled)ra()}if(e.key==='Escape'&&$('cb').style.display!=='none'){e.preventDefault();ca()}});
