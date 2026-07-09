@@ -32,6 +32,7 @@ import sys
 import time
 import urllib.error
 import urllib.request
+from collections import Counter
 from datetime import datetime, timezone
 
 # ---------------------------------------------------------------------------
@@ -51,6 +52,13 @@ DEFAULTS = {
     "zai": "glm-4.6",                            # web-search tool grounding
     "nvidia": "z-ai/glm-5.2",                  # free, GLM via NVIDIA NIM
 }
+
+# Multi-engine models — all via OpenRouter, each web-grounded differently
+MULTI_ENGINES = [
+    {"id": "sonar",   "name": "Perplexity Sonar", "model": "perplexity/sonar", "provider": "openrouter"},
+    {"id": "gpt4o",   "name": "ChatGPT",           "model": "openai/gpt-4o-mini:online", "provider": "openrouter"},
+    {"id": "gemini",  "name": "Gemini Flash",      "model": "google/gemini-2.5-flash", "provider": "openrouter"},
+]
 
 # 10 realistic patient questions a person in Austin would actually ask an AI.
 QUERIES = [
@@ -480,6 +488,119 @@ def _generate_recommendations(citation_data: dict, practices: list, ranking: lis
         "recommendations": unique,
         "top_cited_domains": top_domains[:10],
         "total_unique_domains": len(top_domains),
+    }
+
+
+# ---------------------------------------------------------------------------
+# Multi-engine audit (Phase 2 — compare visibility across AI platforms)
+# ---------------------------------------------------------------------------
+def run_multi_audit(api_key, queries, practices, engines=None, mock=False, on_query=None, market=""):
+    """Run the audit across multiple AI engines and produce a per-engine breakdown.
+
+    Returns same shape as run_audit() plus:
+        "engines": {engine_id: {ranking, queries_with_any, total_cost, query_results, ...}, ...}
+    """
+    engines = engines or MULTI_ENGINES
+    per_engine = {}
+    all_practices_mentioned = {p["name"]: 0 for p in practices}
+    total_queries = 0
+    total_any = 0
+    total_none = 0
+    total_cost = 0.0
+    all_query_results = []
+    all_errors = []
+    all_source_domains = Counter()
+    all_recommendations = []
+
+    for engine in engines:
+        if mock:
+            result = run_audit(
+                engine["provider"], engine["model"], api_key,
+                queries, practices, mock=True, market=market
+            )
+        else:
+            result = run_audit(
+                engine["provider"], engine["model"], api_key,
+                queries, practices, market=market,
+                on_query=lambda i, total, q, hits, qc, rc: on_query(
+                    i, total, q, hits, qc, rc, engine["id"]
+                ) if on_query else None,
+            )
+
+        per_engine[engine["id"]] = {
+            "name": engine["name"],
+            "ranking": result["ranking"],
+            "queries_with_any": result["queries_with_any"],
+            "queries_with_none": result["queries_with_none"],
+            "total_cost": result["total_cost"],
+            "verdict": result["verdict"],
+            "query_results": result["query_results"],
+            "top_cited_domains": result.get("top_cited_domains", []),
+            "recommendations": result.get("recommendations", []),
+        }
+
+        # Aggregate across engines
+        for row in result["ranking"]:
+            all_practices_mentioned[row["name"]] += row["count"]
+        total_queries = max(total_queries, result["total_queries"])
+        total_cost += result["total_cost"]
+        all_errors.extend(result.get("errors", []))
+        all_query_results.extend(result.get("query_results", []))
+        for dm, ct in result.get("top_cited_domains", []):
+            all_source_domains[dm] += ct
+        all_recommendations.extend(result.get("recommendations", []))
+
+    total_any = sum(1 for c in all_practices_mentioned.values() if c > 0)
+
+    # Compute aggregate ranking
+    ranking = sorted(all_practices_mentioned.items(), key=lambda kv: kv[1], reverse=True)
+    counts = [c for _, c in ranking]
+
+    # Verdict
+    total_queries_all = total_queries * len(engines)
+    if total_any == 0:
+        verdict = "COLLAPSES — no practices named"
+        detail = "Not a single practice appeared in any engine across any query."
+    else:
+        top, bottom = counts[0], counts[-1]
+        if top - bottom >= (len(engines) * 3) and bottom <= (total_queries_all // 4):
+            verdict = "GAP IS REAL — build the full tool"
+            detail = f"Top practice at {top}/{total_queries_all}, bottom at {bottom}/{total_queries_all}. Consistent gap across {len(engines)} engines."
+        elif bottom > (total_queries_all // 4):
+            verdict = "AMBIGUOUS — investigate before building"
+            detail = f"Top {top}/{total_queries_all} vs bottom {bottom}/{total_queries_all}. Too flat across {len(engines)} engines."
+        else:
+            verdict = "GAP IS REAL — build the full tool"
+            detail = f"Top practice at {top}/{total_queries_all}, bottom at {bottom}/{total_queries_all}. Significant gap found."
+
+    # Dedupe recommendations
+    seen_recs = set()
+    unique_recs = []
+    for r in all_recommendations:
+        if r["action"] not in seen_recs:
+            seen_recs.add(r["action"])
+            unique_recs.append(r)
+    unique_recs.sort(key=lambda r: r["priority"], reverse=True)
+
+    return {
+        "ranking": [{"name": n, "count": c} for n, c in ranking],
+        "total_queries": total_queries,
+        "total_queries_all": total_queries_all,
+        "queries_with_any": total_any,
+        "queries_with_none": len(practices) - total_any,
+        "verdict": verdict,
+        "detail": detail,
+        "query_results": all_query_results,
+        "errors": all_errors,
+        "total_cost": round(total_cost, 6),
+        "market": market or "",
+        "provider": "multi",
+        "model": f"{len(engines)} engines",
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "source_analysis": _analyze_citations(all_query_results),
+        "recommendations": unique_recs,
+        "top_cited_domains": [(d, c) for d, c in all_source_domains.most_common(15)],
+        "engines": per_engine,
     }
 
 

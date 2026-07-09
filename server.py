@@ -226,7 +226,6 @@ dentist for crowns and implants austin</textarea></div>
 <button id="cb" class="btn btn-d" style="display:none">■ Cancel</button>
 <label class="tog"><input type="checkbox" id="mt"><span>Mock mode</span></label>
 <button id="lex" class="btn btn-gh">Load example</button>
-<span class="st" id="status" role="alert"></span>
 </div></div>
 
 <div id="running" style="display:none"><div class="run-card">
@@ -335,6 +334,8 @@ return'<div class="q-item"><div class="q-head"><span class="q-dot '+(h?'hit':'mi
 
 var re=$('result');if(re)re.scrollIntoView({behavior:'smooth'});
 }catch(e){var st=$('status');if(st)st.textContent='Render: '+e.message;}
+// per-engine breakdown
+var engDiv=$('engBtns');if(engDiv&&d.engines){engDiv.innerHTML='';var eids=Object.keys(d.engines);eids.forEach(function(eid){var eng=d.engines[eid];engDiv.innerHTML+='<span class="dom-tag" style="cursor:pointer;opacity:.7">'+esc(eng.name)+': '+eng.queries_with_any+'/'+(d.total_queries||1)+'</span>'});}
 }
 
 $('rb').addEventListener('click',ra);$('cb').addEventListener('click',ca);
@@ -415,6 +416,10 @@ class Handler(BaseHTTPRequestHandler):
             practices = probe.PRACTICES
 
         provider, model, key = "openrouter", probe.DEFAULTS["openrouter"], ""
+        engines = probe.MULTI_ENGINES if not mock else [probe.MULTI_ENGINES[0]]
+        multi_engine = payload.get("multi", True)  # default: multi-engine
+        if not multi_engine:
+            engines = [probe.MULTI_ENGINES[0]]
         if not mock:
             key = os.environ.get("OPENROUTER_API_KEY", "").strip()
             if not key:
@@ -425,21 +430,33 @@ class Handler(BaseHTTPRequestHandler):
         if not queries:
             queries = probe.QUERIES
         self._start_sse()
-        self._sse({"type": "start", "total": len(queries), "mock": mock})
-
-        def on_query(i, total, q, hits, query_cost=0.0, run_cost=0.0):
-            if hits is None:
-                self._sse({"type": "error", "done": i, "total": total,
-                           "query": q, "error": "API call failed"})
-            else:
-                self._sse({"type": "query", "done": i, "total": total,
-                           "query": q, "mentions": hits or [],
-                           "query_cost": round(query_cost, 6),
-                           "run_cost": round(run_cost, 6)})
+        self._sse({"type": "start", "total": len(queries), "mock": mock, "engines": len(engines)})
 
         try:
-            result = probe.run_audit(provider, model, key, queries, practices,
-                                     mock=mock, on_query=on_query, market=market)
+            if len(engines) > 1:
+                result = probe.run_multi_audit(
+                    key, queries, practices, engines=engines,
+                    mock=mock, market=market,
+                    on_query=lambda i, total, q, hits, qc, rc, eid:
+                        self._sse({"type": "query" if hits is not None else "error",
+                                   "done": i, "total": total,
+                                   "query": q, "mentions": hits or [],
+                                   "query_cost": round(qc, 6), "run_cost": round(rc, 6),
+                                   "engine": eid})
+                )
+            else:
+                provider, model = engines[0]["provider"], engines[0]["model"]
+                def on_query(i, total, q, hits, query_cost=0.0, run_cost=0.0):
+                    if hits is None:
+                        self._sse({"type": "error", "done": i, "total": total,
+                                   "query": q, "error": "API call failed"})
+                    else:
+                        self._sse({"type": "query", "done": i, "total": total,
+                                   "query": q, "mentions": hits or [],
+                                   "query_cost": round(query_cost, 6),
+                                   "run_cost": round(run_cost, 6)})
+                result = probe.run_audit(provider, model, key, queries, practices,
+                                         mock=mock, on_query=on_query, market=market)
             self._sse({"type": "done", "result": result})
         except Exception as e:
             self._sse({"type": "fatal", "error": str(e).replace('"', "'")})
