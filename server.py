@@ -206,7 +206,7 @@ fetch("/api/audit",{method:"POST",headers:{"Content-Type":"application/json"},bo
 (function pump(){rd.read().then(function(x){var data=x.value||"";buf+=dc.decode(data,{stream:!x.done});var i;while((i=buf.indexOf("\n\n"))!==-1){HE(buf.slice(0,i),function(){return tt},function(t){tt=t});buf=buf.slice(i+2)}if(!x.done){pump()}else{if(buf.trim())HE(buf,function(){return tt},function(t){tt=t})}}).catch(function(e){FW(e.message)})})()}).catch(function(e){FW(e.message)})}
 function CA(){if(ES){ES.close();ES=null}$("rnl").innerHTML+='<div class="el">Cancelled after '+EL()+"</div>";SRS(false);$("status").textContent="Cancelled"}
 function HE(c,gt,st){var ls=c.split("\n");for(var i=0;i<ls.length;i++){var l=ls[i];if(l.indexOf("data:")!==0)continue;var p=l.slice(5).trim();if(!p)continue;var ev;try{ev=JSON.parse(p)}catch(e){continue}
-if(ev.type==="start"){st(ev.total);HE.mock=!!ev.mock;HE.engs=ev.engs||1;$("rnp").textContent="0/"+ev.total;if(ev.mock)$("rnc2").textContent="mock"}else if(ev.type==="query"){RC=ev.run_cost||0;var pct=gt()?Math.round((ev.done/gt())*100):0;$("rnf").style.width=pct+"%";$("rnp").textContent=ev.done+"/"+gt();$("rntm").textContent=EL();if(ev.mentions&&ev.mentions.length)$("rnl").innerHTML+='<div class="hl">\u2713 '+E(ev.query)+" \u2192 "+E(ev.mentions.join(", "))+(ev.engine?" <span style=color:var(--text3)>["+ev.engine+"]</span>":"")+"</div>";else $("rnl").innerHTML+='<div class="ml">\u2717 '+E(ev.query)+" (none)"+(ev.engine?" <span style=color:var(--text3)>["+ev.engine+"]</span>":"")+"</div>";if(!HE.mock)$("rnc2").textContent=F(RC);$("rnl").scrollTop=$("rnl").scrollHeight}else if(ev.type==="error"){$("rnl").innerHTML+='<div class="el">ERROR: '+E(ev.query)+"</div>"}else if(ev.type==="done"){SRS(false);$("status").textContent="";$("running").style.display="none";$("result").style.display="block";AD=ev.result;setTimeout(function(){RF(ev.result);AH(ev.result);$("result").scrollIntoView({behavior:"smooth"})},300)}}}
+if(ev.type==="start"){st(ev.total);HE.mock=!!ev.mock;HE.engs=ev.engs||1;$("rnp").textContent="0/"+ev.total;if(ev.mock)$("rnc2").textContent="mock"}else if(ev.type==="query"){RC=ev.run_cost||0;var pct=gt()?Math.round((ev.done/gt())*100):0;$("rnf").style.width=pct+"%";$("rnp").textContent=ev.done+"/"+gt();$("rntm").textContent=EL();if(ev.mentions&&ev.mentions.length)$("rnl").innerHTML+='<div class="hl">\u2713 '+E(ev.query)+" \u2192 "+E(ev.mentions.join(", "))+(ev.engine?" <span style=color:var(--text3)>["+ev.engine+"]</span>":"")+"</div>";else $("rnl").innerHTML+='<div class="ml">\u2717 '+E(ev.query)+" (none)"+(ev.engine?" <span style=color:var(--text3)>["+ev.engine+"]</span>":"")+"</div>";if(!HE.mock)$("rnc2").textContent=F(RC);$("rnl").scrollTop=$("rnl").scrollHeight}else if(ev.type==="error"){$("rnl").innerHTML+='<div class="el">ERROR: '+E(ev.query)+"</div>"}else if(ev.type==="done"){SRS(false);$("status").textContent="";$("running").style.display="none";AD=ev.result;RF(ev.result);AH(ev.result);$("result").style.display="block";$("result").scrollIntoView({behavior:"smooth"})}}}
 function FW(m){$("running").style.display="none";SRS(false);$("status").textContent="Error: "+m}
 
 // engine pills
@@ -270,6 +270,7 @@ fetch("/api/report",{method:"POST",headers:{"Content-Type":"application/json"},b
 $("rb").addEventListener("click",RA);$("cb").addEventListener("click",CA);
 document.addEventListener("keydown",function(e){if((e.ctrlKey||e.metaKey)&&e.key==="Enter"){e.preventDefault();if(!$("rb").disabled)RA()}if(e.key==="Escape"&&$("cb").style.display!=="none"){e.preventDefault();CA()}});
 US();$("hc").style.display=LH().length?"":"none"
+window.downloadReport=downloadReport;window.CH=CH;window.VH=VH;window.EX=EX;window.SP=SP;window.RF=RF
 })()
 """
 
@@ -353,6 +354,7 @@ class Handler(BaseHTTPRequestHandler):
                     else: self._sse({"type":"query","done":i,"total":t,"query":q,"mentions":h or[],"query_cost":round(qc,6),"run_cost":round(rc,6)})
                 result = probe.run_audit(prov, mod, key, queries, practices, mock=mock, on_query=on_q, market=market)
             self._sse({"type":"done","result":result})
+            import time; time.sleep(0.05)  # ensure client drains SSE buffer
         except Exception as e: self._sse({"type":"fatal","error":str(e).replace('"',"'")})
 
     def _handle_report_post(self):
