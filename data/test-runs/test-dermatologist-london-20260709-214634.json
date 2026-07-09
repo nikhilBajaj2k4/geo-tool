@@ -1,0 +1,624 @@
+{
+  "ranking": [
+    {
+      "name": "The Dermatology Clinic London",
+      "count": 3
+    },
+    {
+      "name": "Sk:N London",
+      "count": 3
+    },
+    {
+      "name": "Devonshire Dermatology",
+      "count": 3
+    },
+    {
+      "name": "Cadogan Clinic",
+      "count": 2
+    },
+    {
+      "name": "Harley Street Dermatology Clinic",
+      "count": 2
+    },
+    {
+      "name": "London Dermatology Centre",
+      "count": 1
+    },
+    {
+      "name": "St John's Institute of Dermatology",
+      "count": 0
+    },
+    {
+      "name": "Dermatology Consulting London",
+      "count": 0
+    },
+    {
+      "name": "Cranley Clinic",
+      "count": 0
+    }
+  ],
+  "total_queries": 10,
+  "queries_with_any": 7,
+  "queries_with_none": 3,
+  "verdict": "GAP IS REAL — build the full tool",
+  "detail": "top practice in 3/10, bottom in 0/10. The 'some dominate, some invisible' pattern the thesis needs is here.",
+  "query_results": [
+    {
+      "query": "best dermatologist in london uk",
+      "mentions": [],
+      "answer": "The **best dermatologist in London** is **Nisith Sheth**, who is the **top-rated dermatologist** in the city according to Doctify [4].\n\nHere are the **best verified options** for dermatology care in London, with a one-line reason each:\n\n| Dermatologist / Clinic | Reason |\n|------------------------|--------|\n| **Nisith Sheth** (Doctify) | **Top-rated** and most reviewed dermatologist in London [4] |\n| **Simmy Kaur** (Doctify) | **Most reviewed** dermatologist in London [4] |\n| **Cleveland Clinic London** | Leading private dermatology care with UK-based consultants [1] |\n| **25 Walton St Clinic** | One of the 5 best dermatologists for healthy, glowing skin (2025) [2] |\n| **Wunderlust London Clinic** | Among the 6 best dermatologists in London (2025) [3] |\n\nFor appointments, you can contact **Cleveland Clinic London** at **+44 20 3423 7500** [1], or the **25 Walton St Clinic** at **+44 20 7118 9000** [2]. **Nisith Sheth** and **Simmy Kaur** can be found via the **Doctify** platform [4].",
+      "sources": [
+        {
+          "title": "Private Dermatologist Care | Cleveland Clinic London",
+          "link": "https://clevelandcliniclondon.uk/clinical-institutes/medical-subspecialties/dermatology",
+          "content": ""
+        },
+        {
+          "title": "5 best dermatologists in London for healthy, glowing skin [2025 ]",
+          "link": "https://www.londonjourney.co.uk/best-dermatologists-london/",
+          "content": ""
+        },
+        {
+          "title": "6 Best Dermatologists in London [2025]",
+          "link": "https://www.wunderlustlondon.co.uk/best-dermatologists-london/",
+          "content": ""
+        },
+        {
+          "title": "Best Dermatologists in London, England - Doctify",
+          "link": "https://www.doctify.com/uk/find/dermatology/london/specialists",
+          "content": ""
+        }
+      ],
+      "cost": 0.00533
+    },
+    {
+      "query": "top rated skin clinic london",
+      "mentions": [
+        "Devonshire Dermatology"
+      ],
+      "answer": "The **Harley Street Skin Clinic** is the top-rated skin clinic in London, having won \"Skin Clinic of the Year\" in 2018 and \"Best Skin Clinic\" in 2019, 2021, 2022, and 2023 [2].\n\nHere are the best verified options for top-rated skin clinics in London, with a one-line reason for each:\n\n| Clinic Name | Reason for Recommendation |\n| :--- | :--- |\n| **Harley Street Skin Clinic** | Winner of \"Skin Clinic of the Year\" (2018) and \"Best Skin Clinic\" for five consecutive years (2019–2023) [2]. |\n| **ASKINOLOGY** | The City's #1 independent aesthetics clinic with 40+ years of injectable experience and over 600 5-star reviews [4]. |\n| **Taktouk Clinic** | Founded by Dr. Wassim Taktouk and won \"Clinic of the Year\" at the 2023 Aesthetic Medicine Awards [5]. |\n| **Cleveland Clinic London** | Offers exceptionally personalized dermatology care with a dedicated payment specialist team [3]. |\n| **Dr Sam & Associates** | Located on prestigious Harley Street, recognized as one of London's best for skin treatments [5]. |\n\n**Harley Street Skin Clinic** is located at **14 Devonshire Pl**, central London, near Regents Park tube station [2].  \n**ASKINOLOGY** is at **35-36 Leadenhall Market**, in the heart of the City of London [4].  \n**Taktouk Clinic** is a haven in **Knightsbridge** [5].  \n**Dr Sam & Associates** is at **41 Harley St**, London [5].\n\nFor laser specialists and medical/cosmetic dermatology, the prestigious **Harley Street clinic** (often associated with MAYLIN x Dr Jinah Yoo Dermatology) is also lauded as one of the best London destinations [1].",
+      "sources": [
+        {
+          "title": "The best dermatologists in London and beyond - Harper's BAZAAR",
+          "link": "https://www.harpersbazaar.com/uk/beauty/skincare/a37809/cosmetic-procedure-guide-best-dermatologist/",
+          "content": ""
+        },
+        {
+          "title": "The Harley Street Skin Clinic London",
+          "link": "https://www.harleystreetskinclinic.com",
+          "content": ""
+        },
+        {
+          "title": "Private Dermatologist Care | Cleveland Clinic London",
+          "link": "https://clevelandcliniclondon.uk/clinical-institutes/medical-subspecialties/dermatology",
+          "content": ""
+        },
+        {
+          "title": "ASKINOLOGY - Award Winning Skin Clinic in City of London",
+          "link": "https://askinology.com",
+          "content": ""
+        },
+        {
+          "title": "Best Skin Clinic In London: The Ones To Visit | Marie Claire UK",
+          "link": "https://www.marieclaire.co.uk/beauty/skincare/best-skin-clinics-in-london",
+          "content": ""
+        },
+        {
+          "title": "Top 5 Skin Clinics in London 2026 (Reviewed)",
+          "link": "https://www.topskinclinics.co.uk/find-a-clinic/london/",
+          "content": ""
+        },
+        {
+          "title": "Top 20 Skin Clinics in England - Treatwell",
+          "link": "https://www.treatwell.co.uk/places/at-skin-clinic/in-england-uk/",
+          "content": ""
+        },
+        {
+          "title": "10 of the Best Cosmetic Clinics in London",
+          "link": "https://www.ldnfashion.com/features/best-cosmetic-clinics-london/",
+          "content": ""
+        },
+        {
+          "title": "Top 10 Renowned Skin Clinics in London in 2024",
+          "link": "https://www.linkedin.com/pulse/top-10-renowned-skin-clinics-london-mehdi-jaffary--a0aof",
+          "content": ""
+        },
+        {
+          "title": "Top 10 Best Skin Clinics in London in 2024 (Updated)",
+          "link": "https://www.linkedin.com/pulse/top-10-best-skin-clinics-london-zohaib-manzoor-keerio-9onkf",
+          "content": ""
+        }
+      ],
+      "cost": 0.00545
+    },
+    {
+      "query": "dermatologist near me harley street",
+      "mentions": [
+        "Harley Street Dermatology Clinic",
+        "Sk:N London",
+        "Devonshire Dermatology"
+      ],
+      "answer": "The top **dermatologist** near you on **Harley Street** is **Dr. Ariel Haus** (founder of Dr. Haus Dermatology at 75 Harley Street), who specializes in award-winning medical and cosmetic dermatology[2][3].\n\nHere are the best verified **dermatology practices** and specialists on or near Harley Street, with a one-line reason for each:\n\n| Practice / Specialist | Location | Reason |\n|---|---|---|\n| **Dr. Haus Dermatology** (Dr. Ariel Haus) | 75 Harley Street, W1G 8QL | Award-winning clinic founded in 2010 by Dr. Ariel Haus, specializing in medical & cosmetic dermatology[2][3] |\n| **Skin Inspection** (Dr. Saqib Bashir) | 55 Harley Street, W1G 8QR | Highly rated clinic (4.84/5) with 682 reviews, offering comprehensive dermatology care[2][4] |\n| **25 Harley Street** (Dr. Justine Kluk) | 25 Harley Street, W1G 9QW | Top-rated clinic (4.80/5, 915 reviews) led by Dr. Justine Kluk, expert in acne and cosmetic dermatology[2][4][6] |\n| **The Harley Street Dermatology Clinic** | 10 Harley Street, W1G 9PF | Dedicated medical & cosmetic dermatology clinic in the heart of Harley Street[3] |\n| **SK:N Clinic Harley Street** | 6 Harley Street, W1G 9PA | Multi-specialist clinic with extended opening hours (Mon–Sat) and consultant-led dermatology[5][6] |\n| **The Devonshire Clinic** (Dr. Conal Perrett) | 16 Devonshire Street, W1G 7AF | Led by Dr. Conal Perrett, a leading consultant dermatologist and surgeon in the Harley Street district[2][3][7] |\n| **ProDerm UK** | 152 Harley Street, W1G 7LH | Premier consultant-led clinic providing expert care for all skin, hair, and nail conditions[9] |\n| **London Dermatology Clinic** | 96 Harley Street, W1G 7HY | Established practice with complete medical & surgical dermatology services, no GP referral needed[2][10] |\n\nYou can book appointments directly using the contact buttons on their profiles or by calling the clinics listed[1][2]. Harley Street has over **50 GMC-registered consultant dermatologists** within 0.5 miles, offering same-day to 2-week appointments[6].",
+      "sources": [
+        {
+          "title": "Best Dermatologists in Harley Street, Marylebone - Doctify",
+          "link": "https://www.doctify.com/uk/find/dermatology/harley-street/specialists",
+          "content": ""
+        },
+        {
+          "title": "Top-rated Dermatology clinics in Harley Street, Marylebone - Doctify",
+          "link": "https://www.doctify.com/uk/find/dermatology/harley-street/practices",
+          "content": ""
+        },
+        {
+          "title": "The Harley Street Dermatology Clinic",
+          "link": "https://www.dermadirectory.co.uk/dermatologists-near-london/harley-street-dermatology-clinic",
+          "content": ""
+        },
+        {
+          "title": "Best Dermatologists in Harley Street",
+          "link": "https://www.doctorshire.com/category/42/Harley_Street/Dermatologist/20",
+          "content": ""
+        },
+        {
+          "title": "Dermatology in Harley Street, London",
+          "link": "https://www.sknclinics.co.uk/dermatologist-in-london-harley-street",
+          "content": ""
+        },
+        {
+          "title": "Harley Street Dermatologists | London's Premier Skin Clinic ...",
+          "link": "https://dermatologists.london/guides/harley-street/",
+          "content": ""
+        },
+        {
+          "title": "Medical Dermatologist in Harley Street, London",
+          "link": "https://thedevonshireclinic.co.uk/dermatology-services/medical-dermatology/",
+          "content": ""
+        },
+        {
+          "title": "City Dermatology Clinic in Harley Street - London - WhatClinic",
+          "link": "https://www.whatclinic.com/dermatology/uk/london/harley-street/city-dermatology-clinic",
+          "content": ""
+        },
+        {
+          "title": "Trusted Dermatology Clinic in Harley Street, London",
+          "link": "https://prodermuk.com/our-clinics/london",
+          "content": ""
+        },
+        {
+          "title": "Contact Us - Harley Street Clinic - London Dermatology Clinic",
+          "link": "https://londondermatologyclinics.com/contact-us/",
+          "content": ""
+        }
+      ],
+      "cost": 0.0056
+    },
+    {
+      "query": "acne treatment specialist london",
+      "mentions": [
+        "Cadogan Clinic",
+        "Harley Street Dermatology Clinic",
+        "The Dermatology Clinic London",
+        "Sk:N London"
+      ],
+      "answer": "For acne treatment specialists in London, the **Harley Street Dermatology Clinic** and **Self London** (led by Dr. Anjali Mahto) are top-tier options offering comprehensive medical and laser care.\n\n**Recommended Acne Specialists & Clinics in London:**\n\n| Clinic / Specialist | One-Line Reason |\n| :--- | :--- |\n| **Harley Street Dermatology Clinic** | Consultant dermatologists offer expert medical and laser treatments with a high chance of permanently eradicating acne[1]. |\n| **Self London (Dr. Anjali Mahto)** | Founded by Dr. Mahto, a renowned acne expert, offering cutting-edge, holistic, and consultant-led care for all acne stages[2]. |\n| **Cadogan Clinic** | Home to leading acne specialists in Chelsea, offering award-winning facilities to treat active acne and scarring[3][8]. |\n| **LINIA Skin Clinic** | An award-winning Harley Street clinic specializing in acne treatments to prevent permanent scarring[4]. |\n| **Welbeck (OneWelbeck)** | Features a dedicated private acne clinic with multiple consultant dermatologists like Dr. Abha Gulati and Dr. Amr Salam[9]. |\n| **Dr. Derrick (OneWelbeck)** | Highly in-demand expert using unique UK Vectra 3D imaging technology to identify root causes of breakouts[10]. |\n| **Debbie Thomas Clinic** | Revered specialist in Knightsbridge known for effective, least-invasive laser acne treatments[10]. |\n| **Dr. David Jack Clinic** | Go-to for in-depth acne advice and aesthetic treatments on Harley Street[10]. |\n\nOther notable specialists include **Dr. Iaisha Ali** (41 acne endorsements) and **Dr. Nisith Sheth** (24 years experience) listed on Doctify[5]. For severe cases, **The Dermatology Clinic London** also provides excellent results when over-the-counter products fail[7]. **sk:n clinics** is another leading UK specialist chain for acne treatment[6].",
+      "sources": [
+        {
+          "title": "Acne Treatment in London | Harley Street Dermatology Clinic",
+          "link": "https://www.theharleystreetdermatologyclinic.co.uk/treatments/acne-treatment/",
+          "content": ""
+        },
+        {
+          "title": "Premier Acne Treatment Clinic Led by Dr. Anjali Mahto - Self London",
+          "link": "https://selflondon.com/best-acne-clinic-in-london/",
+          "content": ""
+        },
+        {
+          "title": "Dermatology - London - Cadogan Clinic",
+          "link": "https://www.cadoganclinic.com/dermatology/",
+          "content": ""
+        },
+        {
+          "title": "Acne & Laser",
+          "link": "https://liniaskinclinic.com/treatments/acne-treatment/",
+          "content": ""
+        },
+        {
+          "title": "Best Acne Specialists in London, England - Doctify",
+          "link": "https://www.doctify.com/uk/find/acne/london/specialists",
+          "content": ""
+        },
+        {
+          "title": "Acne treatment, from a leading acne specialists in the UK | sk:n clinics",
+          "link": "https://www.sknclinics.co.uk/treatments-and-pricing/acne-treatment",
+          "content": ""
+        },
+        {
+          "title": "Acne Treatment Specialists - The Dermatology Clinic London",
+          "link": "https://thedermatologyclinic.london/skin-conditions/acne-treatment-in-london/",
+          "content": ""
+        },
+        {
+          "title": "Acne Treatment London - Dermatology - Cadogan Clinic",
+          "link": "https://www.cadoganclinic.com/dermatology/acne/",
+          "content": ""
+        },
+        {
+          "title": "Private Acne Clinic: Acne Specialists - Welbeck",
+          "link": "https://welbeck.com/specialist-centres/private-dermatology-clinic/acne-clinic",
+          "content": ""
+        },
+        {
+          "title": "The SL Directory: Acne Experts",
+          "link": "https://sheerluxe.com/beauty/skincare/best-dermatologist-london",
+          "content": ""
+        }
+      ],
+      "cost": 0.00547
+    },
+    {
+      "query": "skin cancer screening london",
+      "mentions": [],
+      "answer": "There is no approved national early detection screening program for skin cancer in the UK, but private clinics in London offer thorough head-to-toe skin examinations by specialist nurses or dermatologists.\n\n### Recommended Private Skin Cancer Screening Practices in London\n\n| Practice | Location | One-Line Reason |\n| :--- | :--- | :--- |\n| **The Mole Clinic** | Multiple UK sites (including London) | Advanced Skin Cancer Screening Nurses perform thorough head-to-toe checks; no GP referral needed [2]. |\n| **The London General Practice** | Central London | Offers full skin checks with video review by a dermatologist for concerning lesions; part of comprehensive health screens [1]. |\n| **Skin Care Network** | London | Believes annual screening is essential; provides bespoke screening for high-risk patients via visual inspection by experienced specialists [3]. |\n| **Dr. Magnus Lynch (Private)** | London Bridge Hospital, Skin55 (Harley St), OneWelbeck | Head-to-toe examination creating a baseline image for monitoring; provides detailed written records and plans [5]. |\n| **The Online GP by The Wellness** | Marylebone (near Harley St) | Premier doctor-led pathway with same-day appointments; includes dermatoscopic mole checks and full-body mole mapping [6][8]. |\n| **The London Clinic (Harley Street)** | 142-146 Harley Street | Experienced dermatologists assess moles and lesions for prompt identification; located in the heart of Harley Street [7]. |\n| **London Skin Clinic** | Central London | Uses advanced dermoscopy and digital mole mapping; claims 99% five-year survival when melanoma is caught at stage one [9]. |\n| **Guy's and St Thomas' NHS** | Guy's Hospital (Great Maze Pond) | Public NHS option with a dedicated \"Mole screening clinic\" and \"Skin cancer screening clinic\" (requires referral) [10]. |\n\n### Key Information for Your Appointment\n*   **No National Program:** The UK lacks a national screening program because there is no instant medical test; visual inspection by a specialist is the only accurate method [1][3].\n*   **Preparation:** Remove makeup and nail polish (skin cancers can occur on nail beds) and be ready to discuss your personal/family history of skin cancer [5].\n*   **Referral:** Most private clinics (e.g., The Mole Clinic, The Online GP) do **not** require a GP referral; you can book directly [2][6].\n*   **Process:** You will likely be asked to undress to underwear (a gown is provided) for a full head-to-toe check, including areas difficult to see yourself [5].\n\nFor urgent concerns, same-day appointments are often available at private clinics like **The Online GP** [6]. If you prefer NHS care, contact **Guy's and St Thomas'** for their screening clinics, though a referral is typically required [10].",
+      "sources": [
+        {
+          "title": "Skin Cancer Screening",
+          "link": "https://www.thelondongeneralpractice.com/skin-cancer-screening/",
+          "content": ""
+        },
+        {
+          "title": "Full Body Skin Check - The Mole Clinic",
+          "link": "https://themoleclinic.co.uk/full-body-skin-check/",
+          "content": ""
+        },
+        {
+          "title": "Annual Skin Cancer Check In London",
+          "link": "https://www.skincarenetwork.co.uk/skin-cancer-treatment/annual-screening/",
+          "content": ""
+        },
+        {
+          "title": "Skin Cancer Screening and Mole Clinics",
+          "link": "https://www.check4cancer.com/products/skin-cancer-screening-and-mole-clinics",
+          "content": ""
+        },
+        {
+          "title": "Skin Cancer Screening in London",
+          "link": "https://www.drmagnuslynch.com/skin-cancer-screening",
+          "content": ""
+        },
+        {
+          "title": "Skin Cancer Screening, Mole Check & Full-Body ... - The Online GP",
+          "link": "https://www.theonlinegp.com/blog/skin-cancer-screening-mole-check-amp-full-body-mole-mapping-london-2026-londons-premier-doctor-led-pathway",
+          "content": ""
+        },
+        {
+          "title": "Concerned About Skin Cancer?",
+          "link": "https://www.thelondonclinic.co.uk/services/diagnostics/dermatology-clinic",
+          "content": ""
+        },
+        {
+          "title": "Mole Check and Full Skin Cancer Screening London 2026. Doctor ...",
+          "link": "https://www.theonlinegp.com/blog/mole-check-and-full-skin-cancer-screening-london-2026-doctor-led-dermatoscopic-examination-at-the-online-gp-by-the-wellness",
+          "content": ""
+        },
+        {
+          "title": "Annual Skin Cancer Screening London: Yearly Mole Monitoring",
+          "link": "https://londonskinclinic.london/blog/annual-skin-cancer-screening-london-yearly-mole-monitoring-2/",
+          "content": ""
+        },
+        {
+          "title": "Skin cancer - clinics | Guy's and St Thomas' NHS Foundation Trust",
+          "link": "https://www.guysandstthomas.nhs.uk/preview-link/node/183/2e946c0a-461d-4fb5-8826-e72758b07cf8",
+          "content": ""
+        }
+      ],
+      "cost": 0.00564
+    },
+    {
+      "query": "cosmetic dermatologist london uk",
+      "mentions": [
+        "The Dermatology Clinic London",
+        "Devonshire Dermatology"
+      ],
+      "answer": "For a **cosmetic dermatologist in London**, top verified options include **Dr Anjali Mahto** at Self London (Harley Street), **Dr Surbhi Virmani** at Cosderm UK (Hale Clinic, Harley Street), and **Dr Conal Perrett** at The Devonshire Clinic (Harley Street).\n\n| Dermatologist | Clinic | Location | One-Line Reason |\n|---|---|---|---|\n| **Dr Anjali Mahto** | Self London | Harley Street, London | Highly regarded consultant dermatologist and author of *The Skincare Bible*, specializing in acne scarring, rosacea, and aesthetic concerns [1][3] |\n| **Dr Surbhi Virmani** | Cosderm UK | Hale Clinic, Harley Street | Founder specializing in anti-ageing treatments and injectables, with an M.D. in Anaesthesia and PG Dip in Clinical Dermatology [1] |\n| **Dr Conal Perrett** | The Devonshire Clinic | Harley Street, London | Leading Consultant Dermatologist & Dermatologic Surgeon offering cosmetic dermatology services [1][6] |\n| **Dr Angela Tewari** | Dermatology Studios | Chelsea, London | NHS consultant at King’s College Hospital with a private Chelsea practice, boasting countless accolades in dermatology [1] |\n| **Dr Catherine Borysiewicz** | Galen Clinic | 9 Queen Anne Street, Central London | An illustrious authority in dermatology offering exceptional personalised healthcare, including cosmetic dermatology [1] |\n\nAdditional reputable clinics include **The Dermatology Clinic London** (founded by Dr Daniel Glass) on Harley Street [5] and **The Devonshire Clinic**, which offers tailored cosmetic dermatology regimes using latest technologies [2].\n\nFor virtual matching to a perfect dermatologist worldwide, Harper’s Bazaar highlights an impressive virtual service that can connect you based on your specific concern [1].\n\nAppointments typically range from **£200–£515**, with initial video consultations often available at lower rates [1].\n\nAlways confirm availability directly via clinic websites or phone, as appointment confirmation may be subject to verification [7][10].",
+      "sources": [
+        {
+          "title": "The best dermatologists in London and beyond - Harper's BAZAAR",
+          "link": "https://www.harpersbazaar.com/uk/beauty/skincare/a37809/cosmetic-procedure-guide-best-dermatologist/",
+          "content": ""
+        },
+        {
+          "title": "Dermatologist London | Private Dermatology Clinic & Skin Clinic",
+          "link": "https://thedevonshireclinic.co.uk",
+          "content": ""
+        },
+        {
+          "title": "Medical And Cosmetic Dermatologist in Harley Street, London",
+          "link": "https://dranjalimahto.co.uk",
+          "content": ""
+        },
+        {
+          "title": "Private Dermatologist Care | Cleveland Clinic London",
+          "link": "https://clevelandcliniclondon.uk/clinical-institutes/medical-subspecialties/dermatology",
+          "content": ""
+        },
+        {
+          "title": "The Dermatology Clinic London | Skin Specialists in Harley Street",
+          "link": "https://thedermatologyclinic.london",
+          "content": ""
+        },
+        {
+          "title": "Cosmetic Dermatologist in Harley Street, London",
+          "link": "https://thedevonshireclinic.co.uk/dermatology-services/cosmetic-dermatology/",
+          "content": ""
+        },
+        {
+          "title": "Dermatologists across the London Area & Nearby Towns - Top Doctors",
+          "link": "https://www.topdoctors.co.uk/london/dermatology/",
+          "content": ""
+        },
+        {
+          "title": "Cosmetic - Dermatologists In London",
+          "link": "https://dermatologists.london/categories/cosmetic/",
+          "content": ""
+        },
+        {
+          "title": "Top London Dermatologists for Facial aesthetics",
+          "link": "https://www.topdoctors.co.uk/london/dermatology/facial-aesthetics/",
+          "content": ""
+        },
+        {
+          "title": "My HCA GP Central London: 20 best Cosmetic dermatology doctors",
+          "link": "https://www.topdoctors.co.uk/central-london/cosmetic-dermatology-treatment/my-hca-gp/",
+          "content": ""
+        }
+      ],
+      "cost": 0.00549
+    },
+    {
+      "query": "eczema specialist london",
+      "mentions": [],
+      "answer": "For an **eczema specialist in London**, the most highly recommended consultant dermatologist is **Dr. Bryan McDonald**, who specializes in managing difficult, persistent, or severe eczema in both adults and children[1].\n\n### Top Verified Eczema Specialists in London\n\n| Specialist | Location | One-Line Reason |\n| :--- | :--- | :--- |\n| **Dr. Bryan McDonald** | London (Consultant) | Specialist expertise in severe/persistent eczema for adults and children[1]. |\n| **Dr. Shaaira Nasir** | Multiple Locations | Expert in biologic therapy (dupilumab) for childhood and adult eczema[2]. |\n| **Dr. Emma Wedgeworth** | Harley Street & South London | Paediatric and general dermatologist specializing in eczema and food-allergy skin conditions[2]. |\n| **Dr. Magnus Lynch** | Harley Street | Immunodermatology expert managing severe eczema with biologics and systemic therapy[2]. |\n| **Dr. Adam Friedmann** | Harley Street Clinic | 20+ years experience managing all eczema types (paediatric & adult) with comprehensive treatment[2]. |\n| **Dr. Victoria Swale** | 1 Welbeck St, Marylebone | Consultant Dermatologist with 33 years experience and 46 skill endorsements for eczema[9]. |\n\n### NHS Options\nIf you prefer NHS care, **Imperial College Healthcare NHS Trust** offers a specialist clinic for **severe atopic eczema at St Mary’s Hospital**, with general dermatology clinics at Charing Cross and Hammersmith hospitals[10].\n\n### Private Clinics\n*   **Dr Dropin** (Fulham): Offers expert dermatological care for eczema with short wait times and no referral needed[3].\n*   **Skinhorizon Clinic** (Maida Vale): Provides personalised eczema care by a consultant dermatologist[8].\n*   **London Dermatology Clinic** (Harley Street): Established practice providing complete management including phototherapy and biologic treatment[2].\n\nFor the most advanced care, **OneWelbeck Skin Health & Allergy** (Marylebone) is London’s most advanced centre for dermatology and allergy care, offering state-of-the-art treatment[7].",
+      "sources": [
+        {
+          "title": "Eczema Specialist Dermatologist in London - Dr Bryan McDonald",
+          "link": "https://www.drbryan.co.uk/eczema-dermatitis-specialist-london",
+          "content": ""
+        },
+        {
+          "title": "Eczema Treatment London | Dermatologists & Specialists",
+          "link": "https://dermatologists.london/guides/eczema/",
+          "content": ""
+        },
+        {
+          "title": "Eczema Dermatologist London | Short wait time. No referral",
+          "link": "https://www.drdropin.uk/eczema-dermatologist",
+          "content": ""
+        },
+        {
+          "title": "20 expert Dermatologists for Eczema - Top Doctors",
+          "link": "https://www.topdoctors.co.uk/dermatology/eczema/",
+          "content": ""
+        },
+        {
+          "title": "The Exeter Friendly Central London: 20 best Eczema doctors",
+          "link": "https://www.topdoctors.co.uk/central-london/eczema/the-exeter-friendly/",
+          "content": ""
+        },
+        {
+          "title": "Top London Dermatologists for Eczema",
+          "link": "https://www.topdoctors.co.uk/london/dermatology/eczema/",
+          "content": ""
+        },
+        {
+          "title": "Eczema : Expert specialists in 2025 - Top Doctors",
+          "link": "https://www.topdoctors.co.uk/eczema/",
+          "content": ""
+        },
+        {
+          "title": "Eczema Treatment London | Consultant Dermatologist",
+          "link": "https://skinhorizon.co.uk/treatments/eczema-treatment/",
+          "content": ""
+        },
+        {
+          "title": "Eczema (Atopic Dermatitis) Specialists in City of London, ...",
+          "link": "https://www.doctify.com/uk/find/eczema-atopic-dermatitis/city-of-london/specialists",
+          "content": ""
+        },
+        {
+          "title": "Eczema | Imperial College Healthcare NHS Trust",
+          "link": "https://www.imperial.nhs.uk/our-services/dermatology/eczema",
+          "content": ""
+        }
+      ],
+      "cost": 0.00552
+    },
+    {
+      "query": "mole check clinic london",
+      "mentions": [
+        "Cadogan Clinic",
+        "London Dermatology Centre"
+      ],
+      "answer": "For a mole check in London, the **Cadogan Clinic** in Chelsea is a top recommendation as it pioneered mole mapping in the UK and holds the first mole check approved by the British Skin Foundation[1].\n\nHere are the best verified options for a mole check clinic in London:\n\n| Clinic | Location | Key Reason |\n| :--- | :--- | :--- |\n| **Cadogan Clinic** | 120 Sloane Street, Chelsea | UK pioneer of mole mapping; first mole check approved by British Skin Foundation[1] |\n| **The Mole Clinic** | 5 locations (London Bridge, Oxford Circus, Harley Street, Moorgate, Richmond) | Leading independent skin cancer screening clinic; single check £60, full body £195[3] |\n| **London Doctors Clinic** | Oxford Street & Liverpool Street | Specialist-led checks by experienced dermatologists (Dr Ghazavi, Dr Hasan, Dr Rafiq)[2] |\n| **Chiswick Clinic** | West London | Led by Dr. Bela (26+ years experience); focuses on early melanoma detection[5] |\n| **Cosmedics Skin Clinics** | Harley Street, City, Putney | Full body screening £200; offers specific mole consultation for removal prep[6] |\n| **Dermasurge** | Harley Street | Expert dermatologist Dr. Hiba Injibar uses dermatoscopy for detailed mole assessment[7] |\n| **London Dermatology Centre** | 69 Wimpole Street, Central London | Specialist clinic for abnormal mole detection; 6-min walk from Bond Street[8] |\n| **Mole Check Removal** | Harley Street & City (Queen Street) | Same-day urgent screening; consultant dermatoscopy with written report, no GP referral needed[10] |\n\n**Quick Tips:**\n*   **Costs:** Single mole checks range from **£60** (The Mole Clinic)[3] to **£250** (Cadogan Clinic)[1], while full-body screenings are typically **£195–£200**[3][6].\n*   **Referrals:** Most clinics (e.g., Mole Check Removal, Cadogan) do **not require a GP referral** for booking[1][10].\n*   **Urgency:** For urgent same-day checks, **Mole Check Removal** (Harley Street/City) offers immediate appointments with written reports[10].\n\nChoose **Cadogan Clinic** for comprehensive, award-winning screening, or **The Mole Clinic** for affordable, accessible options across multiple London locations.",
+      "sources": [
+        {
+          "title": "Mole Check & Mole Mapping - London - Cadogan Clinic",
+          "link": "https://www.cadoganclinic.com/dermatology/moles-and-skin-cancer/mole-mapping/",
+          "content": ""
+        },
+        {
+          "title": "Private Mole Check London - London Doctors Clinic",
+          "link": "https://www.londondoctorsclinic.co.uk/services/full-body-mole-check/",
+          "content": ""
+        },
+        {
+          "title": "London Clinics - The Mole Clinic",
+          "link": "https://themoleclinic.co.uk/london-clinics/",
+          "content": ""
+        },
+        {
+          "title": "Skin Health MOT - London - Cadogan Clinic",
+          "link": "https://www.cadoganclinic.com/dermatology/skin-health-mot",
+          "content": ""
+        },
+        {
+          "title": "Mole Check London - Early Skin Cancer Detection | Chiswick Clinic",
+          "link": "https://chiswickclinic.com/treatments/mole-check-london/",
+          "content": ""
+        },
+        {
+          "title": "Mole Check Full Body Screening - Cosmedics Skin Clinics",
+          "link": "https://www.cosmedics.co.uk/skin-treatments/mole-checks/",
+          "content": ""
+        },
+        {
+          "title": "Mole Check in London | Dermatology Clinic On Harley Street",
+          "link": "https://dermasurge.co.uk/medical-dermatology/skin-cancer-screening/",
+          "content": ""
+        },
+        {
+          "title": "Mole Check London - The London Dermatology Centre",
+          "link": "https://www.london-dermatology-centre.co.uk/mole-check.html",
+          "content": ""
+        },
+        {
+          "title": "The MOLE Clinic in Harley Street • Read 3 Reviews - WhatClinic",
+          "link": "https://www.whatclinic.com/dermatology/uk/london/harley-street/the-mole-clinic",
+          "content": ""
+        },
+        {
+          "title": "Same-Day Mole Check London | Urgent Skin Cancer Screen Today",
+          "link": "https://molecheckremoval.co.uk/mole-check/london",
+          "content": ""
+        }
+      ],
+      "cost": 0.00558
+    },
+    {
+      "query": "anti aging skin clinic london",
+      "mentions": [
+        "Sk:N London"
+      ],
+      "answer": "For anti-aging skin clinics in **London, UK**, the top verified options are **Rejuvence Clinic**, **Eden Skin Clinic**, and **sk:n clinics (Harley Street)**, each offering evidence-based, non-surgical treatments targeting biological skin aging.\n\n| Clinic | Location | Key Anti-Aging Treatments | One-Line Reason |\n|--------|----------|----------------------------|-----------------|\n| **Rejuvence Clinic** | Central London (near Oxford Circus) | Sciton Forever Young BBL™, LA EXO ExoGiov® Exosome Therapy | One of the few clinics offering specialized autologous exosome therapy combined with the Angel Arthrex® system for regenerative anti-aging [2] |\n| **Eden Skin Clinic** | Kensington (Gloucester Road) & Wimbledon | Venus Freeze, IPL rejuvenation, ACCOR non-surgical eye treatment | Top-rated clinic specializing in advanced, non-invasive face/body treatments with cutting-edge skin tightening solutions [3] |\n| **sk:n clinics** | 6 Harley Street, London W1G 9PA | Anti-ageing injectables, laser resurfacing, HydraFacial | UK’s leading acne/dermatology/aesthetic clinic with 30+ years experience and doctor/nurse prescribers for medical-grade treatments [4] |\n| **The Cosmetic Skin Clinic** | 98 Harley Street, London W1G 7HZ | Morpheus8, Forever Young BBL, MOXI Laser, Polynucleotides | Co-located with surgical sister clinic; offers revolutionary skin revitalizing treatments like Morpheus8 for non-surgical lifting [5] |\n| **Pulse Light Clinic** | Bank, London | Anti-aging laser for pigmentations, sun damage, acne scarring | Specializes in laser treatments for sun spots and anti-aging with extended weekday hours until 8pm [7] |\n\n**Important Note:** Avoid confusion with **Image Anti-Aging & Laser Clinic** in **London, Ontario, Canada** (not UK), which is located downtown in Ontario and unrelated to London, UK [1].\n\nFor booking:  \n- **Rejuvence Clinic**: Contact via their website for premium regenerative programs [2]  \n- **Eden Skin Clinic**: Book online or call Kensington (020 7584 0115) / Wimbledon (020 8947 7037) [3]  \n- **sk:n clinics**: Call 0333 0141 666 or book at Harley Street for doctor-led consultations [4]  \n\nAll recommended clinics are medically led, evidence-based, and located in Central London or Harley Street—the heart of UK dermatology and aesthetics.",
+      "sources": [
+        {
+          "title": "Image Anti-Aging & Laser Clinic",
+          "link": "https://www.imageantiaging.ca",
+          "content": ""
+        },
+        {
+          "title": "Anti-Aging Treatments in London, UK - Rejuvence Clinic",
+          "link": "https://www.rejuvenceclinic.co.uk/anti-ageing/",
+          "content": ""
+        },
+        {
+          "title": "London Anti-ageing Skin Clinic & Skincare Treatments",
+          "link": "https://www.edenskinclinic.co.uk",
+          "content": ""
+        },
+        {
+          "title": "Anti-ageing Injectables Treatment in London Harley Street | sk:n clinics",
+          "link": "https://www.sknclinics.co.uk/anti-ageing-injectables-treatment-in-london-harley-street",
+          "content": ""
+        },
+        {
+          "title": "Non-Surgical Aesthetics Clinic in London - The Cosmetic Skin Clinic",
+          "link": "https://www.cosmeticskinclinic.com/cosmetic-skin-clinic-london/",
+          "content": ""
+        },
+        {
+          "title": "The best anti-ageing doctors",
+          "link": "https://www.thetimes.com/life-style/luxury/article/anti-ageing-doctors-uk-times-luxury-kc9r6ln2x",
+          "content": ""
+        },
+        {
+          "title": "Anti Ageing Laser Treatment - London - Pulse Light Clinic",
+          "link": "https://www.pulselightclinic.co.uk/anti-ageing-laser-treatment",
+          "content": ""
+        },
+        {
+          "title": "Anti-ageing treatments: discover the 20 best clinics and medical centers",
+          "link": "https://www.topdoctors.co.uk/anti-aging-treatments/centres/",
+          "content": ""
+        },
+        {
+          "title": "Anti Wrinkle Clinic - Dr Yiannis Valilas (@antiwrinkleclinic) - Instagram",
+          "link": "https://www.instagram.com/antiwrinkleclinic/",
+          "content": ""
+        },
+        {
+          "title": "Harley Street Dermal. We specialise in cosmetic injectables and ...",
+          "link": "https://www.instagram.com/reel/DN_Q-KrjPo3/",
+          "content": ""
+        }
+      ],
+      "cost": 0.0056
+    },
+    {
+      "query": "private dermatologist london appointment",
+      "mentions": [
+        "The Dermatology Clinic London"
+      ],
+      "answer": "You can book an appointment with a **private dermatologist in London** without needing a GP referral at several top clinics, including **Cleveland Clinic London**, **Cromwell Hospital**, and **St John & St Elizabeth Hospital**.\n\n### Recommended Private Dermatology Practices in London\n\n| Practice | Location | Key Reason |\n|----------|----------|------------|\n| **Cleveland Clinic London** | Heart of London (Marylebone) | Modern, technologically advanced facilities; self-pay and insured options; online booking available [1] |\n| **Cromwell Hospital** | Cromwell Road, SW5 | World-renowned consultant dermatologists including Dr James Shelley and Dr Raj Mallipeddi; skin cancer expertise [6] |\n| **St John & St Elizabeth Hospital** | St John’s Wood, NW8 | Same-day/next-day appointments for acne, warts, skin cancer; self-referral allowed [5] |\n| **Guy's and St Thomas' Specialist Care** | Harley Street Health District | 150+ years of skin condition treatment at St John’s Institute; private outpatient facility [3] |\n| **The London Clinic** | Harley Street, W1G | Only private hospital with 24/7 same-day GP access; advanced imaging for dermatology [4] |\n| **Dr.Dropin** | Fulham Road, SW6 | Flexible evening/weekend slots; video consultations; no referral needed; same-day booking [9] |\n| **Kensington International Clinic** | Knightsbridge, SW7 | Multilingual consultations (English, French, Arabic, etc.); near Harrods and V&A Museum [8] |\n| **Canary Wharf Clinic** | Canary Wharf, E14 | Expert private dermatology in business district; open Mon–Sat 9am–7pm [10] |\n\n### How to Book\n- **Self-pay**: Most clinics accept direct payment (e.g., Cleveland Clinic: +44 20 3423 7500 [1]; Cromwell: +44 20 7244 4886 [6]).\n- **Insured**: Contact your provider first; clinics like Cromwell and Cleveland offer insured pathways [1][6].\n- **Online**: Cleveland Clinic, Dr.Dropin, and Canary Wharf Clinic allow online appointment booking [1][9][10].\n- **No Referral Needed**: You can self-refer to any private dermatologist in the UK [5][9].\n\nFor urgent concerns (e.g., skin cancer, cysts), **St John & St Elizabeth** and **Dr.Dropin** offer same-day appointments [5][9]. For comprehensive care with top specialists, **Cromwell Hospital** and **Cleveland Clinic London** are highly recommended [1][6].",
+      "sources": [
+        {
+          "title": "Private Dermatologist Care | Cleveland Clinic London",
+          "link": "https://clevelandcliniclondon.uk/clinical-institutes/medical-subspecialties/dermatology",
+          "content": ""
+        },
+        {
+          "title": "Private Dermatology Consultation - Circle Health Group",
+          "link": "https://www.circlehealthgroup.co.uk/treatments/dermatology-consultation",
+          "content": ""
+        },
+        {
+          "title": "Dermatology - Guy's and St Thomas' Specialist Care",
+          "link": "https://guysandstthomasspecialistcare.co.uk/services/dermatology/",
+          "content": ""
+        },
+        {
+          "title": "Dermatology Clinic | The London Clinic",
+          "link": "https://www.thelondonclinic.co.uk/services/diagnostics/dermatology-clinic",
+          "content": ""
+        },
+        {
+          "title": "Private Dermatology Clinic London - St John & St Elizabeth Hospital",
+          "link": "https://hje.org.uk/clinics/dermatology/",
+          "content": ""
+        },
+        {
+          "title": "Private Dermatologist London",
+          "link": "https://www.cromwellhospital.com/services-specialties/dermatology/",
+          "content": ""
+        },
+        {
+          "title": "Private Dermatologist London | Dermatology Near Me",
+          "link": "https://www.londondoctorsclinic.co.uk/services/dermatology/",
+          "content": ""
+        },
+        {
+          "title": "Private Dermatology Consultation",
+          "link": "https://kensingtoninternationalclinic.co.uk/services/dermatology/",
+          "content": ""
+        },
+        {
+          "title": "Private Dermatologist London | No Referral Needed - Dr.Dropin",
+          "link": "https://www.drdropin.uk/dermatologist",
+          "content": ""
+        },
+        {
+          "title": "Dermatology",
+          "link": "https://canarywharfclinic.co.uk/services/skin-services-private-dermatologist/",
+          "content": ""
+        }
+      ],
+      "cost": 0.00561
+    }
+  ],
+  "errors": [],
+  "total_cost": 0.05529,
+  "market": "dermatologists in London, UK",
+  "provider": "openrouter",
+  "model": "perplexity/sonar",
+  "timestamp": "2026-07-09T16:16:34.456303+00:00"
+}

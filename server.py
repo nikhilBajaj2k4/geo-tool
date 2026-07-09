@@ -622,7 +622,7 @@ function renderFinal(d) {
       return '<div class="query-item">' +
         '<div class="query-head"><span class="q-dot ' + (hit ? "hit" : "miss") + '">' + (hit ? "\u2713" : "\u00b7") + "</span>" +
         '<span class="q-text">' + esc(q.query) + "</span>" +
-        '<span class="q-cost">' + (q.cost ? fmtCost(q.cost) : "") + "</span></div>" +
+        '<span class="q-cost">' + (q.cost !== undefined ? fmtCost(q.cost) : "") + "</span></div>" +
         '<div class="query-mentions ' + (hit ? "hit" : "miss") + '">' + (hit ? "\u2192 " + esc(q.mentions.join(", ")) : "\u2192 no tracked practices named") + "</div>" +
         '<details class="query-answer"><summary></summary><div class="ans-body">' + esc(q.answer) + "</div></details>" +
         "</div>";

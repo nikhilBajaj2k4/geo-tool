@@ -1,0 +1,558 @@
+{
+  "ranking": [
+    {
+      "name": "Austin Dental Spa",
+      "count": 6
+    },
+    {
+      "name": "Enamel Dentistry",
+      "count": 4
+    },
+    {
+      "name": "Forest Family Dentistry",
+      "count": 3
+    },
+    {
+      "name": "Westlake Hills Dentistry",
+      "count": 2
+    },
+    {
+      "name": "Celebrate Dental & Braces",
+      "count": 2
+    },
+    {
+      "name": "ATX Family Dental",
+      "count": 2
+    },
+    {
+      "name": "Tech Ridge Dental",
+      "count": 2
+    },
+    {
+      "name": "Walden Dental",
+      "count": 1
+    },
+    {
+      "name": "Belterra Dental",
+      "count": 0
+    }
+  ],
+  "total_queries": 10,
+  "queries_with_any": 8,
+  "queries_with_none": 2,
+  "verdict": "GAP IS REAL — build the full tool",
+  "detail": "top practice in 6/10, bottom in 0/10. The 'some dominate, some invisible' pattern the thesis needs is here.",
+  "query_results": [
+    {
+      "query": "best dentist in austin tx",
+      "mentions": [
+        "Austin Dental Spa",
+        "Enamel Dentistry",
+        "Westlake Hills Dentistry",
+        "Celebrate Dental & Braces",
+        "Tech Ridge Dental"
+      ],
+      "answer": "The **best dentists in Austin, TX** for 2026 are **Enamel Dentistry**, **Westlake Hills Dentistry**, and **Austin Dental Spa**, which lead rankings based on Google Map Pack rank, review velocity, and AI Overview citations[2].\n\nHere are the top verified options with a one-line reason for each:\n\n| Dentist | One-Line Reason |\n| :--- | :--- |\n| **Enamel Dentistry** | Deepest review base on the list with **1,820+ Google reviews** at a **4.9 average**[2]. |\n| **Westlake Hills Dentistry** | Top 3 ranking leader for 2026 based on AI Overview citations and review velocity[2]. |\n| **Austin Dental Spa** | Consistently praised for compassionate care and flexible treatment options[2]. |\n| **Celebrate Dental & Braces South Austin** | Most consistently praised by patients for affordability and compassionate care[3]. |\n| **Tech Ridge Dental** | Conveniently located near I-35 and Parmer Lane with extended weekday hours[1]. |\n\n**Enamel Dentistry** stands out as the single top choice due to its massive, high-quality review volume[2]. If you are in South Austin, **Celebrate Dental & Braces** is a highly recommended alternative for families[3]. For those near the southwest corner of I-35 and Parmer Lane, **Tech Ridge Dental** offers a reliable local option[1].",
+      "sources": [
+        {
+          "title": "Tech Ridge Dental",
+          "link": "https://www.techridgedental.com",
+          "content": ""
+        },
+        {
+          "title": "Best 10 Dentists in Austin, TX (2026 — Real Scores)",
+          "link": "https://localpicks.ai/best/dentists/austin-tx",
+          "content": ""
+        },
+        {
+          "title": "Top 10 Best Dentists in Austin, TX - Celebrate Dental & Braces",
+          "link": "https://celebratedental.com/top-10-best-dentists-in-austin-tx/",
+          "content": ""
+        }
+      ],
+      "cost": 0.00535
+    },
+    {
+      "query": "top rated dentist in austin",
+      "mentions": [
+        "Austin Dental Spa",
+        "Enamel Dentistry",
+        "Westlake Hills Dentistry",
+        "Celebrate Dental & Braces"
+      ],
+      "answer": "The top-rated dentist in Austin is **Enamel Dentistry**, which holds a 4.9-star average across **1,820+ Google reviews**, the largest and most robust review base among top Austin practices in 2026[4].\n\n**Key top-rated options in Austin:**\n\n| Practice | Rating & Reviews | Why It Stands Out |\n|----------|----------------|------------------|\n| **Enamel Dentistry** | 4.9 ★ · 1,820+ reviews[4] | Highest review volume with a 4.9 average, making it the hardest-to-maintain top score in the metro[4] |\n| **Westlake Hills Dentistry** | 4.9 ★ · 980+ reviews[4] | Consistently high rating across nearly 1,000 reviews[4] |\n| **Austin Dental Spa** | 4.9 ★ · 760+ reviews[4] | Strong 4.9 average with over 750 reviews[4] |\n| **Celebrate Dental & Braces South Austin** | Top choice per patient reviews[3] | Most consistently praised by patients for compassionate care, affordability, and flexible options[3] |\n| **South Austin Dental Associates** | Recognized as top-rated[2] | Offers full-range general and cosmetic dentistry with glowing patient reviews[2] |\n\nWhile individual Reddit users mention **Dr. Eric Hollander** as \"undoubtedly the best\" and **Brad** as \"the best,\" these are anecdotal and lack the verified, large-scale review data that supports Enamel Dentistry as the top-rated choice[1].\n\nFor the most reliable, data-backed top-rated experience, **Enamel Dentistry** is the leading recommendation.",
+      "sources": [
+        {
+          "title": "Who is the best dentist in Austin? - Reddit",
+          "link": "https://www.reddit.com/r/Austin/comments/1m7ajrg/who_is_the_best_dentist_in_austin/",
+          "content": ""
+        },
+        {
+          "title": "South Austin Dental Associates: Top-Rated Dentist In Austin, TX",
+          "link": "https://southaustindentalassociates.com",
+          "content": ""
+        },
+        {
+          "title": "Top 10 Best Dentists in Austin, TX - Celebrate Dental & Braces",
+          "link": "https://celebratedental.com/top-10-best-dentists-in-austin-tx/",
+          "content": ""
+        },
+        {
+          "title": "Best 10 Dentists in Austin, TX (2026 — Real Scores)",
+          "link": "https://localpicks.ai/best/dentists/austin-tx",
+          "content": ""
+        }
+      ],
+      "cost": 0.0054
+    },
+    {
+      "query": "dentist near me that takes delta dental austin",
+      "mentions": [
+        "Forest Family Dentistry",
+        "Austin Dental Spa",
+        "Enamel Dentistry",
+        "Tech Ridge Dental"
+      ],
+      "answer": "For a dentist in Austin, Texas who accepts Delta Dental, **Swish Dental Downtown** is the top verified option, located at 201 W 5th St with multiple general dentists (including Sarah Eubank and Mehar Khan) accepting Delta Dental PPO and Premier with evening hours[1].\n\nOther highly recommended Delta Dental-accepting dentists in Austin include:\n\n| Dentist / Practice | Location | Reason |\n|---|---|---|\n| **Brodie Oaks Dental** | Austin | Takes Delta Dental and treats patients like family[3] |\n| **The Tooth Inc** | South Austin | Accepts Delta Dental (likely PPO only)[3] |\n| **Daybreak Dental** | South Congress | Accepts Delta Dental and is highly recommended[3] |\n| **Oak Hill Dental (Dr. Cantu)** | Oak Hill | Wonderful service and takes Delta Dental[3] |\n| **Barton Oaks Dental Group** | Barton Oaks | Long-term patients with Delta Dental coverage[3] |\n| **Austin Dental Works (Dr. Jaros)** | The Triangle | Amazing staff, efficient, thorough, and takes Delta Dental[3] |\n| **Forest Family Dentistry** | West Anderson | Excellent service, used by many with Delta Dental[7] |\n| **Tech Ridge Dental (Dr. Minnie & Sean Ma)** | Tech Ridge | Highly recommended for Delta Dental patients[7] |\n| **Great Grins** | Jollyville (78759) | Family-operated, accepts Delta Dental, no upselling pressure[7] |\n| **Horizon Dental** | Near Domain | Accepts Delta Dental, excellent service, no pressure for unnecessary treatments[7] |\n| **KoLa Dentistry** | Near UT Campus | Pleased patients with Delta Dental coverage[7][9] |\n| **Boulder Canyon Dental** | Northwest Austin | Non-pushy, comprehensive services, accepts Delta insurance[7] |\n| **Enamel Dentistry** | Near Campus | Part of Delta Dental PPO network[9] |\n| **The Grove (Dr. Mike Sielski)** | Near Campus | Excellent dentist recommended for Delta Dental patients[9] |\n\nYou can also use **ZocDoc** to search specifically for Delta Dental providers in Austin and book open appointments online[4][8].",
+      "sources": [
+        {
+          "title": "Best Dentists Near Me in Austin, Texas | Delta Dental",
+          "link": "https://www.deltadental.com/member/find-a-dentist/texas/austin-dentists/",
+          "content": ""
+        },
+        {
+          "title": "State of Texas Dentists - Delta Dental",
+          "link": "https://www.deltadental.com/member/find-a-dentist/texas/",
+          "content": ""
+        },
+        {
+          "title": "r/Austin on Reddit: Dentist recommendations please! Searching for a ...",
+          "link": "https://www.reddit.com/r/Austin/comments/153d3x2/dentist_recommendations_please_searching_for_a/",
+          "content": ""
+        },
+        {
+          "title": "Best Delta Dental Dentists Near Me in Austin, TX - Zocdoc",
+          "link": "https://www.zocdoc.com/dentists/austin-221873pm/delta-dental-223d",
+          "content": ""
+        },
+        {
+          "title": "Find a dentist",
+          "link": "https://www.deltadental.com/member/find-a-dentist/",
+          "content": ""
+        },
+        {
+          "title": "How to Find a Trusted Dentist - Delta Dental",
+          "link": "https://www1.deltadentalins.com/members/find-a-dentist.html",
+          "content": ""
+        },
+        {
+          "title": "Delta dental honest dentist recommendation?",
+          "link": "https://www.reddit.com/r/Austin/comments/1gjja3r/delta_dental_honest_dentist_recommendation/",
+          "content": ""
+        },
+        {
+          "title": "Page 3 | Best Delta Dental Dentists Near Me in Downtown, Austin, TX",
+          "link": "https://www.zocdoc.com/dentists/downtown-austin-tx-222343pm/delta-dental-223d/3",
+          "content": ""
+        },
+        {
+          "title": "Delta Health Dentist Recommendation at Austin?",
+          "link": "https://www.reddit.com/r/Austin/comments/1rq4p09/delta_health_dentist_recommendation_at_austin/",
+          "content": ""
+        }
+      ],
+      "cost": 0.00553
+    },
+    {
+      "query": "affordable dentist south austin",
+      "mentions": [],
+      "answer": "For affordable dentists in South Austin, **Southwest Smiles**, **Grand Oaks Dentistry**, and **Castle Dental** are top verified options offering flexible financing and low-cost plans.\n\n| Practice | Location | Why It’s Affordable |\n|----------|----------|---------------------|\n| **Southwest Smiles** | Southwest Smiles (South Austin) | Accepts wide payment methods; aims to lower financial barriers for all patients [1] |\n| **Grand Oaks Dentistry** | 8700 Menchaca Rd, Ste 102, Austin, TX 78748 | Offers Cherry Financing ($100/month), CareCredit, and custom payment plans; no hard credit check [6] |\n| **Castle Dental** | 5510 S. IH-35 Suite 300, Austin, TX 78745 | Provides OneSmile Dental Plan (free check-ups + 20–40% off); low-interest flexible financing [3] |\n| **Lone Star Circle of Care** | Stassney location (South Austin) | Sliding-scale discounts for uninsured patients based on income; accepts Medicaid/Medicare [5] |\n| **South Austin Health Center** | 2529 S. 1st St, Austin, TX 78704 | Free clinic with sliding-scale fees; open Mon 7 AM–5 PM [4] |\n\n**Additional low-cost options**:  \n- **RBJ Dental Clinic** (Austin, TX 78702): Free clinic for uninsured patients [4]  \n- **ACC Dental Hygiene Program**: Volunteer for students to get work done for ~$40 (requires 3 visits) [4][7]  \n\nBe upfront about not having insurance or needing a deal—many clinics (e.g., Little House Dentistry, Moon Tower Dental) offer competitive cash prices [4][7].",
+      "sources": [
+        {
+          "title": "Affordable South Austin Dentist | Southwest Smiles",
+          "link": "https://www.circlecsmiles.com/affordable-dentist/",
+          "content": ""
+        },
+        {
+          "title": "South Austin Family Dental",
+          "link": "https://www.saustindentist.com",
+          "content": ""
+        },
+        {
+          "title": "Affordable Dentist in Austin, TX - Castle Dental",
+          "link": "https://www.castledental.com/dental-office/austin-dentist/35020/",
+          "content": ""
+        },
+        {
+          "title": "Best low cost dentists? : r/Austin - Reddit",
+          "link": "https://www.reddit.com/r/Austin/comments/17ott5c/best_low_cost_dentists/",
+          "content": ""
+        },
+        {
+          "title": "Dentistry - Lone Star Circle of Care",
+          "link": "https://lonestarcares.org/service/dentistry/",
+          "content": ""
+        },
+        {
+          "title": "Grand Oaks Dentistry: Affordable Dentist in South Austin",
+          "link": "https://www.grandoaksdentistry.com/",
+          "content": ""
+        },
+        {
+          "title": "Affordable dentist",
+          "link": "https://www.reddit.com/r/Austin/comments/14ozfq1/affordable_dentist/",
+          "content": ""
+        },
+        {
+          "title": "Dental Resources List - People's Community Clinic",
+          "link": "https://www.austinpcc.org/pregnancy-resources/dental-resources-list/",
+          "content": ""
+        },
+        {
+          "title": "Affordable Dental Care in Round Rock & Austin, TX",
+          "link": "https://highpointsmilestx.com/financial/",
+          "content": ""
+        }
+      ],
+      "cost": 0.00542
+    },
+    {
+      "query": "family dentist austin tx",
+      "mentions": [
+        "Forest Family Dentistry",
+        "ATX Family Dental"
+      ],
+      "answer": "For a family dentist in Austin, TX, **Forest Family Dentistry** is a top verified option with five convenient offices across Austin and Round Rock, offering comprehensive care for all ages since 2013[1][10].\n\nHere are the best real family dental practices in Austin, TX, with a one-line reason for each:\n\n| Practice | One-Line Reason |\n|----------|---------------|\n| **Forest Family Dentistry** | Five offices across Austin/Round Rock; Invisalign Diamond Plus provider; cares for families since 2013[1][10] |\n| **Family Dentistry on Manchaca** | Located in heart of Austin on Manchaca Rd; warm atmosphere for all family members[2] |\n| **ATX Family Dental** | Independent practice offering personalized preventive, restorative, and cosmetic care for all ages[3] |\n| **McLane Family Dental** | Southwest Austin location; compassionate care for patients of all ages; accepts new patients[4] |\n| **Austin Family DDS** | Prioritizes clear communication, comfort, and intentional treatment planning for families[5] |\n| **Clover Smile Studio** | Dr. Karnik Shah leads team; general & aesthetic dentistry in calm environment; new patients welcome[6] |\n| **Austin Family Dentist** | 100% recommended (15 reviews); family & cosmetic dentistry on Far West Blvd[7][10] |\n| **Arbor Oaks Dental** | Affordable care with flexible payment plans; comprehensive services for children to seniors[8] |\n\nAll listed practices explicitly serve families and are currently accepting new patients. Choose based on your preferred Austin neighborhood for easiest access.",
+      "sources": [
+        {
+          "title": "Forest Family Dentistry | Welcome to the Family",
+          "link": "https://www.forestfamily.com",
+          "content": ""
+        },
+        {
+          "title": "Family Dentistry on Manchaca – Austin, TX",
+          "link": "https://familydentistryonmanchaca.com",
+          "content": ""
+        },
+        {
+          "title": "Atx family dental: Home",
+          "link": "https://www.atxfamilydental.com",
+          "content": ""
+        },
+        {
+          "title": "McLane Family Dental - Top Rated Dentist - Soutwest Austin",
+          "link": "https://mclanefamilydental.com",
+          "content": ""
+        },
+        {
+          "title": "Family Dentist in Austin, TX | Austin Family DDS | Dentist Near Me",
+          "link": "https://austinfamilydds.com",
+          "content": ""
+        },
+        {
+          "title": "Clover Smile Studio: Trusted Family Dentist in Austin, TX",
+          "link": "https://www.cloversmilestudio.com/",
+          "content": ""
+        },
+        {
+          "title": "Austin Family Dentist | Austin TX - Facebook",
+          "link": "https://www.facebook.com/AustinFamilyDentist/",
+          "content": ""
+        },
+        {
+          "title": "Family Dentist Austin | Arbor Oaks Dental",
+          "link": "https://www.arboroaksdental.com/austin-tx/family-dentist/",
+          "content": ""
+        },
+        {
+          "title": "South Austin Family Dental - Austin, TX",
+          "link": "https://www.yelp.com/biz/south-austin-family-dental-austin",
+          "content": ""
+        },
+        {
+          "title": "Best Dentists in Austin, TX",
+          "link": "https://www.opencare.com/dentists/austin-tx/",
+          "content": ""
+        }
+      ],
+      "cost": 0.00538
+    },
+    {
+      "query": "cosmetic dentist austin",
+      "mentions": [
+        "Austin Dental Spa",
+        "Enamel Dentistry"
+      ],
+      "answer": "For a **cosmetic dentist in Austin**, **Dr. Mark Sweeney at Austin Dental Spa** is a top choice, having practiced since 1979 and known nationally for smile makeovers and DURAthin® veneers[1].\n\nOther highly recommended **cosmetic dentists in Austin** include:\n\n*   **The Cosmetic Dentists of Austin** (2700 Barton Creek Blvd): Specializes in smile makeovers and porcelain veneers with a 4.9-star rating from 324 reviews[2][4].\n*   **Austin Artistic Dental** (9900 I-35, Suite P-200): Led by Dr. Jarett Hulse, focuses on natural-looking smiles and has a 4.9-star rating from 778 reviews[2][5].\n*   **Austin Cosmetic Dentistry by Tejas Patel, DDS** (221 W 6th St): Offers comprehensive cosmetic procedures with a 4.9-star rating from 280 reviews[2][3].\n*   **Enamel Dentistry South Lamar** (2717 S Lamar Blvd): Provides veneers, whitening, and implants with a focus on comfort, rated 4.8 stars from 875 reviews[2].\n*   **John Schmid DDS** (Westlake area): Highly recommended by Reddit users for exceptional expertise and patient-focused care[5].\n*   **Masterpiece Smiles by Dr. Schmidt DDS** (5656 Bee Caves Rd): Offers full-scope cosmetic dentistry including veneers and implants in Austin and West Lake Hills[9].\n\nThese practices are verified for their expertise in **cosmetic procedures** like veneers, smile makeovers, and teeth whitening in the Austin area[1][2][4].",
+      "sources": [
+        {
+          "title": "Cosmetic Dentist Austin, TX - Mark Sweeney DDS",
+          "link": "https://www.austindentalspa.com/cosmetic-dentist/dr-sweeney-austin-tx/",
+          "content": ""
+        },
+        {
+          "title": "4 Recognized Cosmetic Dentists in Austin for Comprehensive ...",
+          "link": "https://www.hastingsfirm.com/4-recognized-cosmetic-dentists-in-austin/",
+          "content": ""
+        },
+        {
+          "title": "Austin Cosmetic Dentistry | Tejas Patel, DDS",
+          "link": "https://austincosmetic.com/",
+          "content": ""
+        },
+        {
+          "title": "The Cosmetic Dentists Of Austin (@ ...",
+          "link": "https://www.instagram.com/thecosmeticdentistsofaustin/",
+          "content": ""
+        },
+        {
+          "title": "Cosmetic dentist recommendations",
+          "link": "https://www.reddit.com/r/Austin/comments/1mkkno5/cosmetic_dentist_recommendations/",
+          "content": ""
+        },
+        {
+          "title": "Cosmetic Dentist Austin: 9 Best Picks — 2026 Guide",
+          "link": "https://www.bedrock-dentistry.com/posts/cosmetic-dentist-austin-guide",
+          "content": ""
+        },
+        {
+          "title": "Cosmetic Dentistry in Austin, TX | Aspen Dental",
+          "link": "https://www.aspendental.com/dentist/tx/austin/12901-n-interstate-hwy-35/cosmetic-dentistry/",
+          "content": ""
+        },
+        {
+          "title": "The Cosmetic Dentists of Austin - Austin, TX",
+          "link": "https://www.yelp.com/biz/the-cosmetic-dentists-of-austin-austin",
+          "content": ""
+        },
+        {
+          "title": "Dentist Austin TX | Masterpiece Smiles by Dr. Schmidt DDS",
+          "link": "https://www.theatxdentist.com/",
+          "content": ""
+        },
+        {
+          "title": "Cosmetic Dentistry In Austin, TX | Austin Dentist",
+          "link": "https://beecavefamilydentistry.com/cosmetic-dentistry-in-austin-tx/",
+          "content": ""
+        }
+      ],
+      "cost": 0.0054
+    },
+    {
+      "query": "invisalign provider austin tx",
+      "mentions": [
+        "ATX Family Dental"
+      ],
+      "answer": "For an **Invisalign provider in Austin, TX**, top verified options include **Swish Dental** (Invisalign Diamond Plus Provider), **Kunik Orthodontics** (Invisalign Blue Diamond Plus status), and **Limestone Hills Orthodontics** (board-certified orthodontist with lower starting costs).\n\n### Recommended Invisalign Providers in Austin\n\n| Provider | Key Credential / Reason | Location Highlights |\n| :--- | :--- | :--- |\n| **Swish Dental** | **Invisalign Diamond Plus Provider**; standard cost ~$6,450 with financing | Austin, Houston, San Antonio (multiple Austin offices) [1] |\n| **Kunik Orthodontics** | **Invisalign Blue Diamond Plus**; free consult + full 3D workup | Westlake, Domain, Downtown Austin [4][5] |\n| **Limestone Hills Orthodontics** | Led by a **board-certified orthodontist**; starts at **$4,700** ($149.99/mo) | Austin, TX (general dentistry focus) [6] |\n| **Glow Dental Co.** | High-quality Invisalign services; Dr. Kelsi Lewis | Austin, TX (call 512-572-4842) [2][7] |\n| **Mi Casa Family Dentistry** | Qualified dental staff + orthodontist specialists | Pleasant Valley, Cameron, Goodnight Ranch [3] |\n| **Bedrock Dentistry** | Tech-forward, in-house periodontist; North Austin Arboretum | 4505 Spicewood Springs Rd, North Austin [4] |\n| **ATX Family Dental** | Modern 3D scanning; South Austin (78704) | Bouldin Creek, 78704 [4] |\n\n### Cost & Financing Notes\n- **Swish Dental**: Standard cost is **$6,450**, with occasional promotions and financing plans [1].\n- **Limestone Hills Orthodontics**: Starts at **$4,700** comprehensive, with monthly payments from **$149.99** [6].\n- **Kunik Orthodontics**: Offers a **free consultation** and full 3D workup [4][5].\n- Insurance coverage may offset costs at most providers; schedule a consultation for an accurate estimate [1][6].\n\nFor the most specialized care, **Limestone Hills Orthodontics** and **Kunik Orthodontics** are led by orthodontists with advanced training in tooth movement [4][6]. For a general dentistry option with Invisalign expertise, **Swish Dental** is a premier Diamond Plus provider [1].",
+      "sources": [
+        {
+          "title": "Invisalign at Swish Dental | Austin, Houston & San Antonio",
+          "link": "https://www.swishsmiles.com/services/swish-services-invisalign",
+          "content": ""
+        },
+        {
+          "title": "Invisalign® — Austin, TX - Glow Dental Co.",
+          "link": "https://glowdentalco.com/services/invisalign/",
+          "content": ""
+        },
+        {
+          "title": "Invisalign in Austin, TX | Mi Casa Family Dentistry",
+          "link": "https://www.micasafamilydentistry.com/services/orthodontics/invisalign/",
+          "content": ""
+        },
+        {
+          "title": "Invisalign Austin, TX: 2026 Guide to the Top 9 Providers",
+          "link": "https://www.bedrock-dentistry.com/posts/invisalign-austin-providers-guide",
+          "content": ""
+        },
+        {
+          "title": "Get the Best Invisalign Treatment in Austin, Texas | Kunik Orthodontics",
+          "link": "https://www.kunikorthodontics.com/invisalign-austin/",
+          "content": ""
+        },
+        {
+          "title": "Invisalign In Austin, TX | From $149.99/mo",
+          "link": "https://limestonehillsorthodontics.com/invisalign/",
+          "content": ""
+        },
+        {
+          "title": "Invisalign Austin, TX | Straighten Your Smile with Clear Aligners",
+          "link": "https://www.glowdentalco.com/invisalign/",
+          "content": ""
+        }
+      ],
+      "cost": 0.0056
+    },
+    {
+      "query": "emergency dentist austin open saturday",
+      "mentions": [
+        "Forest Family Dentistry",
+        "Austin Dental Spa"
+      ],
+      "answer": "For an **emergency dentist in Austin open on Saturday**, the most reliable option is **myDental Norwood Park**, which is **open every Saturday from 9 AM to 3 PM** for urgent care [5].\n\nHere are the best verified options open on Saturday:\n\n| Practice | Saturday Hours | Reason |\n|----------|----------------|--------|\n| **myDental Norwood Park** | 9 AM – 3 PM (Every Saturday) | Dedicated same-day emergency slots every Saturday; fully staffed for weekend urgent care [5] |\n| **Emergency Dentist of Austin** | 8 AM – 8 PM | Open Saturday with extended hours; located at 1030 Norwood Park Blvd [4][8] |\n| **Daylight Dental (South Austin)** | 7 AM – 1 PM | Open Saturdays to accommodate busy schedules; offers early/late appointments [6][8] |\n| **Brush32 of Central Austin** | 9 AM – 3 PM | Weekend hours available; located at 3500 Jefferson St [7] |\n| **North Austin Dentistry** | 9 AM – 1 PM | Weekend hours; high-rated (4.9) with 103 reviews [7] |\n| **Austin Family Dentistry (Ashley Smitherman, DDS)** | 9 AM – 2 PM | Weekend availability; 4.9 rating with 123 reviews [7] |\n| **Forest Family Dentistry** | 9 AM – 2 PM | Open Saturdays; 4.9 rating with 2700 W Anderson Ln location [7] |\n| **myDental Ben White** | 9 AM – 3 PM (Alternating Saturdays) | Same-day emergency openings on alternating Saturdays; call to confirm availability [9] |\n\n**Top Recommendation**: Call **myDental Norwood Park** at **(512) 815-3520** immediately—they hold dedicated emergency time slots every Saturday and often fit patients in within the hour [5].\n\nIf you need care later in the day, **Emergency Dentist of Austin** (8 AM–8 PM) is another strong option with extended Saturday hours [4][8].\n\nFor South Austin residents, **Daylight Dental** opens early (7 AM) on Saturdays [6].\n\nAlways call first to confirm immediate availability, as emergency slots may fill quickly.",
+      "sources": [
+        {
+          "title": "Austin Emergency Dental: Emergency Dentist Austin TX",
+          "link": "https://emergencydentalaustin.com",
+          "content": ""
+        },
+        {
+          "title": "Same-Day Emergency Dentist | South Austin Dental Associates",
+          "link": "https://southaustindentalassociates.com/services/emergency-dentist-austin-tx/",
+          "content": ""
+        },
+        {
+          "title": "Emergency Dentist Austin, TX | Legend Dental & Orthodontics",
+          "link": "https://legenddental.com/austin/dental-emergencies/",
+          "content": ""
+        },
+        {
+          "title": "EMERGENCY DENTIST OF AUSTIN - Updated July 2026 - Yelp",
+          "link": "https://www.yelp.com/biz/emergency-dentist-of-austin-austin",
+          "content": ""
+        },
+        {
+          "title": "Emergency Dentist in Norwood Park, Austin TX | Same-Day Care",
+          "link": "https://www.mydental.com/locations/norwood-park/emergency-dentistry/",
+          "content": ""
+        },
+        {
+          "title": "Emergency Dentist in South Austin, TX - Daylight Dental",
+          "link": "https://www.daylightdental.com/services/emergency-dentistry/",
+          "content": ""
+        },
+        {
+          "title": "Find an Emergency Dentist in Austin, TX",
+          "link": "https://www.emergencydentist247.com/locations/austin-tx/",
+          "content": ""
+        },
+        {
+          "title": "Emergency Dentist in Austin",
+          "link": "https://expressdentist.com/austin/",
+          "content": ""
+        },
+        {
+          "title": "Emergency Dentist in South Austin, TX | Same-Day Care - myDental",
+          "link": "https://www.mydental.com/locations/ben-white/emergency-dentistry/",
+          "content": ""
+        }
+      ],
+      "cost": 0.00553
+    },
+    {
+      "query": "pediatric dentist austin tx",
+      "mentions": [],
+      "answer": "For a pediatric dentist in Austin, TX, **Central Texas Pediatric Dentistry** (Dr. Angie Hernandez) is a top choice, offering 18+ years of experience and care for children of all abilities [2][8]. Other highly recommended options include:\n\n| Practice | Pediatric Dentist | One-Line Reason |\n|----------|-------------------|-----------------|\n| **Austin Children’s Dentistry** | Dr. Dimple Sharma, DDS | Superior oral health focus with multiple Austin-area locations and strong patient ratings [1][6] |\n| **Minimint Pediatric Dentistry** | Dr. Patricia Robus, DDS | Modern, minimally invasive approach focused on prevention and comfort [3] |\n| **High Point Kids and Braces** | Dr. Massiel Parra, DDS | Board-certified pediatric dentist serving families with comprehensive care [3] |\n| **Westlake Pediatric Dentistry** | Dr. Arwa Owais, DDS | Highly experienced, board-certified provider for infants through adolescents, including special needs [3][5] |\n| **Tiny Texans Pediatric Dentistry** | Team of pediatric dentists | Caring team serving South Austin, Buda, and Kyle with emergency services available [9] |\n\nAll listed practices are verified as pediatric dentistry providers in the Austin area and accept new patients [1]. For immediate scheduling, contact Central Texas Pediatric Dentistry at (512) 474-7575 or Austin Children’s Dentistry at (512) 682-5437 [5].",
+      "sources": [
+        {
+          "title": "Best Pediatric Dentists Near Me in Austin, TX | WebMD",
+          "link": "https://doctor.webmd.com/providers/specialty/pediatric-dentistry/texas/austin",
+          "content": ""
+        },
+        {
+          "title": "Find the Best Pediatric Dentists Near Me in Austin, TX – Book Instantly | Tebra",
+          "link": "https://www.tebra.com/care/pediatric-dentists/austin-tx/",
+          "content": ""
+        },
+        {
+          "title": "Best Pediatric Dentists Near Me in Austin, TX",
+          "link": "https://www.zocdoc.com/pediatric-dentists/austin-221873pm",
+          "content": ""
+        },
+        {
+          "title": "Comprehensive Pediatric Dental Care in Austin, TX - Lucent Dentistry",
+          "link": "https://www.lucentdentistryaustin.com/services/Austin-pediatric-dental-care",
+          "content": ""
+        },
+        {
+          "title": "[PDF] PEDIATRIC DENTISTS List of Austin area pediatric dentists in ...",
+          "link": "https://naustinpeds.com/wp-content/uploads/2023/01/Dentist-List-2023.pdf",
+          "content": ""
+        },
+        {
+          "title": "Austin Children's Dentistry | Pediatric Dentist Austin, TX",
+          "link": "https://www.austinchildrensdentistry.com/",
+          "content": ""
+        },
+        {
+          "title": "Children Dentist near Austin, TX | Better Business Bureau",
+          "link": "https://www.bbb.org/us/tx/austin/category/children-dentist",
+          "content": ""
+        },
+        {
+          "title": "Central Texas Pediatric Dentistry - Austin, TX",
+          "link": "https://www.yelp.com/biz/central-texas-pediatric-dentistry-austin-4",
+          "content": ""
+        },
+        {
+          "title": "Dentist in Austin TX",
+          "link": "https://www.tinytexansteeth.com/location/austin/1821",
+          "content": ""
+        }
+      ],
+      "cost": 0.00535
+    },
+    {
+      "query": "dentist for crowns and implants austin",
+      "mentions": [
+        "Austin Dental Spa",
+        "Walden Dental"
+      ],
+      "answer": "For crowns and implants in Austin, **38th Street Dental** is the top verified choice, offering advanced restorative and implant dentistry with Dr. Tasch and Dr. Meek.\n\nHere are the best real options you can verify, with a one-line reason each:\n\n| Practice | One-Line Reason |\n|---|---|\n| **38th Street Dental** (Austin) | Specializes in both dental crowns and implants; Dr. Meek lectures on Nobel Biocare implants and they pair crowns with implants for missing teeth[5][8]. |\n| **Walden Dental** (Austin) | Experienced team uses advanced technology for personalized implant care and excellent results you can trust[4]. |\n| **Restora Dental Arts** (Austin) | Offers implant crowns and same-visit crown placement using CAD/CAM technology by Dr. Olson[6]. |\n| **Diamond Dental Family and Implant Dentistry** (Austin) | Provides high-quality crowns, bridges, and same-day emergency care by Dr. Supakorndej[7]. |\n| **Austin Dental Implant Center** (Austin) | Led by Dr. Danny J. Holtzclaw, recognized as one of the best implant dentists in Austin[9]. |\n\n**Contact 38th Street Dental** at **(512) 458-6222** to schedule your consultation for crowns and implants[5].",
+      "sources": [
+        {
+          "title": "Austin Cosmetic & Implant Dentistry",
+          "link": "https://austintopdentist.com",
+          "content": ""
+        },
+        {
+          "title": "Austin Dental Implants",
+          "link": "https://austin-dental-implants.com",
+          "content": ""
+        },
+        {
+          "title": "Dental Implants Austin, TX",
+          "link": "https://www.myaustindds.com/video/60555-replace-missing-teeth-with-dental-implants/",
+          "content": ""
+        },
+        {
+          "title": "Implant Dentist Austin, Texas - Restore Your Smile - Walden Dental",
+          "link": "https://www.waldendentaltx.com/implant-dentist-austin-texas/",
+          "content": ""
+        },
+        {
+          "title": "Dental Crowns Austin, TX - Tooth Crown - 38th Street Dental",
+          "link": "https://www.myaustindds.com/services/dental-crowns/",
+          "content": ""
+        },
+        {
+          "title": "Implant Crown - Restora Dental Arts",
+          "link": "https://austincosmeticexcellence.com/services/implant-crown/",
+          "content": ""
+        },
+        {
+          "title": "Dental Crowns & Bridges | Dentist in Austin, TX",
+          "link": "https://www.diamonddentalaustin.com/services/restorative-dentistry/dental-crowns-bridges/",
+          "content": ""
+        },
+        {
+          "title": "Dental Implants Austin, TX",
+          "link": "https://www.myaustindds.com/services/dental-implants/",
+          "content": ""
+        },
+        {
+          "title": "Find Tooth Crown & Cap Treatment Near Austin, TX | Opencare.com",
+          "link": "https://www.opencare.com/dentists/austin-tx/crown-cap/",
+          "content": ""
+        }
+      ],
+      "cost": 0.00534
+    }
+  ],
+  "errors": [],
+  "total_cost": 0.0543,
+  "market": "dentists in Austin, TX",
+  "provider": "openrouter",
+  "model": "perplexity/sonar",
+  "timestamp": "2026-07-09T16:14:40.774972+00:00"
+}

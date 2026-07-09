@@ -1,0 +1,552 @@
+{
+  "ranking": [
+    {
+      "name": "Jaiswal Dental Clinic",
+      "count": 4
+    },
+    {
+      "name": "Kota Dental Hospital",
+      "count": 1
+    },
+    {
+      "name": "Crown Dental Care",
+      "count": 0
+    },
+    {
+      "name": "Dr Sandeep Orthodontic and Dental Clinic",
+      "count": 0
+    },
+    {
+      "name": "Madhuvan Multispeciality Hospital Dental",
+      "count": 0
+    },
+    {
+      "name": "Mittal Dental Clinic",
+      "count": 0
+    },
+    {
+      "name": "Sharma Dental Clinic",
+      "count": 0
+    },
+    {
+      "name": "Agarwal Dental Clinic",
+      "count": 0
+    },
+    {
+      "name": "Shree Dental Care",
+      "count": 0
+    }
+  ],
+  "total_queries": 10,
+  "queries_with_any": 4,
+  "queries_with_none": 6,
+  "verdict": "GAP IS REAL — build the full tool",
+  "detail": "top practice in 4/10, bottom in 0/10. The 'some dominate, some invisible' pattern the thesis needs is here.",
+  "query_results": [
+    {
+      "query": "best dentist in kota rajasthan",
+      "mentions": [],
+      "answer": "The **best dentist in Kota, Rajasthan** is widely recognized as the provider at **Smile and Sujok Dental Clinic**, which holds the **Times Award for Best Dentist of Kota** and specializes in braces, aligners, and dental implants[1][4].\n\n### Top Recommended Dental Practices in Kota\n\n| Practice Name | One-Line Reason |\n|---------------|-----------------|\n| **Smile and Sujok Dental Clinic** | Holds the **Times Award for Best Dentist of Kota** and is a Braces, Aligner, and Implant specialist[1][4] |\n| **Kamal Dental Clinic** | Popular for **Orthodontic Treatment & Implant Center** services in Kota[4] |\n| **Kamal Dental Clinic (Talwandi location)** | Located near **Kotak Mahindra Bank** in Talwandi Circle, offering top dental care[2] |\n\n### Key Details for Smile and Sujok Dental Clinic\n- **Address**: Samyak, 23-B, near Dr Chittora, Talwandi, Kota, Rajasthan 324005[4]\n- **Phone**: 097846 19808[4]\n- **Specialties**: Braces, Aligners, Dental Implants, Best Dental Clinic in Kota[4]\n\nThese recommendations are based on verified awards, patient reviews, and local listings from 2025–2026[1][2][4].",
+      "sources": [
+        {
+          "title": "Best Dentists in Kota Rajasthan - Book Appointment Online - Justdial",
+          "link": "https://www.justdial.com/Kota-Rajasthan/Dentists/nct-10156331",
+          "content": ""
+        },
+        {
+          "title": "Top 10 Dentist in Kota - Read reviews, 2025 Updated list",
+          "link": "https://www.365doctor.in/dentist-in-kota",
+          "content": ""
+        },
+        {
+          "title": "Best Dentists in Kota Rajasthan - Justdial",
+          "link": "https://www.justdial.com/Kota-Rajasthan/Dentists/nct-10156331/page-13",
+          "content": ""
+        },
+        {
+          "title": "Popular Dental Clinics in Kota, List of Top Dentist in Kota",
+          "link": "https://www.kotaonline.in/guide/dental-clinics-in-kota",
+          "content": ""
+        }
+      ],
+      "cost": 0.00535
+    },
+    {
+      "query": "dental clinic near me kota",
+      "mentions": [
+        "Jaiswal Dental Clinic"
+      ],
+      "answer": "For a dental clinic near you in **Kota, Rajasthan**, here are the top verified options with strong ratings and convenient locations:\n\n- **Dr. Sandeep's Orthodontic & Dental Clinic** (Talwandi) – 5.0★ rating, 122 reviews, fee ₹200, specializes in orthodontics and general dental care[1][7].  \n- **Mathur Dental Clinic** (Talwandi) – 5.0★ rating, 584 reviews, fee ₹400, highly experienced with a large patient base[7].  \n- **Jaiswal Dental Clinic** (Kota City) – 5.0★ rating, 134 reviews, fee ₹200, well-known for orthodontic and implant services[1][7].  \n- **Smile Makers Orthodontic & Dental Specialty Centre** (Mahaveer Nagar) – 5.0★ rating, 30 reviews, fee ₹200, offers specialty orthodontic treatments[7].  \n- **Twacha Skin Clinic & Dr Jaya's Dental Clinic** (Talwandi) – 4.5★ rating, 411 reviews, fee ₹300–₹400, Dr. Jaya Singhvi is a trusted local dentist[4][7].\n\nAll these clinics are open today and located in central areas of Kota for easy access. You can book appointments online via **Practo**[4][7] or **Justdial**[1].",
+      "sources": [
+        {
+          "title": "Best Dentists in Kota Rajasthan - Book Appointment Online - Justdial",
+          "link": "https://www.justdial.com/Kota-Rajasthan/Dentists/nct-10156331",
+          "content": ""
+        },
+        {
+          "title": "Dental Clinics in Texas | Find a Dental Clinic Near You",
+          "link": "https://www.jeffersondentalclinics.com/locations/",
+          "content": ""
+        },
+        {
+          "title": "Dr. Ashok Kota, DDS - 1 Review - Sugar Land, TX - Healthgrades",
+          "link": "https://www.healthgrades.com/dentist/dr-ashok-kota-23yvh",
+          "content": ""
+        },
+        {
+          "title": "Best Dentists Near Me in Kota - Practo",
+          "link": "https://www.practo.com/kota/dentist",
+          "content": ""
+        },
+        {
+          "title": "Dental Clinics in Kota, Rajasthan | Order on WhatsApp - chotu",
+          "link": "https://chotu.com/local/dental-clinics-in-kota-rajasthan-india/ct-18418199/",
+          "content": ""
+        },
+        {
+          "title": "List of nearest Dental Hospitals in Kota Rajasthan - Book ...",
+          "link": "https://www.justdial.com/Kota-Rajasthan/Dental-Hospitals/nct-11273042",
+          "content": ""
+        },
+        {
+          "title": "25 Dental Clinics in Kota",
+          "link": "https://www.practo.com/kota/clinics/dental-clinics",
+          "content": ""
+        },
+        {
+          "title": "Best Dental Clinics in Kota - Book Instant Appointment, View Fees, Feedbacks, Contact Numbers",
+          "link": "https://www.lybrate.com/kota/clinics/dental-clinics",
+          "content": ""
+        }
+      ],
+      "cost": 0.00536
+    },
+    {
+      "query": "top rated dentist in kota",
+      "mentions": [],
+      "answer": "The **top-rated dentist in Kota, Rajasthan** is **Dr. Sandeep Singh Bhatia** (also listed as Dr. Sandeep Bhatia), who holds a **4.7★ rating** with **819+ verified reviews** at his clinic, **Dr. Sandeep's Orthodontic & Dental Clinic** in Talwandi Circle [2][3][5].\n\n### Best Verified Options in Kota (with one-line reasons):\n\n| Dentist / Clinic | Rating & Reviews | Reason |\n|------------------|------------------|--------|\n| **Dr. Sandeep Singh Bhatia** (Dr. Sandeep's Orthodontic & Dental Clinic) | 4.7★, 819+ reviews [2][5] | Highest-rated dentist with extensive experience (16 yrs) and orthodontic specialization [3] |\n| **Dr. Praveen Jaiswal** | 4.6★, 18 yrs experience [4] | Top-rated specialist with strong patient feedback on Doctar [4] |\n| **Dr. Manish Bakliwal** | 4.4★, 20 yrs experience [4] | Experienced specialist with consistent 4.4★ rating across 16 verified reviews [4] |\n| **Dental Clinic by Dr. Geet & Dr. Kriti** (@smiles_of_kota) | “Top-rated” claim [7] | Instagram-featured clinic in Indra Vihar, marketed as among the best in Kota [7] |\n\nAll listed dentists are verified on major platforms (Justdial, 365doctor, Doctar, Lybrate) and serve patients in **Kota, Rajasthan** (not Indonesia or Jakarta). For appointments, contact Dr. Sandeep’s clinic at **08735074739** [5].",
+      "sources": [
+        {
+          "title": "Top 10 Dental Clinics & Dentists in Indonesia | Full Care @ 70% Off",
+          "link": "https://www.dentavacation.com/clinics/dentists/indonesia/",
+          "content": ""
+        },
+        {
+          "title": "Best Dentists in Kota Rajasthan - Book Appointment Online - Justdial",
+          "link": "https://www.justdial.com/Kota-Rajasthan/Dentists/nct-10156331",
+          "content": ""
+        },
+        {
+          "title": "Top 10 Dentist in Kota - Read reviews, 2025 Updated list",
+          "link": "https://www.365doctor.in/dentist-in-kota",
+          "content": ""
+        },
+        {
+          "title": "Best Dentists in Kota | Dental Specialist Doctors | Book Appointment ...",
+          "link": "https://doctar.in/dentist/kota/s",
+          "content": ""
+        },
+        {
+          "title": "Best Dentists in Kota Rajasthan - Top BEST Dentists near me | Justdial",
+          "link": "https://www.justdial.com/Kota-Rajasthan/Dentists-for-Cavity-Filling/nct-10156331",
+          "content": ""
+        },
+        {
+          "title": "Dentists in Kota - Book Instant Appointment, Consult Online, View Fees, Contact Numbers, Feedbacks",
+          "link": "https://www.lybrate.com/kota/dentist",
+          "content": ""
+        },
+        {
+          "title": "Dental Clinic By Dr.Geet & Dr.Kriti (@smiles_of_kota)",
+          "link": "https://www.instagram.com/smiles_of_kota/",
+          "content": ""
+        }
+      ],
+      "cost": 0.00543
+    },
+    {
+      "query": "affordable dentist in kota",
+      "mentions": [
+        "Jaiswal Dental Clinic"
+      ],
+      "answer": "For an **affordable dentist in Kota**, Rajasthan, you can find consultation fees as low as **₹100–₹200**, with several highly-rated clinics offering competitive pricing without hidden costs.\n\n### Top Verified Affordable Dental Clinics in Kota\n\n| Clinic Name | Consultation Fee | Rating | Location | Why It’s Affordable |\n|-------------|------------------|--------|----------|---------------------|\n| **Kamal Dental Clinic** | ₹100 | Not rated | Kunadi Kota | Lowest fee in Kota; basic but essential care [4] |\n| **Your Dental Care Centre** | ₹100 | 4.5 (36 reviews) | Talwandi | Budget-friendly with good patient feedback [4] |\n| **Gupta Dental Care and Implant Center** | ₹100–₹300 | Not rated | Kota Jn. | Wide fee range; low-cost options available [4] |\n| **Jain Dental Hospital & RCT Center** (Dr. Ankit Jain) | ₹100 | Not rated | Keshavpura | Endodontist offering low-cost root canal care [7] |\n| **Bhatia Dental Clinic** | ₹100 | Not rated | Gumanpura | Orthodontic & implant services at minimal cost [7] |\n| **Dr. Sandeep's Orthodontic & Dental Clinic** | ₹200 | 5.0 (122 reviews) | Talwandi | High-rated, transparent pricing, no hidden fees [4] |\n| **Jaiswal Dental Clinic** | ₹200 | 5.0 (134 reviews) | Kota City | Excellent reviews, affordable standard care [4] |\n| **Smile Makers Orthodontic & Dental Specialty Centre** | ₹200 | 5.0 (30 reviews) | Mahaveer Nagar | Specialized ortho care at low cost [4] |\n\n### Additional Affordable Options\n- **Dr. Subodh's Dental Clinic** (₹300) – Talwandi, 4.5 rating [4][7]  \n- **Sanjeevani Multispeciality Dental Clinic** (₹200) – Dadabari, Dr. Suneet Khandelwal (22 yrs exp) [7]  \n- **Rootz Dental Care** (₹300) – Mahaveer Nagar, Dr. Satyendra Agarwal (MDS) [7]  \n- **Bakliwal Multi Speciality Dental Hospital** (₹200) – Talwandi, Dr. Manish Bakliwal [7]  \n\n### Price Benchmarks in Kota (2026)\n- **Consultation**: ₹100–₹400 (avg ₹235) [4]  \n- **Tooth Extraction**: ₹500–₹1,500 [6]  \n- **Scaling & Polishing**: ₹1,500–₹3,000 [6]  \n- **24-Hour Emergency**: ₹1,500–₹5,000 [1]  \n\n> **Note**: Clinics like **Dr. Sandeep’s**, **Jaiswal**, and **Smile Makers** offer the best balance of **low cost + high quality** (5.0 ratings). For the absolute lowest fee, **Kamal Dental Clinic** and **Your Dental Care Centre** charge just **₹100**.\n\nAll listed clinics are verified in Kota, Rajasthan. Avoid clinics in Jakarta, Batam, or Vellore (e.g., Happy Dental Clinic, Smart Dental, Indira Dental) — they are **not in Kota**.\n\n📞 **Book early**: Most clinics recommend appointments via WhatsApp or phone for faster service [3].",
+      "sources": [
+        {
+          "title": "Best 24 Hours Dentists in Kota Rajasthan - Justdial",
+          "link": "https://www.justdial.com/Kota-Rajasthan/24-Hours-Dentists/nct-10000372",
+          "content": ""
+        },
+        {
+          "title": "Happy Dental Clinic (@happydentalclinic) - Jakarta - Instagram",
+          "link": "https://www.instagram.com/happydentalclinic/",
+          "content": ""
+        },
+        {
+          "title": "Smart Dental Care - Smart Dental",
+          "link": "https://smartdental.co.id",
+          "content": ""
+        },
+        {
+          "title": "Best Dental Clinics Near Me in Kota - Practo",
+          "link": "https://www.practo.com/kota/clinics/dental-clinics",
+          "content": ""
+        },
+        {
+          "title": "Dental Services in kota | Best Dentist in kota",
+          "link": "https://www.dentalclinicinvellore.in/in/rajasthan/kota",
+          "content": ""
+        },
+        {
+          "title": "Honest Dental Pricing in Kota | No Hidden Costs",
+          "link": "https://drmahimasdentalcare.in/pricing/",
+          "content": ""
+        },
+        {
+          "title": "Dentists in Kota - Book Instant Appointment, Consult Online, View Fees, Contact Numbers, Feedbacks",
+          "link": "https://www.lybrate.com/kota/dentist",
+          "content": ""
+        },
+        {
+          "title": "Best Dentists in Kota | Dental Specialist Doctors | Book Appointment ...",
+          "link": "https://doctar.in/dentist/kota/s",
+          "content": ""
+        },
+        {
+          "title": "Dental Clinic By Dr.Geet & Dr.Kriti (@smiles_of_kota)",
+          "link": "https://www.instagram.com/smiles_of_kota/",
+          "content": ""
+        }
+      ],
+      "cost": 0.00582
+    },
+    {
+      "query": "root canal treatment kota",
+      "mentions": [],
+      "answer": "For root canal treatment in Kota, **Dr. Mahima's Dental Care** in Talwandi is a top verified option offering painless, often single-sitting procedures starting at **₹2,500** [1].\n\n### Recommended Dental Practices for Root Canal in Kota\n\n| Practice Name | Location | Key Reason |\n|---|---|---|\n| **Dr. Mahima's Dental Care** | Talwandi (Sheela Choudhary Road) | Painless, single-sitting RCT (45–60 mins) using advanced rotary instruments; routine RCT starts at ₹2,500 [1] |\n| **Dr. Jaya's Orthodontic & Dental Clinic** | Near Dav School | Comprehensive RCT with crown placement; listed among top endodontic clinics in Kota [2][3] |\n| **Dr. Subodh's Dental Clinic** | Talwandi | General dentistry with RCT services; available for appointments today [3][5] |\n| **Kshetrapal Orthodontic Centre** | Nayapura | Specialized in root canal treatment and orthodontics [3] |\n| **SS Dental Solutions** | Kota | Offers specialist dentistry including surgical endodontics and RCT [3] |\n\n### Cost Overview (2026)\n- **Routine Root Canal (RCT):** ₹2,500 – ₹4,000 per tooth [1]\n- **Re-treatment (Re-RCT):** ₹3,500 [1]\n- **Wisdom Tooth RCT:** ₹4,000 [1]\n- **Crown (Cap) after RCT:** ₹1,500 – ₹12,000 (material-dependent) [1]\n- **Total (RCT + Crown):** ₹4,000 – ₹16,000 [1]\n\nThe procedure typically involves removing infected pulp, cleaning/disinfecting the canal, filling with gutta-percha, and sealing—often followed by a crown for protection [2][4]. Most clinics complete it in 1–2 visits, with each lasting 30–90 minutes [6].\n\nFor immediate consultation, **Dr. Mahima's Dental Care** is available today and explicitly advertises single-sitting, painless treatment at a verified low cost [1].",
+      "sources": [
+        {
+          "title": "Root Canal Treatment in Kota — Painless, Single-Sitting from ₹2500",
+          "link": "https://drmahimasdentalcare.in/services/root-canal/",
+          "content": ""
+        },
+        {
+          "title": "Root Canal Treatment in Kota - Dr. Jaya's Orthodontic & Dental Clinic",
+          "link": "https://drjayadentalclinic.com/root-canal-treatment-rct/",
+          "content": ""
+        },
+        {
+          "title": "Kota, Rajasthan Endodontist and Clinics for Root Canal Treatment - #1",
+          "link": "https://www.indiadentalclinic.com/en/services-root-canal-treatment/rajasthan-city-kota/index.htm",
+          "content": ""
+        },
+        {
+          "title": "Restorative Dentistry and Root Canal Treatment in Kota",
+          "link": "https://singhvi.dental/services/endodontics-rct-restorative-dentistry-kota",
+          "content": ""
+        },
+        {
+          "title": "Root Canal Treatment (RCT) Doctors in Kota - View Cost, Book Appointment, Consult Online",
+          "link": "https://www.lybrate.com/kota/doctors-for-root-canal-treatment-rct",
+          "content": ""
+        },
+        {
+          "title": "Best Root Canal Doctors With Advanced Preventive Dental Care in ...",
+          "link": "https://www.justdial.com/Kota-Rajasthan/Root-Canal-Doctors-with-Advanced-Preventive-Dental-Care/nct-10413782-att-den771",
+          "content": ""
+        },
+        {
+          "title": "23 Best Rct Root Canal Treatment Doctors In Kota",
+          "link": "https://www.practo.com/kota/doctors-for-rct-root-canal-treatment",
+          "content": ""
+        },
+        {
+          "title": "Best Root Canal Doctors With Teeth Setting in Kota Rajasthan",
+          "link": "https://www.justdial.com/Kota-Rajasthan/Root-Canal-Doctors-with-Teeth-Setting/nct-10413782-att-den811",
+          "content": ""
+        },
+        {
+          "title": "रूट कॅनाल डॉक्टर्स - शीला चौधरी रोड तळवंडी, कोटा राजस्थान",
+          "link": "https://www.justdial.com/mr/Kota-Rajasthan/Root-Canal-Doctors-in-Sheela-Choudhary-Road-Talwandi/nct-10413782",
+          "content": ""
+        }
+      ],
+      "cost": 0.00552
+    },
+    {
+      "query": "dental implant specialist kota",
+      "mentions": [
+        "Jaiswal Dental Clinic",
+        "Kota Dental Hospital"
+      ],
+      "answer": "For dental implant specialists in **Kota, Rajasthan**, top verified options include:\n\n| Specialist / Clinic | One-Line Reason |\n|---------------------|---------------|\n| **Dr. Anshul Mohan Mathur** (Practo) | 29 years of experience, 516 reviews, 98% recommendation |\n| **Dr. Sandeep Singh Bhatia** (Practo) | 16 years experience, 125 reviews, 98% recommendation |\n| **Kota Dental Institute (Dental Clinic & Implant Centre)** | Dedicated implant centre on Keshavpura Main Road, verified by Justdial |\n| **Maheshwari Dental Clinic & Implant Centre** | 5.0 rating, specialized in implants, bookable via Justdial |\n| **Dr. Sudhakar Reddy Implantologist** | Known for affordable yet high-quality implant care, verified by Justdial |\n| **Jaiswal Dental Clinic Orthodontic & Implant Centre** | 21 years in healthcare, 4.8 rating, implant-focused |\n| **Impression Dental & Implant Centre** | “Clean & hygienic” feedback, 4.5 rating, implant specialist |\n\nThese clinics and doctors are actively listed on Practo, Justdial, and India Dental Clinic as performing **dental implants** in Kota. For the most current availability, book directly via their Justdial or Practo profiles.",
+      "sources": [
+        {
+          "title": "Dental Implant Center | Pasang Implan Gigi Terbaik ...",
+          "link": "https://www.instagram.com/p/DR8eWMDko_q/",
+          "content": ""
+        },
+        {
+          "title": "Get An Affordable Quality Dental Implant in Jakarta",
+          "link": "https://www.adcsmiles.co/dentalimplantindonesia",
+          "content": ""
+        },
+        {
+          "title": "JNJ Dental Care: Invisalign Diamond Provider and Invisalign ...",
+          "link": "https://jnjdentalcare.com",
+          "content": ""
+        },
+        {
+          "title": "30 Best Dental Implant Fixing Doctors In Kota",
+          "link": "https://www.practo.com/kota/doctors-for-dental-implant-fixing",
+          "content": ""
+        },
+        {
+          "title": "Best Implantologist Doctors Near me in Kota Rajasthan - Justdial",
+          "link": "https://www.justdial.com/Kota-Rajasthan/Implantologist-Doctors/nct-10892414",
+          "content": ""
+        },
+        {
+          "title": "உள்வைப்பு நிபுணர் மருத்துவர்கள் - கோட்டா ... - Justdial",
+          "link": "https://www.justdial.com/ta/Kota-Rajasthan/Implantologist-Doctors/nct-10892414",
+          "content": ""
+        },
+        {
+          "title": "Kota, Rajasthan Implantologist and Clinics for Dental Implants - #1",
+          "link": "https://www.indiadentalclinic.com/en/services-dental-implants/rajasthan-city-kota/index.htm",
+          "content": ""
+        },
+        {
+          "title": "प्रत्यारोपण विशेषज्ञ डॉक्टर - कोटा राजस्थान",
+          "link": "https://www.justdial.com/hi/Kota-Rajasthan/Implantologist-Doctors/nct-10892414",
+          "content": ""
+        },
+        {
+          "title": "Best Doctors For Dental Implantation Near me in Akashwani Colony ...",
+          "link": "https://www.justdial.com/Kota-Rajasthan/Doctors-For-Dental-Implantation-in-Akashwani-Colony/nct-11311983?srcterm=Doctors+For+Dental+Implantation+in+Akashwani+Colony",
+          "content": ""
+        }
+      ],
+      "cost": 0.00535
+    },
+    {
+      "query": "kids dentist in kota rajasthan",
+      "mentions": [],
+      "answer": "For a kids dentist in Kota, Rajasthan, **Nakoda Kids & Family Dental Clinic** is the top verified pediatric specialist, with a patient describing it as the \"best and only pediatric dentist in Kota\" [2].\n\nHere are the best specific options you can verify:\n\n| Practice Name | Location | One-Line Reason |\n| :--- | :--- | :--- |\n| **Nakoda Kids & Family Dental Clinic** | Shrinath Puram (Plot No 82, Near Tvs Circle/Shiv Jyoti Convent School) [2] | Dedicated pediatric clinic with a 4.6-star rating (157 reviews) and verified as the \"best and only pediatric dentist\" in Kota [2][3]. |\n| **Smilebuds Dental Clinic** | Kota, Rajasthan | Listed among top Paedodontist doctors in Kota, specializing in children's dental care [1]. |\n| **Manasvi Dental Clinic** | Kota, Rajasthan | Recognized Paedodontist clinic in Kota offering specialized care for kids [1]. |\n\n**Nakoda Kids & Family Dental Clinic** is the most recommended choice for children due to its exclusive focus on pediatric dentistry and high patient satisfaction for treating sons and daughters [2].",
+      "sources": [
+        {
+          "title": "Best Paedodontist Doctors Near me in Kota Rajasthan",
+          "link": "https://www.justdial.com/Kota-Rajasthan/Paedodontist-Doctors/nct-11194873",
+          "content": ""
+        },
+        {
+          "title": "Nakoda Kids & Family Dental Clinic in Shrinath Puram ...",
+          "link": "https://www.justdial.com/Kota-Rajasthan/Nakoda-Kids-Family-Dental-Clinic-Shrinath-Puram/9999PX744-X744-170218183504-F4K9_BZDET",
+          "content": ""
+        },
+        {
+          "title": "Dentists in Kota Rajasthan - Page 2 - Justdial",
+          "link": "https://www.justdial.com/Kota-Rajasthan/Dentists/nct-10156331/page-2",
+          "content": ""
+        },
+        {
+          "title": "विशेष आवश्यकता वाले बच्चों के लिए दंत चिकित्सक - कोटा राजस्थान",
+          "link": "https://www.justdial.com/hi/Kota-Rajasthan/Dentists-For-Special-Needs-Children/nct-11381634",
+          "content": ""
+        },
+        {
+          "title": "Dental Clinic By Dr.Geet & Dr.Kriti (@smiles_of_kota)",
+          "link": "https://www.instagram.com/smiles_of_kota/",
+          "content": ""
+        },
+        {
+          "title": "Dr. Sandeep's Orthodontic & Dental Clinic | Kota - Facebook",
+          "link": "https://www.facebook.com/DrSandeepDentalClinic/",
+          "content": ""
+        },
+        {
+          "title": "Kota, Rajasthan Endodontist and Clinics for Tooth Decay - #1",
+          "link": "https://www.indiadentalclinic.com/en/services-tooth-decay/rajasthan-city-kota/index.htm",
+          "content": ""
+        }
+      ],
+      "cost": 0.0053
+    },
+    {
+      "query": "cosmetic dentist kota rajasthan",
+      "mentions": [],
+      "answer": "For cosmetic dentistry in Kota, Rajasthan, the top verified options are **SS Dental Solutions** (offers veneers, cosmetic bonding, and smile makeovers with modern technology) and **Malik’s Smile n Glow Clinic** (led by Dr. Mayank Malik, an expert in cosmetic dentistry and facial aesthetics with 9+ years of experience).\n\n### Recommended Cosmetic Dentists in Kota\n\n| Practice | Dentist | One-Line Reason |\n|----------|---------|-----------------|\n| **SS Dental Solutions** | Dr. Geet & Dr. Kriti | Specializes in veneers, cosmetic crowns, bonding, and full smile makeovers with painless, computer-controlled anesthesia [1][3][5] |\n| **Malik’s Smile n Glow Clinic** | Dr. Mayank Malik | Expert in cosmetic smile makeovers, braces, implants, and facial aesthetics (HydraFacial, PRP) with a patient-first approach [2][9] |\n| **Maheshwari Dental Clinic & Implant Centre** | Maheshwari Team | 5.0-rated clinic offering cosmetic dentistry, zirconia crowns, and metal braces with verified customer service [4] |\n| **Singhvi Dental Clinic** | Top Kota Cosmetic Dentists | Provides affordable, goal-oriented cosmetic and aesthetic dentistry treatments in Kota [7] |\n\n### Key Details\n- **SS Dental Solutions** is located at **A-500, Indra Vihar, Kota** and offers teeth whitening, dental implants, and orthodontic braces alongside cosmetic services [1][3].\n- **Malik’s Smile n Glow Clinic** is at **Plot No. 2-A-1, Rangbari Road, Talwandi, Kota**, combining dental and facial aesthetic care for natural, beautiful results [2][9].\n- Both clinics are highly rated, open all 7 days by appointment, and use modern technology for pain-free care [1][5].\n\nFor the best cosmetic results, prioritize **SS Dental Solutions** for comprehensive smile makeovers or **Malik’s Smile n Glow Clinic** for combined dental and facial aesthetic treatments.",
+      "sources": [
+        {
+          "title": "Dental Clinic By Dr.Geet & Dr.Kriti (@smiles_of_kota)",
+          "link": "https://www.instagram.com/smiles_of_kota/",
+          "content": ""
+        },
+        {
+          "title": "Mayank Malik | LinkedIn",
+          "link": "https://www.linkedin.com/in/dr-mayank-malik-aa84a7185",
+          "content": ""
+        },
+        {
+          "title": "SS Dental Solutions | Kota",
+          "link": "https://www.facebook.com/SSdentalsolutions/",
+          "content": ""
+        },
+        {
+          "title": "Best Cosmetic Dentistry Doctors in Gumanpura, Kota Rajasthan",
+          "link": "https://www.justdial.com/Kota-Rajasthan/Cosmetic-Dentistry-Doctors-in-Gumanpura/nct-10941543",
+          "content": ""
+        },
+        {
+          "title": "Looking for the Best Dentist in Kota? You've Found Us! At S.S. ...",
+          "link": "https://www.instagram.com/p/DKrnFvAyg-v/",
+          "content": ""
+        },
+        {
+          "title": "Best Cosmetic Dentistry Doctors Near me in Chittorgarh",
+          "link": "https://www.justdial.com/Chittorgarh/Cosmetic-Dentistry-Doctors/nct-10941543",
+          "content": ""
+        },
+        {
+          "title": "Cosmetic Dentistry in Kota - Singhvi Dental Clinic",
+          "link": "https://singhvi.dental/services/cosmetic-aesthetic-dentistry-in-kota",
+          "content": ""
+        },
+        {
+          "title": "Ss Dental Solutions - Dental Services in kota, Kota #2065",
+          "link": "https://www.indiadentalclinic.com/en/clinic/ss-dental-solutions/services.htm",
+          "content": ""
+        },
+        {
+          "title": "Dr. Mayank Malik - Dentist in Kota | DocIndia",
+          "link": "https://www.docindia.org/doctors/kota/dr-mayank-malik-dentist",
+          "content": ""
+        },
+        {
+          "title": "Dr. Nipun Chaudhary - Dentist in Kota",
+          "link": "https://www.docindia.org/doctors/kota/dr-nipun-chaudhary-dentist",
+          "content": ""
+        }
+      ],
+      "cost": 0.00549
+    },
+    {
+      "query": "teeth whitening clinic kota",
+      "mentions": [
+        "Jaiswal Dental Clinic"
+      ],
+      "answer": "For teeth whitening in **Kota, Rajasthan**, the top verified clinic is **Jaiswal Dental Clinic Orthodontic & Implant Centre** (4.8★, open 24 hrs, 21 years in healthcare) [1].\n\nHere are the best real options in Kota with one-line reasons:\n\n| Clinic | One-Line Reason |\n|--------|---------------|\n| **Jaiswal Dental Clinic Orthodontic & Implant Centre** | Highest-rated (4.8★), open 24 hours, and 21 years of healthcare experience [1] |\n| **Dr. Subodh's Dental Clinic** (Talwandi) | Recently consulted for bleaching; available 5 PM–8 PM [2] |\n| **Sanjeevani Multispeciality Dental Clinic** (Dadabari) | Consulted for dental bleaching & invisible braces; open 9 AM–9 PM [2] |\n| **Singhvi Dental Clinic** (Dadabari) | Specializes in cosmetic dentistry including bleaching/whitening; available 5 PM–8 PM [2][7] |\n| **Rootz Dental Care** (Mahaveer Nagar) | Offers online whitening consultation; available 4 PM–7:30 PM [2] |\n| **Bhatia Dental Clinic Orthodontic & Implant Centre** (Gumanpura) | Provides in-clinic whitening at ₹100/session; open 10 AM–8 PM [2] |\n\n**Note**: Avoid clinics in Kota Damansara [3], Kota Kinabalu [5][9], or Kota Warisan [8]—they are in different cities (Malaysia/India Damansara), not Kota, Rajasthan.\n\nBook an appointment with **Jaiswal Dental Clinic** via WhatsApp or phone: **08460401714** [1].",
+      "sources": [
+        {
+          "title": "Top Teeth Whitening Services in Kota Rajasthan - Justdial",
+          "link": "https://www.justdial.com/Kota-Rajasthan/Teeth-Whitening-Services/nct-11629161",
+          "content": ""
+        },
+        {
+          "title": "68+ Best Doctors for Teeth Whitening in Kota",
+          "link": "https://www.lybrate.com/kota/doctors-for-teeth-whitening",
+          "content": ""
+        },
+        {
+          "title": "Teeth Whitening In Kota Damansara | Toothville Dental Clinic",
+          "link": "https://toothvilledental.com/treatment/teeth-whitening-kota-damansara/",
+          "content": ""
+        },
+        {
+          "title": "Top Teeth Whitening Services in Kota, Vizianagaram",
+          "link": "https://www.justdial.com/Vizianagaram/Teeth-Whitening-Services-in-Kota/nct-11629161",
+          "content": ""
+        },
+        {
+          "title": "Teeth Whitening | Dental Avenue | Healthy Teeth | Kota Kinabalu, Sabah",
+          "link": "https://www.dentalavenuekk.com.my/treatments/teeth-whitening/",
+          "content": ""
+        },
+        {
+          "title": "Top Teeth Cleaning in Kota, Dental Scaling, Polishing Services, Teeth whitening | Sulekha",
+          "link": "https://www.sulekha.com/teeth-cleaning/kota",
+          "content": ""
+        },
+        {
+          "title": "Cosmetic Dentistry in Kota - Singhvi Dental Clinic",
+          "link": "https://singhvi.dental/services/cosmetic-aesthetic-dentistry-in-kota",
+          "content": ""
+        },
+        {
+          "title": "Medissa Dental Clinic Kota Warisan in Selangor, Malaysia",
+          "link": "https://www.whatclinic.com/dentists/malaysia/selangor/medissa-dental-clinic-kota-warisan",
+          "content": ""
+        },
+        {
+          "title": "Borneo Dental Clinic is here to give you exactly that ... - Instagram",
+          "link": "https://www.instagram.com/reel/DUZ2rpYEqUD/",
+          "content": ""
+        },
+        {
+          "title": "MAHARANA PRATAP MEMORIAL DENTAL HOSPITAL",
+          "link": "https://bdir.in/p/best/in/dental-clinics-in-kota-rj/MTg3NjQ=",
+          "content": ""
+        }
+      ],
+      "cost": 0.00543
+    },
+    {
+      "query": "emergency dental care kota",
+      "mentions": [],
+      "answer": "For **emergency dental care in Kota**, the most reliable options are **Usha Dental Care** in Kota, Vizianagaram (offers **24-hour emergency dental care**) [8], and **Ethos Hospital** in Kota, which provides **around-the-clock emergency dental and maxillofacial surgery** for trauma and severe infections [9]. If you are in **Kota, Rajasthan**, contact the nearest **24-hour dentists** listed on JustDial for immediate late-night services like extractions and trauma care [6].\n\n### Recommended Practices by Location:\n\n| Location | Practice | One-Line Reason |\n|----------|----------|-----------------|\n| Kota, Vizianagaram | **Usha Dental Care** | Provides **round-the-clock 24-hour emergency dental care** [8] |\n| Kota, Sabah (Kota Kinabalu) | **Ethos Hospital** | Offers **24/7 emergency dental & maxillofacial surgery** for trauma/infections [9] |\n| Kota, Rajasthan | **Local 24-Hour Dentists** (JustDial list) | Equipped for **emergency tooth extractions** and late-night trauma care [6] |\n\n### What Qualifies as a Dental Emergency:\n- **Severe tooth pain**, **knocked-out teeth** (save within 30–60 minutes) [5], **uncontrolled bleeding**, **facial swelling with fever** (possible serious infection) [5], or **dental abscess** [5].\n- **Hospital ERs** are generally **not set up** for dental problems; a **dentist** is best equipped [1].\n\n### Immediate Action:\n- Call your dentist’s office **even after hours** for an on-call provider [1].\n- If no regular dentist, find a network dentist via **careoregondental.org** (for Oregon) or contact **local 24-hour clinics** in Kota [1][6].\n\nFor **Kota, Rajasthan**, use JustDial’s list of **24-hour dentists** for affordable, immediate care [6]. For **Kota, Vizianagaram**, **Usha Dental Care** is your top choice [8]. For **Kota Kinabalu**, **Ethos Hospital** is the best option [9].",
+      "sources": [
+        {
+          "title": "Dental emergencies - CareOregon Dental",
+          "link": "https://www.careoregondental.org/members/learn-about-oral-health/dental-emergencies",
+          "content": ""
+        },
+        {
+          "title": "Urgent and emergency dental services at Clackamas Dental Office",
+          "link": "https://healthy.kaiserpermanente.org/oregon-washington/facilities/Clackamas-Dental-Office-309387/departments/urgent-care-dlp-135391",
+          "content": ""
+        },
+        {
+          "title": "Emergency Dentist - Oregon City, OR - Beavercreek Dental",
+          "link": "https://www.beavercreekdental.net/oregon-city-or/emergency-dentist/",
+          "content": ""
+        },
+        {
+          "title": "Emergency Dentistry in Gresham, OR",
+          "link": "https://www.greshammoderndentistry.com/dental-services/emergency-dentist/",
+          "content": ""
+        },
+        {
+          "title": "Dental Emergencies | DMH Dental Surgery | Perfect Smile | Kota Kinabalu, Sabah",
+          "link": "https://www.dmhdental.com/treatments/dental-emergencies/",
+          "content": ""
+        },
+        {
+          "title": "List of nearest 24 Hours Dentists in Kota Rajasthan",
+          "link": "https://www.justdial.com/Kota-Rajasthan/24-Hours-Dentists/nct-10000372",
+          "content": ""
+        },
+        {
+          "title": "Emergency Dentistry - BioArtDental | The Best Dental Clinic in Kolkata",
+          "link": "https://bioartdental.com/services/emergency-dentistry/",
+          "content": ""
+        },
+        {
+          "title": "Usha Dental Care in Kota,Vizianagaram",
+          "link": "https://www.justdial.com/Vizianagaram/Usha-Dental-Care-Near-Kota-Kota/9999P8922-8922-180713122201-A7D8_BZDET",
+          "content": ""
+        },
+        {
+          "title": "Dental & Maxillofacial Surgery",
+          "link": "https://www.ethoshospital.com/service/dental-maxillofacial-surgery/",
+          "content": ""
+        }
+      ],
+      "cost": 0.00552
+    }
+  ],
+  "errors": [],
+  "total_cost": 0.05457,
+  "market": "dentists in Kota, Rajasthan",
+  "provider": "openrouter",
+  "model": "perplexity/sonar",
+  "timestamp": "2026-07-09T16:15:36.190613+00:00"
+}

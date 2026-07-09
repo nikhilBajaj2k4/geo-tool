@@ -1,0 +1,101 @@
+{
+  "tests": [
+    {
+      "id": "dentist-austin",
+      "market": "dentists in Austin, TX",
+      "verdict": "GAP IS REAL — build the full tool",
+      "total_queries": 10,
+      "queries_with_any": 8,
+      "total_cost": 0.0543,
+      "ranking": [
+        {
+          "name": "Austin Dental Spa",
+          "count": 6
+        },
+        {
+          "name": "Enamel Dentistry",
+          "count": 4
+        },
+        {
+          "name": "Forest Family Dentistry",
+          "count": 3
+        },
+        {
+          "name": "Westlake Hills Dentistry",
+          "count": 2
+        },
+        {
+          "name": "Celebrate Dental & Braces",
+          "count": 2
+        }
+      ],
+      "errors": 0,
+      "file": "test-dentist-austin-20260709-214440.json"
+    },
+    {
+      "id": "dentist-kota",
+      "market": "dentists in Kota, Rajasthan",
+      "verdict": "GAP IS REAL — build the full tool",
+      "total_queries": 10,
+      "queries_with_any": 4,
+      "total_cost": 0.05457,
+      "ranking": [
+        {
+          "name": "Jaiswal Dental Clinic",
+          "count": 4
+        },
+        {
+          "name": "Kota Dental Hospital",
+          "count": 1
+        },
+        {
+          "name": "Crown Dental Care",
+          "count": 0
+        },
+        {
+          "name": "Dr Sandeep Orthodontic and Dental Clinic",
+          "count": 0
+        },
+        {
+          "name": "Madhuvan Multispeciality Hospital Dental",
+          "count": 0
+        }
+      ],
+      "errors": 0,
+      "file": "test-dentist-kota-20260709-214536.json"
+    },
+    {
+      "id": "dermatologist-london",
+      "market": "dermatologists in London, UK",
+      "verdict": "GAP IS REAL — build the full tool",
+      "total_queries": 10,
+      "queries_with_any": 7,
+      "total_cost": 0.05529,
+      "ranking": [
+        {
+          "name": "The Dermatology Clinic London",
+          "count": 3
+        },
+        {
+          "name": "Sk:N London",
+          "count": 3
+        },
+        {
+          "name": "Devonshire Dermatology",
+          "count": 3
+        },
+        {
+          "name": "Cadogan Clinic",
+          "count": 2
+        },
+        {
+          "name": "Harley Street Dermatology Clinic",
+          "count": 2
+        }
+      ],
+      "errors": 0,
+      "file": "test-dermatologist-london-20260709-214634.json"
+    }
+  ],
+  "runs_at": "2026-07-09T16:13:48.477147+00:00"
+}
